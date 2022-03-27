@@ -4,15 +4,18 @@ import dynamic from "next/dynamic";
 
 import FileSelector from "../components/FileSelector";
 import TagCloud from "../components/TagCloud";
-// import WaveForm from "../components/WaveForm";
+import WordInText from "../components/WordInText";
+
 const WaveForm = dynamic(() => import("../components/WaveForm"), {
   ssr: false,
 });
 
 import { data } from "../data/transcription";
+import getOccurrences from "../helpers/wordcloud";
 
 export default function Home() {
   console.log(data);
+  const words = data.words;
   return (
     <div className={styles.container}>
       <Head>
@@ -22,9 +25,21 @@ export default function Home() {
       </Head>
       <h1>Visualize your audio</h1>
       <FileSelector />
-      <TagCloud data={data} />
+      <TagCloud data={getOccurrences(data.transcript)} />
       <WaveForm url="samples/demo.mp3" />
-      {data}
+      <div>
+        {words.map((el, index) => {
+          return (
+            <WordInText
+              key={index}
+              word={el.word}
+              onClick={() => {
+                console.log(`Jump to ${el.start}`);
+              }}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 }

@@ -1,0 +1,10 @@
+.wrapper {
+  border: 1px solid grey;
+  padding: 10px 20px;
+  display: inline-block;
+}
+
+.wrapper:hover {
+  color: red;
+  cursor: pointer;
+}
