@@ -1,7 +1,7 @@
 # Features
 
 1. General stats
-2. Semantic analysis
+2. Sentiment analysis
 3. Word cloud
 4. Thematic tags analysis
    5 Speech playback
