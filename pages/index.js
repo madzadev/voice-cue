@@ -1,6 +1,7 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import dynamic from "next/dynamic";
+import Sentiment from "sentiment";
 
 import FileSelector from "../components/FileSelector";
 import TagCloud from "../components/TagCloud";
@@ -13,8 +14,10 @@ const WaveForm = dynamic(() => import("../components/WaveForm"), {
 import { data } from "../data/transcription";
 import getOccurrences from "../helpers/wordcloud";
 
+const sentiment = new Sentiment();
+
 export default function Home() {
-  console.log(data);
+  console.log(sentiment.analyze(data.transcript));
   const words = data.words;
   return (
     <div className={styles.container}>
@@ -25,7 +28,7 @@ export default function Home() {
       </Head>
       <h1>Visualize your audio</h1>
       <FileSelector />
-      <TagCloud data={getOccurrences(data.transcript)} />
+      <TagCloud data={getOccurrences(data.words)} />
       <WaveForm url="samples/demo.mp3" />
       <div>
         {words.map((el, index) => {

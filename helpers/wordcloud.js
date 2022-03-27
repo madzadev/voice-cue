@@ -1,8 +1,10 @@
-export default function getOccurrences(str) {
+import Sentiment from "sentiment";
+
+export default function getOccurrences(tokens) {
   var obj = {};
 
-  str.split(" ").forEach(function (el, i, arr) {
-    obj[el] = obj[el] ? ++obj[el] : 1;
+  tokens.forEach(function (el, i, arr) {
+    obj[el.word] = obj[el.word] ? ++obj[el.word] : 1;
   });
 
   let arr = [];
