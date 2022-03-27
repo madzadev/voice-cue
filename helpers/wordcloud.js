@@ -7,7 +7,9 @@ export default function getOccurrences(str) {
 
   let arr = [];
   for (const el in obj) {
-    arr.push({ value: el, count: obj[el] });
+    if (el.length > 2) {
+      arr.push({ value: el, count: obj[el] });
+    }
   }
 
   return arr;
