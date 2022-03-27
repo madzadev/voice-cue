@@ -6,9 +6,9 @@
 4. Thematic tags analysis
    5 Speech playback
    6 Interactive transcript
-   7
-   8
-   9
+   7 Drag and drop select
+   8 Supported formats MP3 and Wav
+   9 Waveform preview audio
    10
    11
    12
