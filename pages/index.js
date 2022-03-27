@@ -1,7 +1,10 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 
+import { data } from "../data/transcription";
+
 export default function Home() {
+  console.log(data);
   return (
     <div className={styles.container}>
       <Head>
@@ -10,6 +13,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <h1>My Deepgram project</h1>
+      {data}
     </div>
   );
 }
