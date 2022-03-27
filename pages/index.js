@@ -27,7 +27,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <h1>Visualize your audio</h1>
-      <FileSelector />
+      {/* <FileSelector /> */}
       <TagCloud data={getOccurrences(data.words)} />
       <WaveForm url="samples/demo.mp3" />
       <div>
