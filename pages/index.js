@@ -1,8 +1,13 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
+import dynamic from "next/dynamic";
 
 import FileSelector from "../components/FileSelector";
 import TagCloud from "../components/TagCloud";
+// import WaveForm from "../components/WaveForm";
+const WaveForm = dynamic(() => import("../components/WaveForm"), {
+  ssr: false,
+});
 
 import { data } from "../data/transcription";
 
@@ -18,6 +23,7 @@ export default function Home() {
       <h1>Visualize your audio</h1>
       <FileSelector />
       <TagCloud data={data} />
+      <WaveForm url="samples/demo.mp3" />
       {data}
     </div>
   );
