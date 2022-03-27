@@ -48,6 +48,13 @@ const WaveForm = ({ url }) => {
       >
         Get current time
       </button>
+      <button
+        onClick={() => {
+          waveform.current.skipForward(2);
+        }}
+      >
+        2 sec forward
+      </button>
     </>
   );
 };
