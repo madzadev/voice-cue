@@ -9,6 +9,7 @@ import "react-tabs/style/react-tabs.css";
 import FileSelector from "../components/FileSelector";
 import TagCloud from "../components/TagCloud";
 import WordInText from "../components/WordInText";
+import Sentiments from "../components/Sentiments";
 
 const WaveForm = dynamic(() => import("../components/WaveForm"), {
   ssr: false,
@@ -59,7 +60,7 @@ export default function Home() {
           </div>
         </TabPanel>
         <TabPanel>
-          <h2>Sentiment</h2>
+          <Sentiments />
         </TabPanel>
         <TabPanel>
           <TagCloud data={getOccurrences(transcription.words)} />

@@ -44,9 +44,9 @@ const WaveForm = ({ url }) => {
   return (
     <>
       <div id="waveform" className={styles.waveform} />
-      <button onClick={playAudio} className={styles.playButton}>
+      {/* <button onClick={playAudio} className={styles.playButton}>
         Play/Pause
-      </button>
+      </button> */}
 
       {/* <button
         onClick={() => {
