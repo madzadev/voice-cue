@@ -1,7 +1,6 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import dynamic from "next/dynamic";
-import Sentiment from "sentiment";
 
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
@@ -17,8 +16,6 @@ const WaveForm = dynamic(() => import("../components/WaveForm"), {
 
 import { transcription } from "../data/transcription";
 import getOccurrences from "../helpers/wordcloud";
-
-const sentiment = new Sentiment();
 
 export default function Home() {
   // console.log(sentiment.analyze(data.transcript));
@@ -39,9 +36,6 @@ export default function Home() {
           <Tab>Sentiment</Tab>
           <Tab>Tag Cloud</Tab>
           <Tab>Entities</Tab>
-          <Tab>Fx5</Tab>
-          <Tab>Fx6</Tab>
-          <Tab>Fx7</Tab>
         </TabList>
 
         <TabPanel>
@@ -52,6 +46,9 @@ export default function Home() {
         </TabPanel>
         <TabPanel>
           <TagCloud data={getOccurrences(transcription.words)} />
+        </TabPanel>
+        <TabPanel>
+          <h1>Entities</h1>
         </TabPanel>
       </Tabs>
     </div>

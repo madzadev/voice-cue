@@ -32,8 +32,8 @@ function SimpleCloud({ data }) {
       style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "30px" }}
     >
       <TagCloud
-        minSize={12}
-        maxSize={35}
+        minSize={18}
+        maxSize={40}
         tags={data}
         onClick={(tag) => {
           setActiveTag(tag);

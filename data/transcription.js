@@ -51,6 +51,9 @@ export const transcription = {
     { word: "and", start: 9.1, end: 9.5, confidence: 0.99 },
     { word: "typesetting", start: 10.1, end: 10.5, confidence: 0.99 },
     { word: "industry", start: 11.1, end: 11.5, confidence: 0.99 },
+    { word: "industry", start: 11.1, end: 11.5, confidence: 0.99 },
+    { word: "industry", start: 11.1, end: 11.5, confidence: 0.99 },
+    { word: "industry", start: 11.1, end: 11.5, confidence: 0.99 },
   ],
 };
 
