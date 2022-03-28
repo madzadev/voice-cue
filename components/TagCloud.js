@@ -28,7 +28,9 @@ function SimpleCloud({ data }) {
   }, [occurrences]);
 
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
+    <div
+      style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "30px" }}
+    >
       <TagCloud
         minSize={12}
         maxSize={35}

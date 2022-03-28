@@ -3,6 +3,9 @@ import styles from "../styles/Home.module.css";
 import dynamic from "next/dynamic";
 import Sentiment from "sentiment";
 
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
+
 import FileSelector from "../components/FileSelector";
 import TagCloud from "../components/TagCloud";
 import WordInText from "../components/WordInText";
@@ -27,21 +30,37 @@ export default function Home() {
       </Head>
       <h1>Visualize your audio</h1>
       {/* <FileSelector /> */}
-      <TagCloud data={getOccurrences(transcription.words)} />
       <WaveForm url="samples/demo.mp3" />
-      <div>
-        {transcription.words.map((el, index) => {
-          return (
-            <WordInText
-              key={index}
-              word={el.word}
-              onClick={() => {
-                console.log(`Jump to ${el.start}`);
-              }}
-            />
-          );
-        })}
-      </div>
+
+      <Tabs>
+        <TabList>
+          <Tab>Transcript</Tab>
+          <Tab>Sentiment</Tab>
+          <Tab>Tag Cloud</Tab>
+        </TabList>
+
+        <TabPanel>
+          <div>
+            {transcription.words.map((el, index) => {
+              return (
+                <WordInText
+                  key={index}
+                  word={el.word}
+                  onClick={() => {
+                    console.log(`Jump to ${el.start}`);
+                  }}
+                />
+              );
+            })}
+          </div>
+        </TabPanel>
+        <TabPanel>
+          <h2>Sentiment</h2>
+        </TabPanel>
+        <TabPanel>
+          <TagCloud data={getOccurrences(transcription.words)} />
+        </TabPanel>
+      </Tabs>
     </div>
   );
 }

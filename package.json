@@ -13,6 +13,7 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-drag-drop-files": "^2.3.4",
+    "react-tabs": "^4.0.1",
     "react-tagcloud": "^2.2.0",
     "sentiment": "^5.0.2",
     "wavesurfer.js": "^6.0.4"
