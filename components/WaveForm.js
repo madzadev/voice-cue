@@ -1,5 +1,5 @@
 import Wavesurfer from "wavesurfer.js";
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 import styles from "./WaveForm.module.css";
 
@@ -34,6 +34,7 @@ const WaveForm = ({ url }) => {
 
   const playAudio = () => {
     // Check if the audio is already playing
+    console.log(waveform.current);
     if (waveform.current.isPlaying()) {
       waveform.current.pause();
     } else {
@@ -44,9 +45,9 @@ const WaveForm = ({ url }) => {
   return (
     <>
       <div id="waveform" className={styles.waveform} />
-      {/* <button onClick={playAudio} className={styles.playButton}>
+      <button onClick={playAudio} className={styles.playButton}>
         Play/Pause
-      </button> */}
+      </button>
 
       {/* <button
         onClick={() => {

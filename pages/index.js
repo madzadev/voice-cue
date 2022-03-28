@@ -1,9 +1,5 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
 import dynamic from "next/dynamic";
-
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import "react-tabs/style/react-tabs.css";
 
 import FileSelector from "../components/FileSelector";
 import Overview from "../components/Overview";
@@ -17,8 +13,14 @@ const WaveForm = dynamic(() => import("../components/WaveForm"), {
 import { transcription } from "../data/transcription";
 import getOccurrences from "../helpers/wordcloud";
 
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
+
+import styles from "../styles/Home.module.css";
+
 export default function Home() {
   // console.log(sentiment.analyze(data.transcript));
+
   return (
     <div className={styles.container}>
       <Head>
@@ -27,7 +29,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <h1 className={styles.title}>The magnifier glass for your audio</h1>
-      {/* <FileSelector /> */}
+      <FileSelector />
       <WaveForm url="samples/demo.mp3" />
 
       <Tabs className={styles.tabs}>

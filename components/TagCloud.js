@@ -14,7 +14,12 @@ function SimpleCloud({ data }) {
   function getTagList(occ) {
     return occ.map((el, index) => {
       return (
-        <div className={styles.listItem}>
+        <div
+          className={styles.listItem}
+          onClick={() => {
+            console.log(`Time is ${el.start}`);
+          }}
+        >
           <h3>
             #{index + 1} appears at {el.start}
           </h3>
