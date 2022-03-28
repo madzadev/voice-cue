@@ -1,12 +1,11 @@
 import WordInText from "./WordInText";
+import ViewSplitter from "../components/ViewSplitter";
 
 import { transcription } from "../data/transcription";
 
 const Overview = () => {
   return (
-    <div
-      style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "30px" }}
-    >
+    <ViewSplitter>
       <div>
         <p>File title: My test speech</p>
         <p>Total words: 234</p>
@@ -29,7 +28,7 @@ const Overview = () => {
           );
         })}
       </div>
-    </div>
+    </ViewSplitter>
   );
 };
 

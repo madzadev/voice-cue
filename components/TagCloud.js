@@ -1,5 +1,6 @@
-import { TagCloud } from "react-tagcloud";
 import { useState, useEffect } from "react";
+import { TagCloud } from "react-tagcloud";
+import ViewSplitter from "../components/ViewSplitter";
 
 import { transcription } from "../data/transcription";
 
@@ -28,9 +29,7 @@ function SimpleCloud({ data }) {
   }, [occurrences]);
 
   return (
-    <div
-      style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "30px" }}
-    >
+    <ViewSplitter>
       <TagCloud
         minSize={18}
         maxSize={40}
@@ -60,7 +59,7 @@ function SimpleCloud({ data }) {
           <h1>Select a tag to get analysis</h1>
         )}
       </div>
-    </div>
+    </ViewSplitter>
   );
 }
 
