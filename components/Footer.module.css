@@ -6,6 +6,7 @@
   left: 0;
   bottom: 0;
   background-color: #4b6fff;
-  /* color: white; */
+  color: #181820;
+  font-weight: bold;
   padding: 10px 20px;
 }

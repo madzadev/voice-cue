@@ -1,3 +1,10 @@
 .waveform {
-  margin: 50px 0;
+  margin: 20px 0;
+}
+
+.playButton {
+  border: none;
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
 }

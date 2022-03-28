@@ -2,6 +2,7 @@
   min-height: 50px;
   display: grid;
   grid-template-columns: auto 100px 100px;
-  background-color: #3b62ff;
+  background-color: #21212c;
   padding: 10px 20px;
+  color: rgb(255, 119, 255);
 }

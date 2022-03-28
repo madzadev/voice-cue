@@ -44,8 +44,11 @@ const WaveForm = ({ url }) => {
   return (
     <>
       <div id="waveform" className={styles.waveform} />
-      <button onClick={playAudio}> Play/Pause</button>
-      <button
+      <button onClick={playAudio} className={styles.playButton}>
+        Play/Pause
+      </button>
+
+      {/* <button
         onClick={() => {
           console.log(waveform.current.getCurrentTime());
         }}
@@ -58,7 +61,7 @@ const WaveForm = ({ url }) => {
         }}
       >
         2 sec forward
-      </button>
+      </button> */}
     </>
   );
 };
