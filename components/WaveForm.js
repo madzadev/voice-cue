@@ -4,7 +4,6 @@ import { useState, useEffect, useRef } from "react";
 import styles from "./WaveForm.module.css";
 
 const WaveForm = ({ url }) => {
-  const [audioDuration, setAudioDuration] = useState(0);
   const waveform = useRef(null);
 
   useEffect(() => {
@@ -24,7 +23,7 @@ const WaveForm = ({ url }) => {
       });
       // Load audio from a remote url.
       waveform.current.load(url);
-      setAudioDuration(waveform.current.getDuration());
+
       /* To load a local audio file
 		    1. Read the audio file as a array buffer.
 			2. Create a blob from the array buffer
@@ -32,8 +31,6 @@ const WaveForm = ({ url }) => {
 	 */
     }
   }, []);
-
-  useEffect(() => {}, [waveform]);
 
   const playAudio = () => {
     // Check if the audio is already playing
@@ -62,7 +59,6 @@ const WaveForm = ({ url }) => {
       >
         2 sec forward
       </button>
-      <p>Audio length: {audioDuration}</p>
     </>
   );
 };
