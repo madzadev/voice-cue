@@ -7,9 +7,9 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 
 import FileSelector from "../components/FileSelector";
-import TagCloud from "../components/TagCloud";
-import WordInText from "../components/WordInText";
+import Overview from "../components/Overview";
 import Sentiments from "../components/Sentiments";
+import TagCloud from "../components/TagCloud";
 
 const WaveForm = dynamic(() => import("../components/WaveForm"), {
   ssr: false,
@@ -45,19 +45,7 @@ export default function Home() {
         </TabList>
 
         <TabPanel>
-          <div>
-            {transcription.words.map((el, index) => {
-              return (
-                <WordInText
-                  key={index}
-                  word={el.word}
-                  onClick={() => {
-                    console.log(`Jump to ${el.start}`);
-                  }}
-                />
-              );
-            })}
-          </div>
+          <Overview />
         </TabPanel>
         <TabPanel>
           <Sentiments />
