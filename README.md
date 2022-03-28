@@ -16,3 +16,7 @@
    14
    15
    16
+
+punctuate=true, add Uppercase and periods for sentences.
+diarize=true, adds "speaker": 1
+ner=true, adds Named-Entity Recognition (eight two = 82)
