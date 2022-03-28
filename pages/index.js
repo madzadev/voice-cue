@@ -11,14 +11,13 @@ const WaveForm = dynamic(() => import("../components/WaveForm"), {
   ssr: false,
 });
 
-import { data } from "../data/transcription";
+import { transcription } from "../data/transcription";
 import getOccurrences from "../helpers/wordcloud";
 
 const sentiment = new Sentiment();
 
 export default function Home() {
-  console.log(sentiment.analyze(data.transcript));
-  const words = data.words;
+  // console.log(sentiment.analyze(data.transcript));
   return (
     <div className={styles.container}>
       <Head>
@@ -28,10 +27,10 @@ export default function Home() {
       </Head>
       <h1>Visualize your audio</h1>
       {/* <FileSelector /> */}
-      <TagCloud data={getOccurrences(data.words)} />
+      <TagCloud data={getOccurrences(transcription.words)} />
       <WaveForm url="samples/demo.mp3" />
       <div>
-        {words.map((el, index) => {
+        {transcription.words.map((el, index) => {
           return (
             <WordInText
               key={index}
