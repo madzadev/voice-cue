@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 
 import { transcription } from "../data/transcription";
 
+import styles from "./TagCloud.module.css";
+
 function SimpleCloud({ data }) {
   const [activeTag, setActiveTag] = useState();
   const [occurrences, setOccurrences] = useState([]);
@@ -11,7 +13,7 @@ function SimpleCloud({ data }) {
   function getTagList(occ) {
     return occ.map((el, index) => {
       return (
-        <div>
+        <div className={styles.listItem}>
           <h3>
             #{index + 1} appears at {el.start}
           </h3>
@@ -45,8 +47,11 @@ function SimpleCloud({ data }) {
       <div>
         {activeTag ? (
           <>
-            <h1>Word: {activeTag.value}</h1>
-            <h3>Occurred {activeTag.count} times</h3>
+            <div className={styles.listHead}>
+              <h1>Word: {activeTag.value}</h1>
+              <h3>Occurred {activeTag.count} times</h3>
+            </div>
+
             {tagList}
           </>
         ) : (
