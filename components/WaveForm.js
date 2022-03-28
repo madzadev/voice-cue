@@ -1,6 +1,8 @@
 import Wavesurfer from "wavesurfer.js";
 import { useState, useEffect, useRef } from "react";
 
+import styles from "./WaveForm.module.css";
+
 const WaveForm = ({ url }) => {
   const [audioDuration, setAudioDuration] = useState(0);
   const waveform = useRef(null);
@@ -16,6 +18,7 @@ const WaveForm = ({ url }) => {
         barGap: 2,
         barWidth: 3,
         barRadius: 3,
+        height: 150,
         cursorWidth: 3,
         cursorColor: "#567FFF",
       });
@@ -43,7 +46,7 @@ const WaveForm = ({ url }) => {
 
   return (
     <>
-      <div id="waveform" />
+      <div id="waveform" className={styles.waveform} />
       <button onClick={playAudio}> Play/Pause</button>
       <button
         onClick={() => {

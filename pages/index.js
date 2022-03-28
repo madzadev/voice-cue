@@ -34,9 +34,13 @@ export default function Home() {
 
       <Tabs>
         <TabList>
-          <Tab>Transcript</Tab>
+          <Tab>Overview</Tab>
           <Tab>Sentiment</Tab>
           <Tab>Tag Cloud</Tab>
+          <Tab>Entities</Tab>
+          <Tab>Fx5</Tab>
+          <Tab>Fx6</Tab>
+          <Tab>Fx7</Tab>
         </TabList>
 
         <TabPanel>
