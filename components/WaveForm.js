@@ -13,7 +13,8 @@ const WaveForm = ({ url }) => {
       // More info about options here https://wavesurfer-js.org/docs/options.html
       waveform.current = Wavesurfer.create({
         container: "#waveform",
-        waveColor: "#567FFF",
+        waveColor: "white",
+        progressColor: "#567FFF",
         barGap: 2,
         barWidth: 3,
         barRadius: 3,
@@ -45,9 +46,9 @@ const WaveForm = ({ url }) => {
   return (
     <>
       <div id="waveform" className={styles.waveform} />
-      <button onClick={playAudio} className={styles.playButton}>
+      {/* <button onClick={playAudio} className={styles.playButton}>
         Play/Pause
-      </button>
+      </button> */}
 
       {/* <button
         onClick={() => {
