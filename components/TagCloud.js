@@ -8,6 +8,7 @@ import styles from "./TagCloud.module.css";
 
 function SimpleCloud({ data }) {
   const [activeTag, setActiveTag] = useState();
+  const [activeColor, setActiveColor] = useState("white");
   const [occurrences, setOccurrences] = useState([]);
   const [tagList, setTagList] = useState();
 
@@ -39,12 +40,12 @@ function SimpleCloud({ data }) {
         minSize={18}
         maxSize={40}
         tags={data}
-        onClick={(tag) => {
+        onClick={(tag, e) => {
           setActiveTag(tag);
           setOccurrences([]);
+          setActiveColor(e.target.style.color);
           transcription.words.forEach((el, index) => {
             if (tag.value === el.word) {
-              console.log(tag);
               setOccurrences((occurrences) => [...occurrences, el]);
             }
           });
@@ -54,7 +55,12 @@ function SimpleCloud({ data }) {
         {activeTag ? (
           <>
             <div className={styles.listHead}>
-              <h1>Word: {activeTag.value}</h1>
+              <h1>
+                Word:{" "}
+                <span style={{ color: `${activeColor}` }}>
+                  {activeTag.value}
+                </span>
+              </h1>
               <h3>Occurred {activeTag.count} times</h3>
             </div>
 
