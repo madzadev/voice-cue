@@ -1,15 +1,19 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import WordInText from "./WordInText";
 import ViewSplitter from "../components/ViewSplitter";
 
 import { transcription } from "../data/transcription";
 
 const Overview = ({ globalWaveForm }) => {
-  // useEffect(() => {
-  //   globalWaveForm.on("audioprocess", function () {
-  //     console.log(globalWaveForm.current.getCurrentTime());
-  //   });
-  // }, []);
+  const [currentTime, setCurrentTime] = useState(0);
+
+  useEffect(() => {
+    if (globalWaveForm) {
+      globalWaveForm.current.on("audioprocess", function () {
+        setCurrentTime(globalWaveForm.current.getCurrentTime());
+      });
+    }
+  }, [globalWaveForm]);
 
   return (
     <ViewSplitter>
@@ -43,6 +47,7 @@ const Overview = ({ globalWaveForm }) => {
             <WordInText
               key={index}
               word={el.word}
+              color={currentTime > el.start ? "blue" : "white"}
               onClick={() => {
                 // console.log(`Jump to ${el.start}`);
                 globalWaveForm.current.skip(

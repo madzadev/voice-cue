@@ -1,5 +1,7 @@
 AudioCue - Explore audio context with category cues
 
+With AudioCue you can save time and skip to important parts with just a click.;
+
 # Features
 
 1. General stats
