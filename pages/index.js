@@ -51,7 +51,8 @@ export default function Home() {
           <Tab>Sentiment</Tab>
           <Tab>Tag Cloud</Tab>
           <Tab>Entities</Tab>
-          <Tab>Analytics</Tab>
+          <Tab>Actions</Tab>
+          <Tab>Graphs</Tab>
         </TabList>
 
         <TabPanel>
@@ -70,7 +71,10 @@ export default function Home() {
           <Entity />
         </TabPanel>
         <TabPanel>
-          <h1>Analytics</h1>
+          <h1>Actions</h1>
+        </TabPanel>
+        <TabPanel>
+          <h1>Graphs</h1>
         </TabPanel>
       </Tabs>
     </div>
