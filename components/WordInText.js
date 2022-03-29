@@ -5,7 +5,7 @@ const WordInText = ({ word, time, onClick, color }) => {
     <div
       className={styles.wrapper}
       onClick={onClick}
-      style={{ color: `${color}` }}
+      style={{ color: `${color}`, fontWeight: "bold" }}
     >
       {word}
     </div>

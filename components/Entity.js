@@ -9,6 +9,7 @@ import styles from "./Sentiments.module.css";
 
 const Entity = () => {
   console.log(doc.tag("MaleName").out("tags"));
+  const [activeEntity, setActiveEntity] = useState("");
   return (
     <ViewSplitter>
       <div>
@@ -27,7 +28,7 @@ const Entity = () => {
         <h3>Activity</h3>
       </div>
       <div>
-        <h1>Select entity to get cues</h1>
+        {activeEntity ? <h1>List</h1> : <h1>Select entity to get cues</h1>}
       </div>
     </ViewSplitter>
   );

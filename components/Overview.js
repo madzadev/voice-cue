@@ -27,7 +27,7 @@ const Overview = ({ globalWaveForm }) => {
         >
           <div>
             <h1>{transcription.words.length}</h1>
-            <h3>Total words</h3>
+            <h2>Words</h2>
           </div>
           <div>
             <h1>21 secs</h1>

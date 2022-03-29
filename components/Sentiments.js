@@ -35,10 +35,6 @@ const Sentiments = () => {
             <p>No words found</p>
           )}
         </div>
-        {/* <div>
-          <h3>Score</h3>
-          <p>+1</p>
-        </div> */}
         <div
           style={{
             color: "tomato",
@@ -55,7 +51,32 @@ const Sentiments = () => {
           )}
         </div>
       </div>
-      <h1>Select sentiment to get cues</h1>
+      <div>
+        {emotion ? (
+          <>
+            <div className={styles.listHead}>
+              <h1>
+                Sentiment:{" "}
+                <span
+                  style={{
+                    color: `${emotion == "positive" ? "limegreen" : "tomato"}`,
+                  }}
+                >
+                  {emotion}
+                </span>
+              </h1>
+              <h3 style={{ color: "grey" }}>
+                Occurred {analysis.negative.length} times
+              </h3>
+            </div>
+            <div style={{ maxHeight: "260px", overflowY: "scroll" }}>
+              <h1>The list goes here</h1>
+            </div>
+          </>
+        ) : (
+          <h1>Select sentiment to get cues</h1>
+        )}
+      </div>
     </ViewSplitter>
   );
 };
