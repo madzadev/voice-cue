@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Head from "next/head";
 import dynamic from "next/dynamic";
 
@@ -20,6 +21,7 @@ import styles from "../styles/Home.module.css";
 
 export default function Home() {
   // console.log(sentiment.analyze(data.transcript));
+  const [globalWaveForm, setGlobalWaveForm] = useState();
 
   return (
     <div className={styles.container}>
@@ -29,8 +31,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <h1 className={styles.title}>The magnifier glass for your audio</h1>
+
       <FileSelector />
-      <WaveForm url="samples/demo.mp3" />
+      <WaveForm url="samples/demo.mp3" setGlobalWaveForm={setGlobalWaveForm} />
 
       <Tabs className={styles.tabs}>
         <TabList>
@@ -41,7 +44,7 @@ export default function Home() {
         </TabList>
 
         <TabPanel>
-          <Overview />
+          <Overview globalWaveForm={globalWaveForm} />
         </TabPanel>
         <TabPanel>
           <Sentiments />

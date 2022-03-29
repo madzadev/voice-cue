@@ -3,9 +3,17 @@ import ViewSplitter from "../components/ViewSplitter";
 
 import { transcription } from "../data/transcription";
 
-const Overview = () => {
+const Overview = ({ globalWaveForm }) => {
   return (
     <ViewSplitter>
+      {/* <button
+        onClick={() => {
+          console.log(globalWaveForm);
+        }}
+      >
+        Get obj
+      </button> */}
+
       <div>
         <div
           style={{
@@ -37,7 +45,10 @@ const Overview = () => {
               key={index}
               word={el.word}
               onClick={() => {
-                console.log(`Jump to ${el.start}`);
+                // console.log(`Jump to ${el.start}`);
+                globalWaveForm.current.skipForward(
+                  el.start - globalWaveForm.current.getCurrentTime()
+                );
               }}
             />
           );

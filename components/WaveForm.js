@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 
 import styles from "./WaveForm.module.css";
 
-const WaveForm = ({ url }) => {
+const WaveForm = ({ url, setGlobalWaveForm }) => {
   const waveform = useRef(null);
 
   useEffect(() => {
@@ -30,6 +30,7 @@ const WaveForm = ({ url }) => {
 			2. Create a blob from the array buffer
 			3. Load the audio using wavesurfer's loadBlob API
 	 */
+      setGlobalWaveForm(waveform);
     }
   }, []);
 
