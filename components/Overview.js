@@ -25,9 +25,18 @@ const Overview = ({ globalWaveForm }) => {
             gap: "20px",
           }}
         >
-          <h3>Total words: {transcription.words.length}</h3>
-          <h3>Length: 2min 34sec</h3>
-          <h3>Speakers: 2</h3>
+          <div>
+            <h1>{transcription.words.length}</h1>
+            <h3>Total words</h3>
+          </div>
+          <div>
+            <h1>21 secs</h1>
+            <h3>Length</h3>
+          </div>
+          <div>
+            <h1>2</h1>
+            <h3>Speakers</h3>
+          </div>
         </div>
         <div
           style={{
