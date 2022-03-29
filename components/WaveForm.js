@@ -34,22 +34,9 @@ const WaveForm = ({ url, setGlobalWaveForm }) => {
     }
   }, []);
 
-  const playAudio = () => {
-    // Check if the audio is already playing
-    console.log(waveform.current);
-    if (waveform.current.isPlaying()) {
-      waveform.current.pause();
-    } else {
-      waveform.current.play();
-    }
-  };
-
   return (
     <>
       <div id="waveform" className={styles.waveform} />
-      <button onClick={playAudio} className={styles.playButton}>
-        Play/Pause
-      </button>
 
       {/* <button
         onClick={() => {
