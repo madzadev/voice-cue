@@ -4,7 +4,7 @@ With AudioCue you can save time and skip to important parts with just a click.;
 
 # Features
 
-1. General stats
+1. General stats ()
 2. Sentiment analysis
 3. Word cloud
 4. Thematic tags analysis
@@ -19,7 +19,7 @@ With AudioCue you can save time and skip to important parts with just a click.;
    13
    14
    15
-   16
+   16 Colorful UI for easier
 
 punctuate=true, add Uppercase and periods for sentences.
 diarize=true, adds "speaker": 1

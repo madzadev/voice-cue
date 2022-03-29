@@ -37,7 +37,7 @@ export default function Home() {
           <h1 className={styles.title}>The magnifier glass for your audio</h1>
           <FileSelector />
         </div>
-        <div>
+        <div style={{ display: "grid", placeItems: "center" }}>
           <PlayButton globalWaveForm={globalWaveForm} />
         </div>
       </ViewSplitter>
