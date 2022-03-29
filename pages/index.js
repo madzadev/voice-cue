@@ -6,6 +6,7 @@ import FileSelector from "../components/FileSelector";
 import Overview from "../components/Overview";
 import Sentiments from "../components/Sentiments";
 import TagCloud from "../components/TagCloud";
+import Entity from "../components/Entity";
 import ViewSplitter from "../components/ViewSplitter";
 import PlayButton from "../components/PlayButton";
 
@@ -50,6 +51,7 @@ export default function Home() {
           <Tab>Sentiment</Tab>
           <Tab>Tag Cloud</Tab>
           <Tab>Entities</Tab>
+          <Tab>Analytics</Tab>
         </TabList>
 
         <TabPanel>
@@ -65,7 +67,10 @@ export default function Home() {
           />
         </TabPanel>
         <TabPanel>
-          <h1>Entities</h1>
+          <Entity />
+        </TabPanel>
+        <TabPanel>
+          <h1>Analytics</h1>
         </TabPanel>
       </Tabs>
     </div>
