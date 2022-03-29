@@ -7,13 +7,28 @@ const Overview = () => {
   return (
     <ViewSplitter>
       <div>
-        <p>File title: My test speech</p>
-        <p>Total words: 234</p>
-        <p>Length: 2min 34sec</p>
-        <p>Speakers: 2</p>
-        <p>Overall sentiment: +4</p>
-        <p>Total words: 234</p>
-        <p>Total words: 234</p>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr 1fr",
+            gap: "20px",
+          }}
+        >
+          <h3>Total words: {transcription.words.length}</h3>
+          <h3>Length: 2min 34sec</h3>
+          <h3>Speakers: 2</h3>
+        </div>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr 1fr",
+            gap: "20px",
+          }}
+        >
+          <p>Overall sentiment: +4</p>
+          <p>Total words: 234</p>
+          <p>Total words: 234</p>
+        </div>
       </div>
       <div>
         {transcription.words.map((el, index) => {

@@ -61,10 +61,13 @@ function SimpleCloud({ data }) {
                   {activeTag.value}
                 </span>
               </h1>
-              <h3>Occurred {activeTag.count} times</h3>
+              <h3 style={{ color: "grey" }}>
+                Occurred {activeTag.count} times
+              </h3>
             </div>
-
-            {tagList}
+            <div style={{ maxHeight: "260px", overflowY: "scroll" }}>
+              {tagList}
+            </div>
           </>
         ) : (
           <h1>Select a tag to get analysis</h1>

@@ -6,9 +6,9 @@
   left: 0;
   bottom: 0;
   /* background-color: #4b6fff; */
-  background-color: #181820;
+  background-color: #21212c;
   color: #181820;
-  color: #fff;
+  color: rgb(255, 207, 103);
   /* font-weight: bold; */
   padding: 10px 20px;
 }

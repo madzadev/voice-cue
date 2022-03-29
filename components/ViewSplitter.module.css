@@ -2,4 +2,5 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
+  max-height: 200px;
 }
