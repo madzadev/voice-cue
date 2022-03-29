@@ -6,7 +6,7 @@ import { transcription } from "../data/transcription";
 
 import styles from "./TagCloud.module.css";
 
-function SimpleCloud({ data }) {
+function SimpleCloud({ data, globalWaveForm }) {
   const [activeTag, setActiveTag] = useState();
   const [activeColor, setActiveColor] = useState("white");
   const [occurrences, setOccurrences] = useState([]);
@@ -18,7 +18,10 @@ function SimpleCloud({ data }) {
         <div
           className={styles.listItem}
           onClick={() => {
-            console.log(`Time is ${el.start}`);
+            // console.log(`Time is ${el.start}`);
+            globalWaveForm.current.skip(
+              el.start - globalWaveForm.current.getCurrentTime()
+            );
           }}
         >
           <h3>

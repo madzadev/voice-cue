@@ -46,7 +46,7 @@ const Overview = ({ globalWaveForm }) => {
               word={el.word}
               onClick={() => {
                 // console.log(`Jump to ${el.start}`);
-                globalWaveForm.current.skipForward(
+                globalWaveForm.current.skip(
                   el.start - globalWaveForm.current.getCurrentTime()
                 );
               }}

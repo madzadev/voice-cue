@@ -50,7 +50,10 @@ export default function Home() {
           <Sentiments />
         </TabPanel>
         <TabPanel>
-          <TagCloud data={getOccurrences(transcription.words)} />
+          <TagCloud
+            data={getOccurrences(transcription.words)}
+            globalWaveForm={globalWaveForm}
+          />
         </TabPanel>
         <TabPanel>
           <h1>Entities</h1>
