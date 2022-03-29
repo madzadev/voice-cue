@@ -5,8 +5,10 @@
   position: absolute;
   left: 0;
   bottom: 0;
-  background-color: #4b6fff;
+  /* background-color: #4b6fff; */
+  background-color: #181820;
   color: #181820;
-  font-weight: bold;
+  color: #fff;
+  /* font-weight: bold; */
   padding: 10px 20px;
 }
