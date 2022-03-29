@@ -28,7 +28,7 @@ const Sentiments = () => {
             setEmotion("positive");
           }}
         >
-          <h3>Positive</h3>
+          <h1>Positive</h1>
           {analysis.positive ? (
             <p>Words: {analysis.positive.length}</p>
           ) : (
@@ -47,7 +47,7 @@ const Sentiments = () => {
             setEmotion("negative");
           }}
         >
-          <h3>Negative</h3>
+          <h1>Negative</h1>
           {analysis.negative ? (
             <p>Words: {analysis.negative.length}</p>
           ) : (
