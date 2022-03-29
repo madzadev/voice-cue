@@ -17,3 +17,7 @@ a {
   margin: 0;
   box-sizing: border-box;
 }
+
+.tag-cloud-tag:hover {
+  cursor: pointer;
+}
