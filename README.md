@@ -18,7 +18,7 @@ With AudioCue you can save time and skip to important parts with just a click.;
    12
    13
    14
-   15
+   15 Fully responsive
    16 Colorful UI for easier
 
 punctuate=true, add Uppercase and periods for sentences.

@@ -73,7 +73,7 @@ function SimpleCloud({ data, globalWaveForm }) {
             </div>
           </>
         ) : (
-          <h1>Select a tag to get analysis</h1>
+          <h1>Select a tag to get cues</h1>
         )}
       </div>
     </ViewSplitter>

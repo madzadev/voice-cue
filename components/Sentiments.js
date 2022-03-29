@@ -16,7 +16,7 @@ const Sentiments = () => {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "1fr 1fr 1fr",
+          gridTemplateColumns: "1fr 1fr",
           gap: "20px",
         }}
       >
@@ -35,10 +35,10 @@ const Sentiments = () => {
             <p>No words found</p>
           )}
         </div>
-        <div>
+        {/* <div>
           <h3>Score</h3>
           <p>+1</p>
-        </div>
+        </div> */}
         <div
           style={{
             color: "tomato",
@@ -55,7 +55,7 @@ const Sentiments = () => {
           )}
         </div>
       </div>
-      <h1>Select faces to get started</h1>
+      <h1>Select sentiment to get cues</h1>
     </ViewSplitter>
   );
 };
