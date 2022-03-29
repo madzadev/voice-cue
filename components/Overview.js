@@ -1,19 +1,18 @@
+import { useEffect } from "react";
 import WordInText from "./WordInText";
 import ViewSplitter from "../components/ViewSplitter";
 
 import { transcription } from "../data/transcription";
 
 const Overview = ({ globalWaveForm }) => {
+  // useEffect(() => {
+  //   globalWaveForm.on("audioprocess", function () {
+  //     console.log(globalWaveForm.current.getCurrentTime());
+  //   });
+  // }, []);
+
   return (
     <ViewSplitter>
-      {/* <button
-        onClick={() => {
-          console.log(globalWaveForm);
-        }}
-      >
-        Get obj
-      </button> */}
-
       <div>
         <div
           style={{
