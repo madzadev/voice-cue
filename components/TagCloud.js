@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { TagCloud } from "react-tagcloud";
 import ViewSplitter from "../components/ViewSplitter";
+import TagCloudItem from "../components/TagCloudItem";
 
 import { transcription } from "../data/transcription";
 
@@ -15,20 +16,29 @@ function SimpleCloud({ data, globalWaveForm }) {
   function getTagList(occ) {
     return occ.map((el, index) => {
       return (
-        <div
-          className={styles.listItem}
+        // <div
+        //   className={styles.listItem}
+        //   onClick={() => {
+        //     globalWaveForm.current.skip(
+        //       el.start - globalWaveForm.current.getCurrentTime()
+        //     );
+        //   }}
+        // >
+        //   <h3>
+        //     #{index + 1} appears at {el.start}
+        //   </h3>
+        //   <p>This is the text included</p>
+        // </div>
+        <TagCloudItem
+          index={index}
+          time={el.start}
+          color={activeColor}
           onClick={() => {
-            // console.log(`Time is ${el.start}`);
             globalWaveForm.current.skip(
               el.start - globalWaveForm.current.getCurrentTime()
             );
           }}
-        >
-          <h3>
-            #{index + 1} appears at {el.start}
-          </h3>
-          <p>This is the text included</p>
-        </div>
+        />
       );
     });
   }
