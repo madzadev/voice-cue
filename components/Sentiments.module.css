@@ -11,8 +11,10 @@
 
 .positive {
   color: limegreen;
+  cursor: pointer;
 }
 
 .negative {
   color: tomato;
+  cursor: pointer;
 }

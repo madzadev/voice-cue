@@ -17,38 +17,42 @@ const Sentiments = () => {
   return (
     <ViewSplitter>
       <div className={styles.wrapper}>
-        <div
-          className={styles.positive}
-          onClick={() => {
-            setEmotion("positive");
-            setSentimentList([]);
-            analysis.calculation.forEach((el, index) => {
-              if (el[Object.keys(el)] > 0) {
-                setSentimentList((sentimentList) => [...sentimentList, el]);
-              }
-            });
-          }}
-        >
-          <h1>Positive</h1>
+        <div>
+          <h1
+            className={styles.positive}
+            onClick={() => {
+              setEmotion("positive");
+              setSentimentList([]);
+              analysis.calculation.forEach((el, index) => {
+                if (el[Object.keys(el)] > 0) {
+                  setSentimentList((sentimentList) => [...sentimentList, el]);
+                }
+              });
+            }}
+          >
+            Positive
+          </h1>
           {analysis.positive ? (
             <p>Words: {analysis.positive.length}</p>
           ) : (
             <p>No words found</p>
           )}
         </div>
-        <div
-          className={styles.negative}
-          onClick={() => {
-            setEmotion("negative");
-            setSentimentList([]);
-            analysis.calculation.forEach((el, index) => {
-              if (el[Object.keys(el)] < 0) {
-                setSentimentList((sentimentList) => [...sentimentList, el]);
-              }
-            });
-          }}
-        >
-          <h1>Negative</h1>
+        <div>
+          <h1
+            className={styles.negative}
+            onClick={() => {
+              setEmotion("negative");
+              setSentimentList([]);
+              analysis.calculation.forEach((el, index) => {
+                if (el[Object.keys(el)] < 0) {
+                  setSentimentList((sentimentList) => [...sentimentList, el]);
+                }
+              });
+            }}
+          >
+            Negative
+          </h1>
           {analysis.negative ? (
             <p>Words: {analysis.negative.length}</p>
           ) : (
