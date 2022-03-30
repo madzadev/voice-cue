@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <header className={styles.wrapper}>
       <Link href="/">
-        <h2 className={styles.logo}>AudioCue</h2>
+        <h2 className={styles.logo}>HotCues</h2>
       </Link>
       <Link href="/features">
         <p className={styles.link}>Features</p>

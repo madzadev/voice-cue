@@ -14,13 +14,13 @@ const WaveForm = ({ url, setGlobalWaveForm }) => {
       waveform.current = Wavesurfer.create({
         container: "#waveform",
         waveColor: "white",
-        progressColor: "#567FFF",
+        progressColor: "#0d76ff",
         barGap: 2,
         barWidth: 3,
         barRadius: 3,
         height: 150,
         cursorWidth: 3,
-        cursorColor: "#567FFF",
+        cursorColor: "#0d76ff",
       });
       // Load audio from a remote url.
       waveform.current.load(url);

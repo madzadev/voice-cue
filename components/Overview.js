@@ -3,6 +3,8 @@ import WordInText from "./WordInText";
 import ViewSplitter from "../components/ViewSplitter";
 
 import { transcription } from "../data/transcription";
+import { style } from "wavesurfer.js";
+import styles from "./Overview.module.css";
 
 const Overview = ({ globalWaveForm }) => {
   const [currentTime, setCurrentTime] = useState(0);
@@ -18,33 +20,21 @@ const Overview = ({ globalWaveForm }) => {
   return (
     <ViewSplitter>
       <div>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr 1fr",
-            gap: "20px",
-          }}
-        >
+        <div className={styles.wrapper}>
           <div>
             <h1>{transcription.words.length}</h1>
-            <h2>Words</h2>
+            <h2 className={styles.category}>Words</h2>
           </div>
           <div>
             <h1>21 secs</h1>
-            <h3>Length</h3>
+            <h3 className={styles.category}>Length</h3>
           </div>
           <div>
             <h1>2</h1>
-            <h3>Speakers</h3>
+            <h3 className={styles.category}>Speakers</h3>
           </div>
         </div>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr 1fr",
-            gap: "20px",
-          }}
-        >
+        <div className={styles.wrapper}>
           <p>Overall sentiment: +4</p>
           <p>Total words: 234</p>
           <p>Total words: 234</p>
