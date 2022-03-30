@@ -29,6 +29,12 @@ const Sentiments = () => {
           }}
           onClick={() => {
             setEmotion("positive");
+            setSentimentList([]);
+            analysis.calculation.forEach((el, index) => {
+              if (el[Object.keys(el)] > 0) {
+                setSentimentList((sentimentList) => [...sentimentList, el]);
+              }
+            });
           }}
         >
           <h1>Positive</h1>
@@ -75,7 +81,7 @@ const Sentiments = () => {
                 </span>
               </h1>
               <h3 style={{ color: "grey" }}>
-                Occurred {analysis.negative.length} times
+                Occurred {sentimentList.length} times
               </h3>
             </div>
             <div style={{ maxHeight: "260px", overflowY: "scroll" }}>
@@ -83,6 +89,7 @@ const Sentiments = () => {
               {sentimentList.map((el, index) => {
                 return (
                   <SentimentItem
+                    sentiment={emotion}
                     score={el[Object.keys(el)]}
                     word={Object.keys(el)}
                     key={index}

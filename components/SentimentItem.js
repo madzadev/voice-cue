@@ -1,10 +1,14 @@
 import styles from "./SentimentItem.module.css";
 
-const SentimentItem = ({ score, word }) => {
+const SentimentItem = ({ sentiment, score, word }) => {
   return (
     <div className={styles.wrapper}>
       <div>
-        <h1 className={styles.score}>
+        <h1
+          style={{
+            color: `${sentiment == "positive" ? "limegreen" : "tomato"}`,
+          }}
+        >
           {score > 0 ? "+" : ""}
           {score}
         </h1>
