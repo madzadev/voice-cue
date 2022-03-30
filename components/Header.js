@@ -7,8 +7,12 @@ const Header = () => {
       <Link href="/">
         <h2 className={styles.logo}>AudioCue</h2>
       </Link>
-      <p>Features</p>
-      <p>About</p>
+      <Link href="/features">
+        <p className={styles.link}>Features</p>
+      </Link>
+      <Link href="/about">
+        <p className={styles.link}>About</p>
+      </Link>
     </header>
   );
 };
