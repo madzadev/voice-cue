@@ -2,3 +2,17 @@
   /* background-color: silver; */
   /* border: 1px solid silver; */
 }
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.positive {
+  color: limegreen;
+}
+
+.negative {
+  color: tomato;
+}

@@ -16,17 +16,9 @@ const Sentiments = () => {
 
   return (
     <ViewSplitter>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: "20px",
-        }}
-      >
+      <div className={styles.wrapper}>
         <div
-          style={{
-            color: "limegreen",
-          }}
+          className={styles.positive}
           onClick={() => {
             setEmotion("positive");
             setSentimentList([]);
@@ -45,9 +37,7 @@ const Sentiments = () => {
           )}
         </div>
         <div
-          style={{
-            color: "tomato",
-          }}
+          className={styles.negative}
           onClick={() => {
             setEmotion("negative");
             setSentimentList([]);
@@ -85,7 +75,6 @@ const Sentiments = () => {
               </h3>
             </div>
             <div style={{ maxHeight: "260px", overflowY: "scroll" }}>
-              {/* <h1>The list goes here</h1> */}
               {sentimentList.map((el, index) => {
                 return (
                   <SentimentItem

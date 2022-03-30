@@ -14,7 +14,16 @@ const SentimentItem = ({ sentiment, score, word }) => {
         </h1>
       </div>
       <div>
-        <h3>Word: {word}</h3>
+        <h3>
+          Word:{" "}
+          <span
+            style={{
+              color: `${sentiment == "positive" ? "limegreen" : "tomato"}`,
+            }}
+          >
+            {word}
+          </span>
+        </h3>
         <p>The sentence use case</p>
       </div>
     </div>
