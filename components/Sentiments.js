@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Sentiment from "sentiment";
 import ViewSplitter from "../components/ViewSplitter";
+import SentimentItem from "../components/SentimentItem";
 import { transcription } from "../data/transcription";
 
 import styles from "./Sentiments.module.css";
@@ -10,6 +11,8 @@ const analysis = sentiment.analyze(transcription.transcript);
 
 const Sentiments = () => {
   const [emotion, setEmotion] = useState("");
+  const [sentimentList, setSentimentList] = useState([]);
+  console.log(analysis);
 
   return (
     <ViewSplitter>
@@ -41,6 +44,12 @@ const Sentiments = () => {
           }}
           onClick={() => {
             setEmotion("negative");
+            setSentimentList([]);
+            analysis.calculation.forEach((el, index) => {
+              if (el[Object.keys(el)] < 0) {
+                setSentimentList((sentimentList) => [...sentimentList, el]);
+              }
+            });
           }}
         >
           <h1>Negative</h1>
@@ -70,7 +79,16 @@ const Sentiments = () => {
               </h3>
             </div>
             <div style={{ maxHeight: "260px", overflowY: "scroll" }}>
-              <h1>The list goes here</h1>
+              {/* <h1>The list goes here</h1> */}
+              {sentimentList.map((el, index) => {
+                return (
+                  <SentimentItem
+                    score={el[Object.keys(el)]}
+                    word={Object.keys(el)}
+                    key={index}
+                  />
+                );
+              })}
             </div>
           </>
         ) : (
