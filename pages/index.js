@@ -35,7 +35,10 @@ export default function Home() {
       </Head>
       <ViewSplitter>
         <div>
-          <h1 className={styles.title}>The magnifier glass for your audio</h1>
+          <h1 className={styles.title}>Explore audio with cues</h1>
+          <h3 className={styles.subtitle}>
+            Find sentiments, tags, entities, actions instantly
+          </h3>
           <FileSelector />
         </div>
         <div style={{ display: "grid", placeItems: "center" }}>

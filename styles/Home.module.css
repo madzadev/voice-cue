@@ -1,6 +1,11 @@
 .title {
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  margin-bottom: 40px;
+  color: #424253;
 }
 
 .tabs {
