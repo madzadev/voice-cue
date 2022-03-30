@@ -1,0 +1,16 @@
+.wrapper {
+}
+
+.title {
+  color: #0658c2;
+}
+
+.time {
+  color: white;
+}
+
+.player {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 20px;
+}

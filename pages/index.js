@@ -8,7 +8,7 @@ import Sentiments from "../components/Sentiments";
 import TagCloud from "../components/TagCloud";
 import Entity from "../components/Entity";
 import ViewSplitter from "../components/ViewSplitter";
-import PlayButton from "../components/PlayButton";
+import MainPlayer from "../components/MainPlayer";
 
 const WaveForm = dynamic(() => import("../components/WaveForm"), {
   ssr: false,
@@ -42,7 +42,7 @@ export default function Home() {
           <FileSelector />
         </div>
         <div style={{ display: "grid", placeItems: "center" }}>
-          <PlayButton globalWaveForm={globalWaveForm} />
+          <MainPlayer globalWaveForm={globalWaveForm} />
         </div>
       </ViewSplitter>
 
