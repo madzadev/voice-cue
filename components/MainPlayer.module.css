@@ -3,10 +3,11 @@
 
 .title {
   color: #0658c2;
+  margin-bottom: 10px;
 }
 
 .time {
-  color: white;
+  margin-bottom: 10px;
 }
 
 .player {
