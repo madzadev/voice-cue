@@ -20,7 +20,7 @@ const WaveForm = ({ url, setGlobalWaveForm }) => {
         barRadius: 3,
         height: 150,
         cursorWidth: 3,
-        cursorColor: "#0d76ff",
+        cursorColor: "#567FFF",
       });
       // Load audio from a remote url.
       waveform.current.load(url);

@@ -3,7 +3,6 @@ import WordInText from "./WordInText";
 import ViewSplitter from "../components/ViewSplitter";
 
 import { transcription } from "../data/transcription";
-import { style } from "wavesurfer.js";
 import styles from "./Overview.module.css";
 
 const Overview = ({ globalWaveForm }) => {
