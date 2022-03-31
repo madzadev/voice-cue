@@ -12,7 +12,7 @@ const analysis = sentiment.analyze(transcription.transcript);
 const Sentiments = () => {
   const [emotion, setEmotion] = useState("");
   const [sentimentList, setSentimentList] = useState([]);
-  console.log(analysis);
+  // console.log(analysis);
 
   return (
     <ViewSplitter>

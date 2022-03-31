@@ -8,9 +8,15 @@ const WaveForm = ({ url, setGlobalWaveForm }) => {
 
   useEffect(() => {
     // Check if wavesurfer object is already created.
+    if (waveform.current) {
+      waveform.current.destroy();
+      waveform.current = null;
+    }
+
     if (!waveform.current) {
       // Create a wavesurfer object
       // More info about options here https://wavesurfer-js.org/docs/options.html
+
       waveform.current = Wavesurfer.create({
         container: "#waveform",
         waveColor: "white",
@@ -23,7 +29,12 @@ const WaveForm = ({ url, setGlobalWaveForm }) => {
         cursorColor: "#567FFF",
       });
       // Load audio from a remote url.
-      waveform.current.load(url);
+      if (typeof url == "string") {
+        waveform.current.load(url);
+      } else {
+        console.log("file loaded");
+        waveform.current.loadBlob(url);
+      }
 
       /* To load a local audio file
 		    1. Read the audio file as a array buffer.
@@ -32,7 +43,7 @@ const WaveForm = ({ url, setGlobalWaveForm }) => {
 	 */
       setGlobalWaveForm(waveform);
     }
-  }, []);
+  }, [url]);
 
   return (
     <>

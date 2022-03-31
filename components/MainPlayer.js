@@ -11,7 +11,7 @@ const MainPlayer = ({ globalWaveForm }) => {
   useEffect(() => {
     if (globalWaveForm) {
       globalWaveForm.current.on("ready", function () {
-        console.log(globalWaveForm.current);
+        // console.log(globalWaveForm.current);
         setAudioLength(toHHMMSS(globalWaveForm.current.getDuration()));
       });
       globalWaveForm.current.on("audioprocess", function () {

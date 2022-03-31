@@ -8,7 +8,7 @@ let doc = nlp(transcription.transcript);
 import styles from "./Sentiments.module.css";
 
 const Entity = () => {
-  console.log(doc.tag("MaleName").out("tags"));
+  // console.log(doc.tag("MaleName").out("tags"));
   const [activeEntity, setActiveEntity] = useState("");
   return (
     <ViewSplitter>

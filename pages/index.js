@@ -25,6 +25,7 @@ import styles from "../styles/Home.module.css";
 export default function Home() {
   // console.log(sentiment.analyze(data.transcript));
   const [globalWaveForm, setGlobalWaveForm] = useState();
+  const [audio, setAudio] = useState(false);
 
   return (
     <div className={styles.container}>
@@ -42,14 +43,17 @@ export default function Home() {
           <h3 className={styles.subtitle}>
             Find sentiments, tags, entities, actions instantly
           </h3>
-          <FileSelector />
+          <FileSelector setAudio={setAudio} />
         </div>
         <div style={{ display: "grid", placeItems: "center" }}>
           <MainPlayer globalWaveForm={globalWaveForm} />
         </div>
       </ViewSplitter>
 
-      <WaveForm url="samples/demo.mp3" setGlobalWaveForm={setGlobalWaveForm} />
+      <WaveForm
+        url={!audio ? "samples/demo.mp3" : audio}
+        setGlobalWaveForm={setGlobalWaveForm}
+      />
 
       <Tabs className={styles.tabs}>
         <TabList>
