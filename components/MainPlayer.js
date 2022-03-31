@@ -6,6 +6,7 @@ import styles from "./MainPlayer.module.css";
 
 const MainPlayer = ({ globalWaveForm }) => {
   const [audioLength, setAudioLength] = useState(0);
+  const [currentTime, setCurrentTime] = useState("00:00");
 
   useEffect(() => {
     if (globalWaveForm) {
@@ -13,12 +14,17 @@ const MainPlayer = ({ globalWaveForm }) => {
         console.log(globalWaveForm.current);
         setAudioLength(toHHMMSS(globalWaveForm.current.getDuration()));
       });
+      globalWaveForm.current.on("audioprocess", function () {
+        setCurrentTime(toHHMMSS(globalWaveForm.current.getCurrentTime()));
+      });
     }
   }, [globalWaveForm]);
 
   return (
     <div className={styles.wrapper}>
-      <h1 className={styles.time}>0:03/{audioLength}</h1>
+      <h1 className={styles.time}>
+        {currentTime}/{audioLength}
+      </h1>
       <h3 className={styles.title}>My test audio file.mp3</h3>
       <div className={styles.player}>
         <h3>beg</h3>
