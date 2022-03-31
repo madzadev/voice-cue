@@ -83,7 +83,7 @@ export default function Home() {
           <h1>Graphs</h1>
         </TabPanel>
       </Tabs>
-      <h1>Test</h1>
+      {/* <h1>Test</h1> */}
     </div>
   );
 }
