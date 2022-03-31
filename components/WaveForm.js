@@ -1,10 +1,11 @@
 import Wavesurfer from "wavesurfer.js";
-import { useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import styles from "./WaveForm.module.css";
 
 const WaveForm = ({ url, setGlobalWaveForm }) => {
   const waveform = useRef(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     // Check if wavesurfer object is already created.
@@ -36,6 +37,14 @@ const WaveForm = ({ url, setGlobalWaveForm }) => {
         waveform.current.loadBlob(url);
       }
 
+      waveform.current.on("loading", function () {
+        setLoading(true);
+      });
+
+      waveform.current.on("ready", function () {
+        setLoading(false);
+      });
+
       /* To load a local audio file
 		    1. Read the audio file as a array buffer.
 			2. Create a blob from the array buffer
@@ -48,6 +57,7 @@ const WaveForm = ({ url, setGlobalWaveForm }) => {
   return (
     <>
       <div id="waveform" className={styles.waveform} />
+      {loading && <h1>Loading...</h1>}
 
       {/* <button
         onClick={() => {
