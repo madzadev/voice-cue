@@ -8,8 +8,10 @@ const Search = () => {
   return (
     <ViewSplitter>
       <div>
-        <h1>Search</h1>
+        <h1>Custom search:</h1>
         <input
+          spellcheck="false"
+          className={styles.input}
           onChange={(e) => {
             setInput(e.target.value);
           }}
@@ -17,8 +19,11 @@ const Search = () => {
       </div>
       <div>
         {input.length > 2 ? (
-          <div>
-            <h1>Query: {input}</h1>
+          <div className={styles.listHead}>
+            <h1>
+              Query: <span style={{ color: "#0d76ff" }}>{input}</span>
+            </h1>
+            <h3 style={{ color: "grey" }}>Occurred {23} times</h3>
           </div>
         ) : (
           <h1>Type at least 3 chars to get cues</h1>
