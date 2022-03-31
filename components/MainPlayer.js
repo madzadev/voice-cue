@@ -9,14 +9,9 @@ const MainPlayer = ({ globalWaveForm }) => {
   const [currentTime, setCurrentTime] = useState("00:00");
 
   useEffect(() => {
-    console.log("track is changed");
     if (globalWaveForm) {
       globalWaveForm.current.on("ready", function () {
-        // console.log(globalWaveForm.current);
         setAudioLength(toHHMMSS(globalWaveForm.current.getDuration()));
-      });
-      globalWaveForm.current.on("audioprocess", function () {
-        setCurrentTime(toHHMMSS(globalWaveForm.current.getCurrentTime()));
       });
       globalWaveForm.current.on("audioprocess", function () {
         setCurrentTime(toHHMMSS(globalWaveForm.current.getCurrentTime()));

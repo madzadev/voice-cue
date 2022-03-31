@@ -1,9 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import styles from "./PlayButton.module.css";
 
 const PlayButton = ({ globalWaveForm }) => {
   const [isPlaying, setIsPlaying] = useState(false);
+
+  useEffect(() => {
+    if (globalWaveForm) {
+      globalWaveForm.current.on("finish", function () {
+        setIsPlaying(false);
+      });
+    }
+  }, [globalWaveForm]);
 
   const playAudio = () => {
     if (globalWaveForm.current.isPlaying()) {
