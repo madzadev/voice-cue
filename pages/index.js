@@ -7,6 +7,8 @@ import Overview from "../components/Overview";
 import Sentiments from "../components/Sentiments";
 import TagCloud from "../components/TagCloud";
 import Entity from "../components/Entity";
+import Actions from "../components/Actions";
+import Search from "../components/Search";
 import ViewSplitter from "../components/ViewSplitter";
 import MainPlayer from "../components/MainPlayer";
 
@@ -62,7 +64,7 @@ export default function Home() {
           <Tab>Tag Cloud</Tab>
           <Tab>Entities</Tab>
           <Tab>Actions</Tab>
-          <Tab>Graphs</Tab>
+          <Tab>Search</Tab>
         </TabList>
 
         <TabPanel>
@@ -81,13 +83,12 @@ export default function Home() {
           <Entity />
         </TabPanel>
         <TabPanel>
-          <h1>Actions</h1>
+          <Actions />
         </TabPanel>
         <TabPanel>
-          <h1>Graphs</h1>
+          <Search />
         </TabPanel>
       </Tabs>
-      {/* <h1>Test</h1> */}
     </div>
   );
 }
