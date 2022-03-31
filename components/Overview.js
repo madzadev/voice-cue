@@ -39,7 +39,7 @@ const Overview = ({ globalWaveForm }) => {
           <p>Total words: 234</p>
         </div>
       </div>
-      <div>
+      <div style={{ maxHeight: "260px", overflowY: "scroll" }}>
         {transcription.words.map((el, index) => {
           return (
             <WordInText
