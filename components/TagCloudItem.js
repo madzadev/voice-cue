@@ -1,3 +1,5 @@
+import toHHMMSS from "../helpers/getMinuteFormat";
+
 import styles from "./TagCloudItem.module.css";
 
 const TagCloudItem = ({ index, time, color, onClick }) => {
@@ -13,7 +15,7 @@ const TagCloudItem = ({ index, time, color, onClick }) => {
         </h1>
       </div>
       <div>
-        <h3>Appears at: {time}</h3>
+        <h3>Appears at: {toHHMMSS(time)}</h3>
         <p>This is the text included</p>
       </div>
     </div>
