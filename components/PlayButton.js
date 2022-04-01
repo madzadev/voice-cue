@@ -7,6 +7,9 @@ const PlayButton = ({ globalWaveForm }) => {
 
   useEffect(() => {
     if (globalWaveForm) {
+      // globalWaveForm.current.on("pause", function () {
+      //   setIsPlaying(false);
+      // });
       globalWaveForm.current.on("finish", function () {
         setIsPlaying(false);
       });
