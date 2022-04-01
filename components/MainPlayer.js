@@ -31,11 +31,23 @@ const MainPlayer = ({ globalWaveForm, audio }) => {
         {audio ? audio.name : "Sample audio track.mp3"}
       </h3>
       <div className={styles.player}>
-        <h3>beg</h3>
-        <h3>back</h3>
+        <img
+          className={styles.ffStop}
+          src="icons/fast-backward-start.png"
+          alt="ff-stop-icon"
+        />
+        <img
+          className={styles.ff}
+          src="icons/fast-backward.png"
+          alt="ff-icon"
+        />
         <PlayButton globalWaveForm={globalWaveForm} />
-        <h3>forw</h3>
-        <h3>end</h3>
+        <img className={styles.ff} src="icons/fast-forward.png" alt="ff-icon" />
+        <img
+          className={styles.ffStop}
+          src="icons/fast-forward-end.png"
+          alt="ff-stop-icon"
+        />
       </div>
     </div>
   );
