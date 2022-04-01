@@ -34,18 +34,35 @@ const MainPlayer = ({ globalWaveForm, audio }) => {
         <img
           className={styles.ffStop}
           src="icons/fast-backward-start.png"
+          onClick={() => {
+            globalWaveForm.current.stop();
+          }}
           alt="ff-stop-icon"
         />
         <img
           className={styles.ff}
           src="icons/fast-backward.png"
+          onClick={() => {
+            globalWaveForm.current.skipBackward(10);
+          }}
           alt="ff-icon"
         />
         <PlayButton globalWaveForm={globalWaveForm} />
-        <img className={styles.ff} src="icons/fast-forward.png" alt="ff-icon" />
+        <img
+          className={styles.ff}
+          src="icons/fast-forward.png"
+          onClick={() => {
+            globalWaveForm.current.skipForward(10);
+          }}
+          alt="ff-icon"
+        />
         <img
           className={styles.ffStop}
           src="icons/fast-forward-end.png"
+          onClick={() => {
+            globalWaveForm.current.seekTo(1);
+            globalWaveForm.current.pause();
+          }}
           alt="ff-stop-icon"
         />
       </div>
