@@ -4,12 +4,15 @@ import toHHMMSS from "../helpers/getMinuteFormat";
 
 import styles from "./MainPlayer.module.css";
 
-const MainPlayer = ({ globalWaveForm }) => {
+const MainPlayer = ({ globalWaveForm, audio }) => {
   const [audioLength, setAudioLength] = useState(0);
   const [currentTime, setCurrentTime] = useState("00:00");
 
+  // globalWaveForm.current = {};
   useEffect(() => {
     if (globalWaveForm) {
+      console.log(audio);
+      console.log(globalWaveForm.current.getDuration());
       globalWaveForm.current.on("ready", function () {
         setAudioLength(toHHMMSS(globalWaveForm.current.getDuration()));
       });
@@ -17,14 +20,16 @@ const MainPlayer = ({ globalWaveForm }) => {
         setCurrentTime(toHHMMSS(globalWaveForm.current.getCurrentTime()));
       });
     }
-  }, [globalWaveForm]);
+  }, [audio]);
 
   return (
     <div className={styles.wrapper}>
       <h1 className={styles.time}>
         {currentTime}/{audioLength}
       </h1>
-      <h3 className={styles.title}>My test audio file.mp3</h3>
+      <h3 className={styles.title}>
+        {audio ? audio.name : "Sample audio track.mp3"}
+      </h3>
       <div className={styles.player}>
         <h3>beg</h3>
         <h3>back</h3>

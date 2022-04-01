@@ -48,7 +48,7 @@ export default function Home() {
           <FileSelector setAudio={setAudio} />
         </div>
         <div style={{ display: "grid", placeItems: "center" }}>
-          <MainPlayer globalWaveForm={globalWaveForm} />
+          <MainPlayer globalWaveForm={globalWaveForm} audio={audio} />
         </div>
       </ViewSplitter>
 
