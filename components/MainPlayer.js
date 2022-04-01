@@ -8,7 +8,6 @@ const MainPlayer = ({ globalWaveForm, audio }) => {
   const [audioLength, setAudioLength] = useState(0);
   const [currentTime, setCurrentTime] = useState("00:00");
 
-  // globalWaveForm.current = {};
   useEffect(() => {
     if (globalWaveForm) {
       console.log(audio);
@@ -53,6 +52,13 @@ const MainPlayer = ({ globalWaveForm, audio }) => {
           src="icons/fast-forward.png"
           onClick={() => {
             globalWaveForm.current.skipForward(10);
+            console.log(globalWaveForm.current.getDuration());
+
+            setAudioLength(toHHMMSS(globalWaveForm.current.getDuration()));
+
+            globalWaveForm.current.on("audioprocess", function () {
+              setCurrentTime(toHHMMSS(globalWaveForm.current.getCurrentTime()));
+            });
           }}
           alt="ff-icon"
         />
