@@ -16,19 +16,6 @@ function SimpleCloud({ data, globalWaveForm }) {
   function getTagList(occ) {
     return occ.map((el, index) => {
       return (
-        // <div
-        //   className={styles.listItem}
-        //   onClick={() => {
-        //     globalWaveForm.current.skip(
-        //       el.start - globalWaveForm.current.getCurrentTime()
-        //     );
-        //   }}
-        // >
-        //   <h3>
-        //     #{index + 1} appears at {el.start}
-        //   </h3>
-        //   <p>This is the text included</p>
-        // </div>
         <TagCloudItem
           index={index}
           key={index}
