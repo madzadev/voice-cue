@@ -5,32 +5,46 @@ import toHHMMSS from "../helpers/getMinuteFormat";
 import styles from "./MainPlayer.module.css";
 
 const MainPlayer = ({ globalWaveForm, audio }) => {
-  const [audioLength, setAudioLength] = useState(0);
+  const [audioLength, setAudioLength] = useState("00:00");
   const [currentTime, setCurrentTime] = useState("00:00");
+  const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
     if (globalWaveForm) {
       console.log(audio);
       console.log(globalWaveForm.current.getDuration());
+      console.log(globalWaveForm.current);
       globalWaveForm.current.on("ready", function () {
         setAudioLength(toHHMMSS(globalWaveForm.current.getDuration()));
       });
       globalWaveForm.current.on("audioprocess", function () {
         setCurrentTime(toHHMMSS(globalWaveForm.current.getCurrentTime()));
+      });
+      globalWaveForm.current.on("finish", function () {
+        setIsPlaying(false);
       });
     }
   }, [globalWaveForm]);
 
-  useEffect(() => {
+  setInterval(() => {
     if (globalWaveForm) {
-      globalWaveForm.current.on("ready", function () {
-        setAudioLength(toHHMMSS(globalWaveForm.current.getDuration()));
-      });
+      setAudioLength(toHHMMSS(globalWaveForm.current.getDuration()));
+
       globalWaveForm.current.on("audioprocess", function () {
         setCurrentTime(toHHMMSS(globalWaveForm.current.getCurrentTime()));
       });
     }
-  }, [audio]);
+  }, 3000);
+
+  const playAudio = () => {
+    if (globalWaveForm.current.isPlaying()) {
+      setIsPlaying(false);
+      globalWaveForm.current.pause();
+    } else {
+      setIsPlaying(true);
+      globalWaveForm.current.play();
+    }
+  };
 
   return (
     <div className={styles.wrapper}>
@@ -46,6 +60,7 @@ const MainPlayer = ({ globalWaveForm, audio }) => {
           src="icons/fast-backward-start.png"
           onClick={() => {
             globalWaveForm.current.stop();
+            setIsPlaying(false);
           }}
           alt="ff-stop-icon"
         />
@@ -57,7 +72,12 @@ const MainPlayer = ({ globalWaveForm, audio }) => {
           }}
           alt="ff-icon"
         />
-        <PlayButton globalWaveForm={globalWaveForm} />
+        <img
+          className={styles.play}
+          onClick={playAudio}
+          src={isPlaying ? "icons/pause.png" : "icons/play.png"}
+          alt="play-button"
+        />
         <img
           className={styles.ff}
           src="icons/fast-forward.png"
@@ -79,6 +99,7 @@ const MainPlayer = ({ globalWaveForm, audio }) => {
           onClick={() => {
             globalWaveForm.current.seekTo(1);
             globalWaveForm.current.pause();
+            setIsPlaying(false);
           }}
           alt="ff-stop-icon"
         />

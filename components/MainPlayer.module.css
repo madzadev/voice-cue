@@ -20,6 +20,16 @@
   gap: 20px;
 }
 
+.play {
+  width: 70px;
+  height: 70px;
+}
+
+.play:hover {
+  cursor: pointer;
+}
+
+
 .ff {
   height: 60px;
   width: 60px;
