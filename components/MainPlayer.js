@@ -19,6 +19,17 @@ const MainPlayer = ({ globalWaveForm, audio }) => {
         setCurrentTime(toHHMMSS(globalWaveForm.current.getCurrentTime()));
       });
     }
+  }, [globalWaveForm]);
+
+  useEffect(() => {
+    if (globalWaveForm) {
+      globalWaveForm.current.on("ready", function () {
+        setAudioLength(toHHMMSS(globalWaveForm.current.getDuration()));
+      });
+      globalWaveForm.current.on("audioprocess", function () {
+        setCurrentTime(toHHMMSS(globalWaveForm.current.getCurrentTime()));
+      });
+    }
   }, [audio]);
 
   return (
