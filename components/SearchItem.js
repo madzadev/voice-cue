@@ -16,7 +16,15 @@ const SearchItem = ({ color, word, index, time, onClick }) => {
       </div>
       <div>
         <h3>
-          Word: {word} Appears at: {toHHMMSS(time)}
+          Word:{" "}
+          <span
+            style={{
+              color: `${color}`,
+            }}
+          >
+            {word}
+          </span>{" "}
+          Appears at: {toHHMMSS(time)}
         </h3>
         <p>This is the text included</p>
       </div>

@@ -86,7 +86,7 @@ export default function Home() {
           <Actions />
         </TabPanel>
         <TabPanel>
-          <Search />
+          <Search globalWaveForm={globalWaveForm} />
         </TabPanel>
       </Tabs>
     </div>

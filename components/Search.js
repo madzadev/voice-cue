@@ -5,7 +5,7 @@ import SearchItem from "./SearchItem";
 import styles from "./Search.module.css";
 import { transcription } from "../data/transcription";
 
-const Search = () => {
+const Search = ({ globalWaveForm }) => {
   const [input, setInput] = useState("");
   const [resultsArray, setResultsArray] = useState([]);
   return (
@@ -52,7 +52,9 @@ const Search = () => {
               time={word.start}
               word={word.word}
               onClick={() => {
-                console.log("Clicked");
+                globalWaveForm.current.skip(
+                  word.start - globalWaveForm.current.getCurrentTime()
+                );
               }}
             />
           );
