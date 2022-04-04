@@ -10,7 +10,7 @@ import Entity from "../components/Entity";
 import Actions from "../components/Actions";
 import Search from "../components/Search";
 import ViewSplitter from "../components/ViewSplitter";
-import MainPlayer from "../components/MainPlayer";
+import Player from "../components/Player";
 
 const WaveForm = dynamic(() => import("../components/WaveForm"), {
   ssr: false,
@@ -48,7 +48,7 @@ export default function Home() {
           <FileSelector setAudio={setAudio} />
         </div>
         <div style={{ display: "grid", placeItems: "center" }}>
-          <MainPlayer globalWaveForm={globalWaveForm} audio={audio} />
+          <Player globalWaveForm={globalWaveForm} audio={audio} />
         </div>
       </ViewSplitter>
 

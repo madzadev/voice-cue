@@ -1,19 +1,15 @@
 import { useState, useEffect } from "react";
-import PlayButton from "./PlayButton";
 import toHHMMSS from "../helpers/getMinuteFormat";
 
-import styles from "./MainPlayer.module.css";
+import styles from "./Player.module.css";
 
-const MainPlayer = ({ globalWaveForm, audio }) => {
+const Player = ({ globalWaveForm, audio }) => {
   const [audioLength, setAudioLength] = useState("00:00");
   const [currentTime, setCurrentTime] = useState("00:00");
   const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
     if (globalWaveForm) {
-      console.log(audio);
-      console.log(globalWaveForm.current.getDuration());
-      console.log(globalWaveForm.current);
       globalWaveForm.current.on("ready", function () {
         setAudioLength(toHHMMSS(globalWaveForm.current.getDuration()));
       });
@@ -108,4 +104,4 @@ const MainPlayer = ({ globalWaveForm, audio }) => {
   );
 };
 
-export default MainPlayer;
+export default Player;
