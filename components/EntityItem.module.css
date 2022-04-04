@@ -1,0 +1,10 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: 50px auto;
+    margin: 10px 0;
+  }
+  
+  .wrapper:hover {
+    cursor: pointer;
+  }
+  

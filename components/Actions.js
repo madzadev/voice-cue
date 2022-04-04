@@ -5,7 +5,8 @@ const Actions = () => {
   return (
     <ViewSplitter>
       <div>
-        <h1>Actions</h1>
+        <h1>Past, now, future</h1>
+        <h3>Activity</h3>
       </div>
       <div>
         <h1>Select an action to get cues</h1>

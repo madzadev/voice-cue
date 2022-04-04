@@ -13,7 +13,6 @@ const Entity = () => {
   return (
     <ViewSplitter>
       <div>
-        <h1>This is entity</h1>
         <h3>Person</h3>
         <h3>Place</h3>
         <h3>Money</h3>
@@ -25,7 +24,6 @@ const Entity = () => {
         <h3>HashTag</h3>
         <h3>PhoneNumber</h3>
         <h3>Unit</h3>
-        <h3>Activity</h3>
       </div>
       <div>
         {activeEntity ? <h1>List</h1> : <h1>Select entity to get cues</h1>}

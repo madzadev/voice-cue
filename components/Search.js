@@ -1,19 +1,33 @@
 import { useState } from "react";
 
 import ViewSplitter from "./ViewSplitter";
+import SearchItem from "./SearchItem";
 import styles from "./Search.module.css";
+import { transcription } from "../data/transcription";
 
 const Search = () => {
   const [input, setInput] = useState("");
+  const [resultsArray, setResultsArray] = useState([]);
   return (
     <ViewSplitter>
       <div>
         <h1>Custom search:</h1>
         <input
-          spellcheck="false"
+          spellCheck="false"
           className={styles.input}
           onChange={(e) => {
             setInput(e.target.value);
+            setResultsArray([]);
+            if (e.target.value.length > 2) {
+              transcription.words.forEach((word, index) => {
+                if (
+                  word.word.toLowerCase().includes(e.target.value.toLowerCase())
+                ) {
+                  console.log(word);
+                  setResultsArray((resultsArray) => [...resultsArray, word]);
+                }
+              });
+            }
           }}
         />
       </div>
@@ -23,11 +37,26 @@ const Search = () => {
             <h1>
               Query: <span style={{ color: "#0d76ff" }}>{input}</span>
             </h1>
-            <h3 style={{ color: "grey" }}>Occurred {23} times</h3>
+            <h3 style={{ color: "grey" }}>
+              Occurred {resultsArray.length} times
+            </h3>
           </div>
         ) : (
-          <h1>Type at least 3 chars to get cues</h1>
+          <h1>Type at least 3 chars</h1>
         )}
+        {resultsArray.map((word, index) => {
+          return (
+            <SearchItem
+              color="#0d76ff"
+              index={index}
+              time={word.start}
+              word={word.word}
+              onClick={() => {
+                console.log("Clicked");
+              }}
+            />
+          );
+        })}
       </div>
     </ViewSplitter>
   );
