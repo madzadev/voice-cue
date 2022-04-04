@@ -45,7 +45,7 @@ const Overview = ({ globalWaveForm }) => {
             <WordInText
               key={index}
               word={el.word}
-              color={currentTime > el.start ? "#567FFF" : "white"}
+              color={currentTime > el.start ? "#0d76ff" : "white"}
               onClick={() => {
                 // console.log(`Jump to ${el.start}`);
                 globalWaveForm.current.skip(
