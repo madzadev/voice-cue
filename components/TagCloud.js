@@ -31,6 +31,7 @@ function SimpleCloud({ data, globalWaveForm }) {
         // </div>
         <TagCloudItem
           index={index}
+          key={index}
           time={el.start}
           color={activeColor}
           onClick={() => {
