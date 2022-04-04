@@ -28,7 +28,7 @@ const Player = ({ globalWaveForm, audio }) => {
       setAudioLength(toHHMMSS(globalWaveForm.current.getDuration()));
       setCurrentTime(toHHMMSS(globalWaveForm.current.getCurrentTime()));
     }
-  }, 100);
+  }, 500);
 
   const playAudio = () => {
     if (globalWaveForm.current.isPlaying()) {

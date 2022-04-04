@@ -1,8 +1,10 @@
+import toHHMMSS from "../helpers/getMinuteFormat";
+
 import styles from "./SentimentItem.module.css";
 
-const SentimentItem = ({ sentiment, score, word }) => {
+const SentimentItem = ({ sentiment, score, word, time, onClick }) => {
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} onClick={onClick}>
       <div>
         <h1
           style={{
@@ -22,7 +24,8 @@ const SentimentItem = ({ sentiment, score, word }) => {
             }}
           >
             {word}
-          </span>
+          </span>{" "}
+          at {time}
         </h3>
         <p>The sentence use case</p>
       </div>

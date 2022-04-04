@@ -23,8 +23,20 @@ const Sentiments = () => {
             onClick={() => {
               setEmotion("positive");
               setSentimentList([]);
+              console.log(analysis.calculation);
+              console.log(transcription.words);
               analysis.calculation.forEach((el, index) => {
+                let elObject = {};
                 if (el[Object.keys(el)] > 0) {
+                  elObject.sentiment = Object.keys(el)[0];
+                  elObject.score = el[Object.keys(el)];
+                  elObject.position = 1;
+                  // let transcriptIndex;
+
+                  // transcription.words.forEach(()=>{
+
+                  // })
+                  console.log(elObject);
                   setSentimentList((sentimentList) => [...sentimentList, el]);
                 }
               });
@@ -85,7 +97,11 @@ const Sentiments = () => {
                     sentiment={emotion}
                     score={el[Object.keys(el)]}
                     word={Object.keys(el)}
+                    time={5}
                     key={index}
+                    onClick={() => {
+                      console.log("Clicked");
+                    }}
                   />
                 );
               })}
