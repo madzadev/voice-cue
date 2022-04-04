@@ -22,6 +22,7 @@ const Player = ({ globalWaveForm, audio }) => {
     }
   }, [globalWaveForm]);
 
+  // Update this via useEffect
   setInterval(() => {
     if (globalWaveForm) {
       setAudioLength(toHHMMSS(globalWaveForm.current.getDuration()));
