@@ -7,6 +7,19 @@ let doc = nlp(transcription.transcript);
 
 import styles from "./Sentiments.module.css";
 
+const entities = [
+  "Person",
+  "Place",
+  "Money",
+  "Date",
+  "Url",
+  "Email",
+  "Organization",
+  "NumericValue",
+  "Hashtag",
+  "PhoneNumber",
+  "Unit",
+];
 const Entity = () => {
   // console.log(doc.tag("MaleName").out("tags"));
   const [activeEntity, setActiveEntity] = useState("");
