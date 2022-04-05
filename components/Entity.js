@@ -22,35 +22,44 @@ const entities = [
   "Unit",
 ];
 const Entity = () => {
-  // console.log(doc.tag("MaleName").out("tags"));
   const [activeEntity, setActiveEntity] = useState("");
+
+  useEffect(() => {
+    const nlpArrays = doc.document;
+    for (let i = 0; i < nlpArrays.length; i++) {
+      for (let j = 0; j < nlpArrays[i].length; j++) {
+        console.log("111");
+      }
+    }
+  }, [activeEntity]);
+
   return (
     <ViewSplitter>
       <div>
         {entities.map((entity, index) => {
           return (
-            <EntityItem
-              key={item}
+            <h3
+              key={index}
               onClick={() => {
                 setActiveEntity(entity);
               }}
-            />
+            >
+              {entity}
+            </h3>
           );
         })}
-        <h3>Person</h3>
-        <h3>Place</h3>
-        <h3>Money</h3>
-        <h3>Date</h3>
-        <h3>Url</h3>
-        <h3>Email</h3>
-        <h3>Organization</h3>
-        <h3>NumericValue</h3>
-        <h3>HashTag</h3>
-        <h3>PhoneNumber</h3>
-        <h3>Unit</h3>
       </div>
       <div>
-        {activeEntity ? <h1>List</h1> : <h1>Select entity to get cues</h1>}
+        {activeEntity ? (
+          <>
+            <h1>List</h1>
+            {entities.map((entity, index) => {
+              return <EntityItem key={index} />;
+            })}
+          </>
+        ) : (
+          <h1>Select entity to get cues</h1>
+        )}
       </div>
     </ViewSplitter>
   );
