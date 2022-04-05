@@ -30,37 +30,45 @@ const Entity = ({ globalWaveForm }) => {
     const nlpArrays = doc.document;
     setEntityArray([]);
     let wordsArray = transcription.words;
+    let usedWordsArray = [];
     for (let i = 0; i < nlpArrays.length; i++) {
       for (let j = 0; j < nlpArrays[i].length; j++) {
         if (nlpArrays[i][j].tags.has(activeEntity)) {
+          let word1 = "";
           wordsArray.forEach((word, index) => {
             if (nlpArrays[i][j].text.toLowerCase() == word.word.toLowerCase()) {
-              setEntityArray((entityArray) => [...entityArray, word]);
-              wordsArray.slice(index, 1);
+              if (!usedWordsArray.includes(word.word.toLowerCase())) {
+                setEntityArray((entityArray) => [...entityArray, word]);
+                word1 = word.word.toLowerCase();
+              }
             }
           });
+          usedWordsArray.push(word1);
         }
       }
     }
   }, [activeEntity]);
 
   function getEntityList(entityArray) {
-    return entityArray.map((el, index) => {
-      return (
-        <EntityItem
-          index={index}
-          key={index}
-          time={el.start}
-          word={el.word}
-          color="red"
-          onClick={() => {
-            globalWaveForm.current.skip(
-              el.start - globalWaveForm.current.getCurrentTime()
-            );
-          }}
-        />
-      );
-    });
+    return entityArray
+      .sort((a, b) => a.start - b.start)
+      .map((el, index) => {
+        return (
+          <EntityItem
+            index={index}
+            key={index}
+            time={el.start}
+            word={el.word}
+            entity={activeEntity}
+            color="red"
+            onClick={() => {
+              globalWaveForm.current.skip(
+                el.start - globalWaveForm.current.getCurrentTime()
+              );
+            }}
+          />
+        );
+      });
   }
 
   useEffect(() => {

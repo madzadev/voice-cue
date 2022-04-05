@@ -1,7 +1,7 @@
 export const transcription = {
   confidence: 0.99,
   transcript:
-    "John McLeod in London There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.",
+    "John McLeod in London There are many variations Dan of passages of Lorem Ipsum available, John but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.",
   words: [
     { word: "Lorem", start: 0.1, end: 0.5, confidence: 0.99 },
     { word: "Ipsum", start: 1.1, end: 1.5, confidence: 0.99 },
@@ -23,8 +23,9 @@ export const transcription = {
     { word: "McLeod", start: 1.1, end: 1.5, confidence: 0.99 },
     { word: "There", start: 2.1, end: 2.5, confidence: 0.99 },
     { word: "London", start: 3.1, end: 3.5, confidence: 0.99 },
-    // { word: "dummy", start: 4.1, end: 4.5, confidence: 0.99 },
-    // { word: "text", start: 5.1, end: 5.5, confidence: 0.99 },
+    { word: "John", start: 15.1, end: 0.5, confidence: 0.99 },
+    { word: "Dan", start: 4.1, end: 4.5, confidence: 0.99 },
+    { word: "McLeod", start: 5.1, end: 5.5, confidence: 0.99 },
     // { word: "of", start: 6.1, end: 6.5, confidence: 0.99 },
     // { word: "the", start: 7.1, end: 7.5, confidence: 0.99 },
     // { word: "printing", start: 8.1, end: 8.5, confidence: 0.99 },

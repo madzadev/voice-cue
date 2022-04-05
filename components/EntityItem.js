@@ -2,7 +2,7 @@ import toHHMMSS from "../helpers/getMinuteFormat";
 
 import styles from "./EntityItem.module.css";
 
-const EntityItem = ({ word, color, index, time, onClick }) => {
+const EntityItem = ({ entity, word, color, index, time, onClick }) => {
   return (
     <div className={styles.wrapper} onClick={onClick}>
       <div>
@@ -16,7 +16,7 @@ const EntityItem = ({ word, color, index, time, onClick }) => {
       </div>
       <div>
         <h3>
-          Word: <span style={{ color: `${color}` }}>{word}</span> Appears at:{" "}
+          {entity}: <span style={{ color: `${color}` }}>{word}</span> At:{" "}
           {toHHMMSS(time)}
         </h3>
         <p>This is the text included</p>
