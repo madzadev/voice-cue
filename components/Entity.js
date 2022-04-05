@@ -5,21 +5,21 @@ import ViewSplitter from "../components/ViewSplitter";
 import { transcription } from "../data/transcription";
 let doc = nlp(transcription.transcript);
 
-import styles from "./Sentiments.module.css";
+import styles from "./Entity.module.css";
 import EntityItem from "./EntityItem";
 
 const entities = [
   "Person",
   "Place",
+  "Organization",
   "Money",
-  "Date",
+  "Unit",
+  "NumericValue",
   "Url",
   "Email",
-  "Organization",
-  "NumericValue",
-  "Hashtag",
   "PhoneNumber",
-  "Unit",
+  "Date",
+  "Hashtag",
 ];
 
 const Entity = ({ globalWaveForm }) => {
@@ -78,17 +78,18 @@ const Entity = ({ globalWaveForm }) => {
 
   return (
     <ViewSplitter>
-      <div>
+      <div className={styles.entities}>
         {entities.map((entity, index) => {
           return (
-            <h3
+            <p
+              className={styles.item}
               key={index}
               onClick={() => {
                 setActiveEntity(entity);
               }}
             >
-              {entity}
-            </h3>
+              💰 {entity}
+            </p>
           );
         })}
       </div>

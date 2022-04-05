@@ -11,7 +11,7 @@ const Search = ({ globalWaveForm }) => {
   return (
     <ViewSplitter>
       <div>
-        <h1>Custom search:</h1>
+        {/* <h1>Custom search:</h1> */}
         <input
           spellCheck="false"
           className={styles.input}
