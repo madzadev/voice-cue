@@ -1,0 +1,7 @@
+@media only screen and (max-width: 750px) {
+    .wrapper {
+       text-align: center;
+       display: grid;
+       place-items: center
+    }
+  }

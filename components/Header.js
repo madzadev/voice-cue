@@ -18,10 +18,14 @@ const Header = () => {
         </h2>
       </Link>
       <Link href="/features">
-        <p className={styles.link}>Features</p>
+        <div className={styles.navItem}>
+          <p>Features</p>
+        </div>
       </Link>
       <Link href="/about">
-        <p className={styles.link}>About</p>
+        <div className={styles.navItem}>
+          <p>About</p>
+        </div>
       </Link>
     </header>
   );

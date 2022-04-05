@@ -1,7 +1,7 @@
 .wrapper {
   min-height: 50px;
   display: grid;
-  grid-template-columns: auto 100px 100px;
+  grid-template-columns: auto 80px 80px;
   background-color: #21212c;
   padding: 10px 20px;
   color: rgb(255, 255, 255);
@@ -11,3 +11,10 @@
 .logo {
   cursor: pointer;
 }
+
+.navItem {
+  display: grid;
+  place-items: center end;
+}
+
+

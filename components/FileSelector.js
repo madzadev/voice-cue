@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import { FileUploader } from "react-drag-drop-files";
+import styles from "./FileSelector.module.css";
 
 const fileTypes = ["MP3", "WAV"];
 
@@ -11,7 +12,9 @@ function DragDrop({ setAudio }) {
     setAudio(file);
   };
   return (
-    <FileUploader handleChange={handleChange} name="file" types={fileTypes} />
+    <div className={styles.wrapper}>
+      <FileUploader handleChange={handleChange} name="file" types={fileTypes} />
+    </div>
   );
 }
 

@@ -16,3 +16,9 @@
 .waveform {
   margin: 40px 0;
 }
+
+@media only screen and (max-width: 750px) {
+  .title, .subtitle {
+     text-align: center;
+  }
+}

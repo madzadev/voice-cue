@@ -36,7 +36,7 @@ const Overview = ({ globalWaveForm }) => {
         <div className={styles.wrapper}>
           <div>
             <h1>+4</h1>
-            <h3 className={styles.category}>Overall sentiment</h3>
+            <h3 className={styles.category}>Sentiment</h3>
           </div>
           <div>
             <h1>234</h1>

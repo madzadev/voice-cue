@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital@1&display=swap');
 
 .wrapper {
+  max-width: 340px;
+  text-align: right;
 }
 
 .title {
@@ -11,13 +14,16 @@
 .time {
   margin-bottom: 10px;
   font-family: 'Roboto Mono', monospace;
-  /* font-family: "Montserrat", monospace; */
+  font-family: 'JetBrains Mono', monospace;
+  /* font-size:18px; */
+  
 }
 
 .player {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   gap: 20px;
+  place-items: center;
 }
 
 .play {
@@ -40,6 +46,17 @@
   height: 40px;
   width: 40px;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 750px) {
+  .wrapper {
+     min-width: 100%;
+     max-width: 100%;
+     text-align: center;
+     
+  }
+
+
 }
 
 

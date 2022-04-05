@@ -42,9 +42,9 @@ const Player = ({ globalWaveForm, audio }) => {
 
   return (
     <div className={styles.wrapper}>
-      <h1 className={styles.time}>
+      <h2 className={styles.time}>
         {currentTime}/{audioLength}
-      </h1>
+      </h2>
       <h3 className={styles.title}>
         {audio ? audio.name : "Sample audio track.mp3"}
       </h3>
