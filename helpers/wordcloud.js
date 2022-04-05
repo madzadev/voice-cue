@@ -1,7 +1,5 @@
-import Sentiment from "sentiment";
-
 export default function getOccurrences(tokens) {
-  var obj = {};
+  let obj = {};
 
   tokens.forEach(function (el, i, arr) {
     obj[el.word] = obj[el.word] ? ++obj[el.word] : 1;
