@@ -28,7 +28,7 @@ const Entity = () => {
     const nlpArrays = doc.document;
     for (let i = 0; i < nlpArrays.length; i++) {
       for (let j = 0; j < nlpArrays[i].length; j++) {
-        console.log("111");
+        console.log(nlpArrays[i]);
       }
     }
   }, [activeEntity]);
