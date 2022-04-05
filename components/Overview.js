@@ -56,10 +56,10 @@ const Overview = ({ globalWaveForm }) => {
               word={el.word}
               color={currentTime > el.start ? "#0d76ff" : "white"}
               onClick={() => {
-                // console.log(`Jump to ${el.start}`);
                 globalWaveForm.current.skip(
                   el.start - globalWaveForm.current.getCurrentTime()
                 );
+                setCurrentTime(el.start + 0.01);
               }}
             />
           );
