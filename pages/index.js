@@ -80,7 +80,7 @@ export default function Home() {
           />
         </TabPanel>
         <TabPanel>
-          <Entity />
+          <Entity globalWaveForm={globalWaveForm} />
         </TabPanel>
         <TabPanel>
           <Actions />

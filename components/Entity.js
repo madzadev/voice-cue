@@ -21,17 +21,50 @@ const entities = [
   "PhoneNumber",
   "Unit",
 ];
-const Entity = () => {
+const Entity = ({ globalWaveForm }) => {
   const [activeEntity, setActiveEntity] = useState("");
+  const [entityArray, setEntityArray] = useState([]);
+  const [entityList, setEntityList] = useState();
 
   useEffect(() => {
     const nlpArrays = doc.document;
+    setEntityArray([]);
+    let wordsArray = transcription.words;
     for (let i = 0; i < nlpArrays.length; i++) {
       for (let j = 0; j < nlpArrays[i].length; j++) {
-        console.log(nlpArrays[i]);
+        if (nlpArrays[i][j].tags.has(activeEntity)) {
+          wordsArray.forEach((word, index) => {
+            if (nlpArrays[i][j].text.toLowerCase() == word.word.toLowerCase()) {
+              setEntityArray((entityArray) => [...entityArray, word]);
+              wordsArray.slice(index, 1);
+            }
+          });
+        }
       }
     }
   }, [activeEntity]);
+
+  function getEntityList(entityArray) {
+    return entityArray.map((el, index) => {
+      return (
+        <EntityItem
+          index={index}
+          key={index}
+          time={el.start}
+          color="red"
+          onClick={() => {
+            globalWaveForm.current.skip(
+              el.start - globalWaveForm.current.getCurrentTime()
+            );
+          }}
+        />
+      );
+    });
+  }
+
+  useEffect(() => {
+    setEntityList(getEntityList(entityArray));
+  }, [entityArray]);
 
   return (
     <ViewSplitter>
@@ -53,9 +86,7 @@ const Entity = () => {
         {activeEntity ? (
           <>
             <h1>List</h1>
-            {entities.map((entity, index) => {
-              return <EntityItem key={index} />;
-            })}
+            {entityList}
           </>
         ) : (
           <h1>Select entity to get cues</h1>
