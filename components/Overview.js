@@ -48,7 +48,7 @@ const Overview = ({ globalWaveForm }) => {
           </div>
         </div>
       </div>
-      <div style={{ maxHeight: "260px", overflowY: "scroll" }}>
+      <div style={{ maxHeight: "220px", overflowY: "scroll" }}>
         {transcription.words.map((el, index) => {
           return (
             <WordInText

@@ -101,7 +101,7 @@ const Actions = ({ globalWaveForm }) => {
                 Occurred {actionArray.length} times
               </h3>
             </div>
-            <div style={{ maxHeight: "260px", overflowY: "scroll" }}>
+            <div style={{ maxHeight: "220px", overflowY: "scroll" }}>
               {actionList}
             </div>
           </>

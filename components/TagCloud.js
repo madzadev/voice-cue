@@ -66,7 +66,7 @@ function SimpleCloud({ data, globalWaveForm }) {
                 Occurred {activeTag.count} times
               </h3>
             </div>
-            <div style={{ maxHeight: "260px", overflowY: "scroll" }}>
+            <div style={{ maxHeight: "220px", overflowY: "scroll" }}>
               {tagList}
             </div>
           </>

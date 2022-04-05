@@ -90,7 +90,7 @@ const Sentiments = () => {
                 Occurred {sentimentList.length} times
               </h3>
             </div>
-            <div style={{ maxHeight: "260px", overflowY: "scroll" }}>
+            <div style={{ maxHeight: "220px", overflowY: "scroll" }}>
               {sentimentList.map((el, index) => {
                 return (
                   <SentimentItem

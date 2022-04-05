@@ -33,32 +33,36 @@ const Search = ({ globalWaveForm }) => {
       </div>
       <div>
         {input.length > 2 ? (
-          <div className={styles.listHead}>
-            <h1>
-              Query: <span style={{ color: "#0d76ff" }}>{input}</span>
-            </h1>
-            <h3 style={{ color: "grey" }}>
-              Occurred {resultsArray.length} times
-            </h3>
-          </div>
+          <>
+            <div className={styles.listHead}>
+              <h1>
+                Query: <span style={{ color: "#0d76ff" }}>{input}</span>
+              </h1>
+              <h3 style={{ color: "grey" }}>
+                Occurred {resultsArray.length} times
+              </h3>
+            </div>
+            <div style={{ maxHeight: "220px", overflowY: "scroll" }}>
+              {resultsArray.map((word, index) => {
+                return (
+                  <SearchItem
+                    color="#0d76ff"
+                    index={index}
+                    time={word.start}
+                    word={word.word}
+                    onClick={() => {
+                      globalWaveForm.current.skip(
+                        word.start - globalWaveForm.current.getCurrentTime()
+                      );
+                    }}
+                  />
+                );
+              })}
+            </div>
+          </>
         ) : (
           <h1>Type at least 3 chars</h1>
         )}
-        {resultsArray.map((word, index) => {
-          return (
-            <SearchItem
-              color="#0d76ff"
-              index={index}
-              time={word.start}
-              word={word.word}
-              onClick={() => {
-                globalWaveForm.current.skip(
-                  word.start - globalWaveForm.current.getCurrentTime()
-                );
-              }}
-            />
-          );
-        })}
       </div>
     </ViewSplitter>
   );
