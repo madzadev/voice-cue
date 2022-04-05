@@ -41,7 +41,10 @@ export default function Home() {
       </Head>
       <ViewSplitter>
         <div>
-          <h1 className={styles.title}>Explore audio with HotCues</h1>
+          <h1 className={styles.title}>
+            Explore audio with HotCues{" "}
+            <span style={{ color: "red" }}>| | |</span>
+          </h1>
           <h3 className={styles.subtitle}>
             Find sentiments, tags, entities, actions instantly
           </h3>
@@ -83,7 +86,7 @@ export default function Home() {
           <Entity globalWaveForm={globalWaveForm} />
         </TabPanel>
         <TabPanel>
-          <Actions />
+          <Actions globalWaveForm={globalWaveForm} />
         </TabPanel>
         <TabPanel>
           <Search globalWaveForm={globalWaveForm} />

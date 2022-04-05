@@ -14,7 +14,7 @@ const Header = () => {
               Router.reload(window.location.pathname);
           }}
         >
-          HotCues
+          HotCues <span style={{ color: "red" }}>| | |</span>
         </h2>
       </Link>
       <Link href="/features">

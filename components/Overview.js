@@ -16,6 +16,8 @@ const Overview = ({ globalWaveForm }) => {
     }
   }, [globalWaveForm]);
 
+  console.log(transcription);
+
   return (
     <ViewSplitter>
       <div>

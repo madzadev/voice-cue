@@ -46,7 +46,7 @@ const Player = ({ globalWaveForm, audio }) => {
         {currentTime}/{audioLength}
       </h2>
       <h3 className={styles.title}>
-        {audio ? audio.name : "Sample audio track.mp3"}
+        {audio ? audio.name : "DEV X Deepgram hackathon.mp3"}
       </h3>
       <div className={styles.player}>
         <img
