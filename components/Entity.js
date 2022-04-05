@@ -51,6 +51,7 @@ const Entity = ({ globalWaveForm }) => {
           index={index}
           key={index}
           time={el.start}
+          word={el.word}
           color="red"
           onClick={() => {
             globalWaveForm.current.skip(
@@ -85,8 +86,17 @@ const Entity = ({ globalWaveForm }) => {
       <div>
         {activeEntity ? (
           <>
-            <h1>List</h1>
-            {entityList}
+            <div className={styles.listHead}>
+              <h1>
+                Entity: <span style={{ color: `red` }}>{activeEntity}</span>
+              </h1>
+              <h3 style={{ color: "grey" }}>
+                Occurred {entityArray.length} times
+              </h3>
+            </div>
+            <div style={{ maxHeight: "260px", overflowY: "scroll" }}>
+              {entityList}
+            </div>
           </>
         ) : (
           <h1>Select entity to get cues</h1>
