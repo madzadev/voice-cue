@@ -21,6 +21,7 @@ const entities = [
   "PhoneNumber",
   "Unit",
 ];
+
 const Entity = ({ globalWaveForm }) => {
   const [activeEntity, setActiveEntity] = useState("");
   const [entityArray, setEntityArray] = useState([]);
