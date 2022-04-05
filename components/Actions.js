@@ -9,17 +9,17 @@ import styles from "./Actions.module.css";
 import ActionItem from "./ActionItem";
 
 const actions = [
-  "Person",
-  "Place",
-  "Money",
-  "Date",
-  "Url",
-  "Email",
-  "Organization",
-  "NumericValue",
-  "Hashtag",
-  "PhoneNumber",
-  "Unit",
+  "PastTense",
+  "PerfectTense",
+  "Infinitive",
+  "PresentTense",
+  "Copula",
+  "Modal",
+  "Gerund",
+  "FuturePerfect",
+  "Pluperfect",
+  "FuturePerfect",
+  "Activity",
 ];
 const Actions = ({ globalWaveForm }) => {
   const [activeAction, setActiveAction] = useState("");
