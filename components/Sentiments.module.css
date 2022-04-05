@@ -18,3 +18,9 @@
   color: tomato;
   cursor: pointer;
 }
+
+@media only screen and (max-width: 750px) {
+  .wrapper {
+     text-align: center;
+  }
+}

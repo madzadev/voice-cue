@@ -15,6 +15,12 @@
 .navItem {
   display: grid;
   place-items: center end;
+  
+}
+
+.link:hover {
+  cursor: pointer;
+  
 }
 
 

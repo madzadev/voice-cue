@@ -19,12 +19,12 @@ const Header = () => {
       </Link>
       <Link href="/features">
         <div className={styles.navItem}>
-          <p>Features</p>
+          <p className={styles.link}>Features</p>
         </div>
       </Link>
       <Link href="/about">
         <div className={styles.navItem}>
-          <p>About</p>
+          <p className={styles.link}>About</p>
         </div>
       </Link>
     </header>

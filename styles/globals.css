@@ -5,7 +5,8 @@ body {
   background-color: #181820;
   color: white;
   font-family: "Montserrat", sans-serif;
-  
+  min-height: 100vh;
+  position: relative;
 }
 
 a {
@@ -22,3 +23,4 @@ a {
 .tag-cloud-tag:hover {
   cursor: pointer;
 }
+
