@@ -34,9 +34,18 @@ const Overview = ({ globalWaveForm }) => {
           </div>
         </div>
         <div className={styles.wrapper}>
-          <p>Overall sentiment: +4</p>
-          <p>Total words: 234</p>
-          <p>Total words: 234</p>
+          <div>
+            <h1>+4</h1>
+            <h3 className={styles.category}>Overall sentiment</h3>
+          </div>
+          <div>
+            <h1>234</h1>
+            <h3 className={styles.category}>Total words</h3>
+          </div>
+          <div>
+            <h1>234</h1>
+            <h3 className={styles.category}>Total words</h3>
+          </div>
         </div>
       </div>
       <div style={{ maxHeight: "260px", overflowY: "scroll" }}>
