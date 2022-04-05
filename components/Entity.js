@@ -6,6 +6,7 @@ import { transcription } from "../data/transcription";
 let doc = nlp(transcription.transcript);
 
 import styles from "./Sentiments.module.css";
+import EntityItem from "./EntityItem";
 
 const entities = [
   "Person",
@@ -26,6 +27,16 @@ const Entity = () => {
   return (
     <ViewSplitter>
       <div>
+        {entities.map((entity, index) => {
+          return (
+            <EntityItem
+              key={item}
+              onClick={() => {
+                setActiveEntity(entity);
+              }}
+            />
+          );
+        })}
         <h3>Person</h3>
         <h3>Place</h3>
         <h3>Money</h3>
