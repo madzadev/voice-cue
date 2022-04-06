@@ -1,4 +1,4 @@
-# Introducing VoiceCue
+# Introducing VoiceCue 🔷
 
 Forget about listening to long and boring voice recordings and process them manually. 
 
@@ -10,7 +10,7 @@ The app workflow is as simple as uploading your voice recording, selecting which
 
 ## Features ✨
 
-1. General stats
+1. General stats - overview
 2. Sentiment analysis
 3. Word cloud generation
 4. Entity name recognition
@@ -27,17 +27,27 @@ The app workflow is as simple as uploading your voice recording, selecting which
 
 ## Tech stack 🛠️
 
-NextJS - React application framework
-Deepgram - 
-compromise, sentiment - For text processing
-react-tagcloud - 
-react-tabs - 
-react-drag-drop-files
-wavesurfer.js
-GitHub - To host the code
-Netlify - To deploy the project, serverless functions
-ESLint, prettier - For linting and code formatting
-Namecheap - For custom subdomain (configured on Netlify)
+[NextJS](https://nextjs.org) - React application framework
+
+[Deepgram](https://deepgram.com) - for AI based speech recognition
+
+[compromise](https://www.npmjs.com/package/compromise), [sentiment](https://www.npmjs.com/package/sentiment) - for text processing
+
+[react-tagcloud](https://www.npmjs.com/package/react-tagcloud) - to generate word cloud
+
+[react-tabs](https://www.npmjs.com/package/react-tabs) - for navigation panels
+
+[react-drag-drop-files](https://www.npmjs.com/package/react-drag-drop-files) - for drag and drop support
+
+[wavesurfer.js](https://www.npmjs.com/package/wavesurfer.js) - to generate the audio waveform
+
+[GitHub](https://github.com) - to host the code
+
+[Netlify](https://netlify.com) - to deploy the project, serverless functions
+
+[ESLint](https://eslint.org/), [prettier](https://prettier.io/) - for linting and code formatting
+
+[Namecheap](https://namecheap.com) - for custom subdomain (configured on Netlify)
 
 ## Licence 📚
 
