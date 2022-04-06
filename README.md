@@ -15,7 +15,7 @@ The app workflow is as simple as uploading your voice recording, selecting which
 3. Word cloud generation - most used word classification
 4. Entity name recognition - categories such as person, place, etc
 5. Activity tracking - find actions in past, present or future
-6. Voice recognition - AI based solution by Deepgram
+6. Voice recognition - AI based solution by [Deepgram](https://deepgram.com)
 7. Interactive transcript - see progress or click to control it
 8. Cue word usage - extractions from the text for context
 9. Waveform preview - see the dynamics of voice, identify silences
