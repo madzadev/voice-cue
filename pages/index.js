@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Head from "next/head";
 import dynamic from "next/dynamic";
 
@@ -28,6 +28,7 @@ export default function Home() {
   // console.log(sentiment.analyze(data.transcript));
   const [globalWaveForm, setGlobalWaveForm] = useState();
   const [audio, setAudio] = useState(false);
+  const [transcript, setTranscript] = useState();
 
   return (
     <div className={styles.container}>
@@ -47,7 +48,7 @@ export default function Home() {
           <h3 className={styles.subtitle}>
             Find sentiments, tags, entities, actions instantly
           </h3>
-          <FileSelector setAudio={setAudio} />
+          <FileSelector setAudio={setAudio} setTranscript={setTranscript} />
         </div>
         <div style={{ display: "grid", placeItems: "center end" }}>
           <Player globalWaveForm={globalWaveForm} audio={audio} />
@@ -70,7 +71,7 @@ export default function Home() {
         </TabList>
 
         <TabPanel>
-          <Overview globalWaveForm={globalWaveForm} />
+          <Overview globalWaveForm={globalWaveForm} transcript={transcript} />
         </TabPanel>
         <TabPanel>
           <Sentiments />

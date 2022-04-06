@@ -5,8 +5,11 @@ import ViewSplitter from "../components/ViewSplitter";
 import { transcription } from "../data/transcription";
 import styles from "./Overview.module.css";
 
-const Overview = ({ globalWaveForm }) => {
+const Overview = ({ globalWaveForm, transcript }) => {
   const [currentTime, setCurrentTime] = useState(0);
+  const [AAA, setAAA] = useState(transcription);
+
+  console.log(AAA);
 
   useEffect(() => {
     if (globalWaveForm) {
@@ -17,6 +20,13 @@ const Overview = ({ globalWaveForm }) => {
   }, [globalWaveForm]);
 
   // console.log(transcription);
+
+  useEffect(() => {
+    if (transcript) {
+      setAAA(transcript);
+    }
+    // console.log(transcript);
+  }, [transcript]);
 
   return (
     <ViewSplitter>
@@ -51,7 +61,7 @@ const Overview = ({ globalWaveForm }) => {
         </div>
       </div>
       <div style={{ maxHeight: "220px", overflowY: "scroll" }}>
-        {transcription.words.map((el, index) => {
+        {AAA.words.map((el, index) => {
           return (
             <WordInText
               key={index}

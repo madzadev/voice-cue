@@ -4,7 +4,7 @@ import styles from "./FileSelector.module.css";
 
 const fileTypes = ["MP3", "WAV"];
 
-function DragDrop({ setAudio }) {
+function DragDrop({ setAudio, setTranscript }) {
   // const [file, setFile] = useState(null);
   const file = useRef(null);
 
@@ -30,6 +30,7 @@ function DragDrop({ setAudio }) {
         .then((response) => response.json())
         .then((result) => {
           console.log(JSON.parse(result.body));
+          setTranscript(JSON.parse(result.body).channels[0].alternatives[0]);
         })
         .catch((error) => {
           console.error("Error:", error);
