@@ -1,4 +1,4 @@
-# Introducing VoiceCue 🔷
+# Introducing VoiceCue 📣
 
 Forget about listening to long and boring voice recordings and process them manually. 
 
@@ -10,20 +10,20 @@ The app workflow is as simple as uploading your voice recording, selecting which
 
 ## Features ✨
 
-1. General stats - overview
-2. Sentiment analysis
-3. Word cloud generation
-4. Entity name recognition
-5. Activity tracking
-6. Voice recognition
-7. Interactive transcript
-8. Cue word usage
-9. Waveform preview
-10. Audio controls
-11. Drag and drop support
-12. Upload both MP3 and WAV
-13. Fully responsive
-14. Colorful UI
+1. General stats - overview about voice recording
+2. Sentiment analysis - positive and negative word detection
+3. Word cloud generation - most used
+4. Entity name recognition - categories such as per
+5. Activity tracking - 
+6. Voice recognition - AI based solution by Deepgram
+7. Interactive transcript - 
+8. Cue word usage - extractions from the text for context
+9. Waveform preview - see the dynamics of voice, identify silences
+10. Audio controls - play, pause, fast forward and backward
+11. Drag and drop support - drop audio in the file select area
+12. Upload both MP3 and WAV - commonly used audio formats
+13. Fully responsive - works fine on mobile and tablets
+14. Colorful UI - 
 
 ## Tech stack 🛠️
 
