@@ -33,7 +33,7 @@ const WaveForm = ({ url, setGlobalWaveForm }) => {
       if (typeof url == "string") {
         waveform.current.load(url);
       } else {
-        console.log("file loaded");
+        // console.log("file loaded");
         waveform.current.loadBlob(url);
       }
 

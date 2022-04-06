@@ -14,12 +14,12 @@ const entities = [
   "Organization",
   "Money",
   "Unit",
-  "NumericValue",
-  "Url",
-  "Email",
-  "PhoneNumber",
+  // "NumericValue",
+  // "Url",
+  // "Email",
+  // "PhoneNumber",
   "Date",
-  "Hashtag",
+  // "Hashtag",
 ];
 
 const Entity = ({ globalWaveForm }) => {

@@ -32,7 +32,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>HotCues</title>
+        <title>VoiceCue</title>
         <meta
           name="description"
           content="Find sentiments, tags, entities, actions instantly"
@@ -42,8 +42,7 @@ export default function Home() {
       <ViewSplitter>
         <div>
           <h1 className={styles.title}>
-            Explore voice recordings with VoiceCue{" "}
-            <span style={{ color: "red" }}>| | |</span>
+            Explore voice recordings with VoiceCue
           </h1>
           <h3 className={styles.subtitle}>
             Find sentiments, tags, entities, actions instantly

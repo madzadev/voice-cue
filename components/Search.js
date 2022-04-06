@@ -23,7 +23,7 @@ const Search = ({ globalWaveForm }) => {
                 if (
                   word.word.toLowerCase().includes(e.target.value.toLowerCase())
                 ) {
-                  console.log(word);
+                  // console.log(word);
                   setResultsArray((resultsArray) => [...resultsArray, word]);
                 }
               });

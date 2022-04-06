@@ -10,16 +10,16 @@ import ActionItem from "./ActionItem";
 
 const actions = [
   "PastTense",
-  "PerfectTense",
+  // "PerfectTense",
   "Infinitive",
-  "PresentTense",
+  // "PresentTense",
   "Copula",
   "Modal",
   "Gerund",
-  "FuturePerfect",
-  "Pluperfect",
-  "FuturePerfect",
-  "Activity",
+  // "FuturePerfect",
+  // "Pluperfect",
+  // "FuturePerfect",
+  // "Activity",
 ];
 const Actions = ({ globalWaveForm }) => {
   const [activeAction, setActiveAction] = useState("");

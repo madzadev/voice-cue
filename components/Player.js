@@ -77,7 +77,7 @@ const Player = ({ globalWaveForm, audio }) => {
           src="icons/fast-forward.png"
           onClick={() => {
             globalWaveForm.current.skipForward(10);
-            console.log(globalWaveForm.current.getDuration());
+            // console.log(globalWaveForm.current.getDuration());
 
             setAudioLength(toHHMMSS(globalWaveForm.current.getDuration()));
 

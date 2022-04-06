@@ -1,12 +1,12 @@
 # Introducing VoiceCue 📣
 
-Forget about listening to long and boring voice recordings and process them in days. 
+Forget about listening to long and boring voice recordings and process them in days.
 
 ## About 👀
 
 VoiceCue lets you find sentiments, tags, entities, and actions in your voice recordings instantly.
 
-The app workflow is as simple as uploading your voice recording, selecting which type of analysis to perform and clicking on the generated cues in the list to instantly navigate to its exact position in the voice recording. 
+The app workflow is as simple as uploading your voice recording, selecting which type of analysis to perform and clicking on the generated cues in the list to instantly navigate to its exact position in the voice recording.
 
 ## Features ✨
 
@@ -55,19 +55,15 @@ VoiceCue is an open source project. The feature requests are welcome.
 
 The project is under the terms of [MIT license](https://choosealicense.com/licenses/mit/).
 
-
-
-
-
-
 punctuate=true, add Uppercase and periods for sentences.
 diarize=true, adds "speaker": 1
 ner=true, adds Named-Entity Recognition (eight two = 82)
 
 Switch between tabs while tha voice recording is playing.
 
-Welcome to VoiceCue, an online application that lets you find sentiments, tags, entities, and actions in your voice recordings instantly.
-Currently, you are listening to the demo voice recording for presentation purposes, but feel free to upload your own voice recordings as well.
-VoiceCue was built specifically as an entry for DEV.to and Deepgram hackathon from mid-March to mid-April in 2022. VoiceCue was built with NextJS and is based on Deepgram API, which is among the leading voice recognition solutions in the world, giving you streamlined access to all Deepgram trained speech recognition models.
-I want to say thanks for this amazing opportunity. Building in public is the best way to learn, especially in such supportive communities as DEV.to.
-If you want to try the speech recognition yourself, dont waste your time and go to the Deepgram website and sign up for 150$ free credit to test out their awesome API yourself.
+This application lets you find sentiments, tags, entities, and actions in your voice recordings instantly.
+You are listening to the demo voice recording for presentation purposes, but feel free to upload your own voice recordings as well.
+It is as my entry for DEV and Deepgram coding contest from mid-March to mid-April in 2022. The application was built with NextJS and is based on Deepgram API, which is among the leading voice recognition solutions, giving you streamlined access to all Deepgram trained speech recognition models.
+Forget about bad transcripts. The API even recognizes person names like John and Jane, places like London and Paris, organizations like Google and Microsoft.
+I want to say thanks for this amazing opportunity. Building in public is the best way to learn, especially in such supportive communities as DEV.
+If you want to try the speech recognition yourself, do not waste your time and go to the Deepgram website and sign up for 150$ free credit to test out their awesome API yourself.
