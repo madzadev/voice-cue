@@ -26,6 +26,7 @@ const Entity = ({ globalWaveForm }) => {
   const [activeEntity, setActiveEntity] = useState("");
   const [entityArray, setEntityArray] = useState([]);
   const [entityList, setEntityList] = useState();
+  console.log(doc.match("#Person").ptrs.length);
 
   useEffect(() => {
     const nlpArrays = doc.document;
@@ -91,7 +92,7 @@ const Entity = ({ globalWaveForm }) => {
               >
                 {entity}
               </h2>
-              <p>Words: 10</p>
+              <p>Words: {doc.match(`#${entity}`).ptrs.length}</p>
             </div>
           );
         })}
