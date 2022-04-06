@@ -1,12 +1,10 @@
 # Introducing VoiceCue
 
-Forget about writing listening to long and boring voice recordings, writing down the timecodes and taking notes of main ideas. 
-
-With VoiceCue your audio timecode map has already been created.
+Forget about listening to long and boring voice recordings and process them manually. 
 
 ## About 👀
 
-VoiceCue is an online application that lets you find sentiments, tags, entities, and actions in your voice recordings instantly.
+VoiceCue lets you find sentiments, tags, entities, and actions in your voice recordings instantly.
 
 The app workflow is as simple as uploading your voice recording, selecting which type of analysis to perform and clicking on the generated cues in the list to instantly navigate to its exact position in the voice recording. 
 
