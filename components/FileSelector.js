@@ -10,6 +10,23 @@ function DragDrop({ setAudio }) {
 
   const handleChange = (file) => {
     setAudio(file);
+
+    const data = { username: "madza" };
+
+    fetch("api/deepgram", {
+      method: "POST", // or 'PUT'
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Success:", data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
   };
   return (
     <div className={styles.wrapper}>
