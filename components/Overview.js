@@ -19,13 +19,10 @@ const Overview = ({ globalWaveForm, transcript }) => {
     }
   }, [globalWaveForm]);
 
-  // console.log(transcription);
-
   useEffect(() => {
     if (transcript) {
       setAAA(transcript);
     }
-    // console.log(transcript);
   }, [transcript]);
 
   return (
