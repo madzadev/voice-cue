@@ -4,10 +4,11 @@ AudioCue - Explore audio like never before
 
 With AudioCue you can save time and skip to important parts with just a click.;
 
-## About
+## About 👀
 
 
-## Features
+
+## Features ✨
 
 1. General stats
 2. Sentiment analysis
@@ -22,18 +23,23 @@ With AudioCue you can save time and skip to important parts with just a click.;
 11. Drag and drop support
 12. Upload both MP3 and WAV
 13. Fully responsive
-14. Colorful UI for easier
+14. Colorful UI
 
-## Tech stack
+## Tech stack 🛠️
 
 NextJS - React application framework
 Deepgram - 
+compromise, sentiment - For text processing
+react-tagcloud - 
+react-tabs - 
+react-drag-drop-files
+wavesurfer.js
 GitHub - To host the code
-Netlify - To deploy the project
+Netlify - To deploy the project, serverless functions
 ESLint, prettier - For linting and code formatting
 Namecheap - For custom subdomain (configured on Netlify)
 
-## Licence
+## Licence 📚
 
 AudioCue is an open source project. The feature requests are welcome.
 
