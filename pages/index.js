@@ -42,7 +42,7 @@ export default function Home() {
       <ViewSplitter>
         <div>
           <h1 className={styles.title}>
-            Explore audio with HotCues{" "}
+            Explore voice recordings with VoiceCue{" "}
             <span style={{ color: "red" }}>| | |</span>
           </h1>
           <h3 className={styles.subtitle}>
