@@ -1,25 +1,48 @@
-AudioCue - Explore audio context with category cues
+# Introducing AudioCue
+
+AudioCue - Explore audio like never before
 
 With AudioCue you can save time and skip to important parts with just a click.;
 
-# Features
+## About
 
-1. General stats ()
+
+## Features
+
+1. General stats
 2. Sentiment analysis
 3. Word cloud generation
 4. Entity name recognition
-   5 Speech playback
-   6 Interactive transcript
-   7 Drag and drop select
-   8 Supported formats MP3 and Wav
-   9 Waveform preview audio
-   10 Audio controls
-   11
-   12
-   13
-   14
-   15 Fully responsive
-   16 Colorful UI for easier
+5. Activity tracking
+6. Speech recognition
+7. Interactive transcript
+8. Cue word usage
+9. Waveform preview
+10. Audio controls
+11. Drag and drop support
+12. Upload both MP3 and WAV
+13. Fully responsive
+14. Colorful UI for easier
+
+## Tech stack
+
+NextJS - React application framework
+Deepgram - 
+GitHub - To host the code
+Netlify - To deploy the project
+ESLint, prettier - For linting and code formatting
+Namecheap - For custom subdomain (configured on Netlify)
+
+## Licence
+
+AudioCue is an open source project. The feature requests are welcome.
+
+The project is under the terms of [MIT license](https://choosealicense.com/licenses/mit/).
+
+
+
+
+
 
 punctuate=true, add Uppercase and periods for sentences.
 diarize=true, adds "speaker": 1
