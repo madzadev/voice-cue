@@ -3,7 +3,7 @@
 export const transcription = {
   confidence: 0.99609375,
   transcript:
-    "this application lets you find sentiments tags entities and actions in your voice recordings instantly it was built as an entry for dev and deepgram contest from mid march to mid april in two thousand twenty two it is based on deepgram api which is among the leading voice recognition solutions giving you streamlined access says to all deepgram trained speech recognition models forget about bad transcripts the api even recognized as person names like john and jane places like london and paris organizations like google and microsoft if you want to try the speech recognition yourself do not waste your time and go to the deepgram website and sign up for one hundred fifty dollars free credit to test out their awesome api yourself",
+    "this application lets you find sentiments tags entities and actions in your voice recordings instantly it was built as an entry for dev and deepgram coding contest from mid march to mid april in two thousand twenty two it is based on deepgram api which is among the leading voice recognition solutions giving you streamlined access to all deepgram trained speech recognition models forget about bad transcripts the api even recognized as person names like john and jane places like london and paris organizations like google and microsoft if you want to try the speech recognition yourself do not waste your time and go to the deepgram website and sign up for one hundred fifty dollars free credit to test out their awesome api yourself",
   words: [
     { word: "this", start: 0.21911766, end: 0.71911764, confidence: 0.9995117 },
     {
@@ -65,7 +65,7 @@ export const transcription = {
       end: 10.375447,
       confidence: 0.89501953,
     },
-
+    { word: "coding", start: 10.552763, end: 10.951184, confidence: 0.515625 },
     {
       word: "contest",
       start: 10.951184,
@@ -131,7 +131,6 @@ export const transcription = {
       confidence: 0.99121094,
     },
     { word: "access", start: 22.360561, end: 22.515, confidence: 0.62890625 },
-    { word: "says", start: 22.695, end: 22.894999, confidence: 0.44018555 },
     { word: "to", start: 22.894999, end: 23.095, confidence: 0.9975586 },
     { word: "all", start: 23.095, end: 23.255, confidence: 0.9980469 },
     { word: "deepgram", start: 23.335, end: 23.835, confidence: 0.921875 },

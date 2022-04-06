@@ -81,15 +81,18 @@ const Entity = ({ globalWaveForm }) => {
       <div className={styles.entities}>
         {entities.map((entity, index) => {
           return (
-            <p
-              className={styles.item}
-              key={index}
-              onClick={() => {
-                setActiveEntity(entity);
-              }}
-            >
-              💰 {entity}
-            </p>
+            <div>
+              <h2
+                className={styles.item}
+                key={index}
+                onClick={() => {
+                  setActiveEntity(entity);
+                }}
+              >
+                {entity}
+              </h2>
+              <p>Words: 10</p>
+            </div>
           );
         })}
       </div>
