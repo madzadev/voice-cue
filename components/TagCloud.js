@@ -4,14 +4,16 @@ import ViewSplitter from "../components/ViewSplitter";
 import TagCloudItem from "../components/TagCloudItem";
 
 import { transcription } from "../data/transcription";
+import getOccurrences from "../helpers/wordcloud";
 
 import styles from "./TagCloud.module.css";
 
-function SimpleCloud({ data, globalWaveForm }) {
+function SimpleCloud({ globalWaveForm, dGTranscript }) {
   const [activeTag, setActiveTag] = useState();
   const [activeColor, setActiveColor] = useState("white");
   const [occurrences, setOccurrences] = useState([]);
   const [tagList, setTagList] = useState();
+  const [transcript, setTranscript] = useState(transcription);
 
   function getTagList(occ) {
     return occ.map((el, index) => {
@@ -35,17 +37,23 @@ function SimpleCloud({ data, globalWaveForm }) {
     setTagList(getTagList(occurrences));
   }, [occurrences]);
 
+  useEffect(() => {
+    if (dGTranscript) {
+      setTranscript(dGTranscript);
+    }
+  }, [dGTranscript]);
+
   return (
     <ViewSplitter>
       <TagCloud
         minSize={18}
         maxSize={40}
-        tags={data}
+        tags={getOccurrences(transcript.words)}
         onClick={(tag, e) => {
           setActiveTag(tag);
           setOccurrences([]);
           setActiveColor(e.target.style.color);
-          transcription.words.forEach((el, index) => {
+          transcript.words.forEach((el, index) => {
             if (tag.value === el.word) {
               setOccurrences((occurrences) => [...occurrences, el]);
             }

@@ -1,13 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import ViewSplitter from "./ViewSplitter";
 import SearchItem from "./SearchItem";
 import styles from "./Search.module.css";
 import { transcription } from "../data/transcription";
 
-const Search = ({ globalWaveForm }) => {
+const Search = ({ globalWaveForm, dGTranscript }) => {
   const [input, setInput] = useState("");
   const [resultsArray, setResultsArray] = useState([]);
+  const [transcript, setTranscript] = useState(transcription);
+
+  useEffect(() => {
+    if (dGTranscript) {
+      setTranscript(dGTranscript);
+    }
+  }, [dGTranscript]);
+
   return (
     <ViewSplitter>
       <div>
@@ -19,7 +27,7 @@ const Search = ({ globalWaveForm }) => {
             setInput(e.target.value);
             setResultsArray([]);
             if (e.target.value.length > 2) {
-              transcription.words.forEach((word, index) => {
+              transcript.words.forEach((word, index) => {
                 if (
                   word.word.toLowerCase().includes(e.target.value.toLowerCase())
                 ) {

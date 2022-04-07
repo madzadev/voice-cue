@@ -3,7 +3,6 @@ import nlp from "compromise/two";
 
 import ViewSplitter from "../components/ViewSplitter";
 import { transcription } from "../data/transcription";
-let doc = nlp(transcription.transcript);
 
 import styles from "./Entity.module.css";
 import EntityItem from "./EntityItem";
@@ -22,16 +21,18 @@ const entities = [
   // "Hashtag",
 ];
 
-const Entity = ({ globalWaveForm }) => {
+const Entity = ({ globalWaveForm, dGTranscript }) => {
   const [activeEntity, setActiveEntity] = useState("");
   const [entityArray, setEntityArray] = useState([]);
   const [entityList, setEntityList] = useState();
-  console.log(doc.match("#Person").ptrs.length);
+  const [transcript, setTranscript] = useState(transcription);
+
+  let doc = nlp(transcript.transcript);
 
   useEffect(() => {
     const nlpArrays = doc.document;
     setEntityArray([]);
-    let wordsArray = transcription.words;
+    let wordsArray = transcript.words;
     let usedWordsArray = [];
     for (let i = 0; i < nlpArrays.length; i++) {
       for (let j = 0; j < nlpArrays[i].length; j++) {
@@ -76,6 +77,12 @@ const Entity = ({ globalWaveForm }) => {
   useEffect(() => {
     setEntityList(getEntityList(entityArray));
   }, [entityArray]);
+
+  useEffect(() => {
+    if (dGTranscript) {
+      setTranscript(dGTranscript);
+    }
+  }, [dGTranscript]);
 
   return (
     <ViewSplitter>

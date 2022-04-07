@@ -3,7 +3,6 @@ import nlp from "compromise/two";
 
 import ViewSplitter from "../components/ViewSplitter";
 import { transcription } from "../data/transcription";
-let doc = nlp(transcription.transcript);
 
 import styles from "./Actions.module.css";
 import ActionItem from "./ActionItem";
@@ -21,15 +20,18 @@ const actions = [
   // "FuturePerfect",
   // "Activity",
 ];
-const Actions = ({ globalWaveForm }) => {
+const Actions = ({ globalWaveForm, dGTranscript }) => {
   const [activeAction, setActiveAction] = useState("");
   const [actionArray, setActionArray] = useState([]);
   const [actionList, setActionList] = useState();
+  const [transcript, setTranscript] = useState(transcription);
+
+  let doc = nlp(transcript.transcript);
 
   useEffect(() => {
     const nlpArrays = doc.document;
     setActionArray([]);
-    let wordsArray = transcription.words;
+    let wordsArray = transcript.words;
     let usedWordsArray = [];
     for (let i = 0; i < nlpArrays.length; i++) {
       for (let j = 0; j < nlpArrays[i].length; j++) {
@@ -74,6 +76,13 @@ const Actions = ({ globalWaveForm }) => {
   useEffect(() => {
     setActionList(getActionList(actionArray));
   }, [actionArray]);
+
+  useEffect(() => {
+    if (dGTranscript) {
+      setTranscript(dGTranscript);
+    }
+  }, [dGTranscript]);
+
   return (
     <ViewSplitter>
       <div className={styles.actions}>

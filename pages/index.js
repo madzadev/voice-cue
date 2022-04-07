@@ -16,8 +16,7 @@ const WaveForm = dynamic(() => import("../components/WaveForm"), {
   ssr: false,
 });
 
-import { transcription } from "../data/transcription";
-import getOccurrences from "../helpers/wordcloud";
+// import { transcription } from "../data/transcription";
 
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
@@ -81,18 +80,21 @@ export default function Home() {
         </TabPanel>
         <TabPanel>
           <TagCloud
-            data={getOccurrences(transcription.words)}
             globalWaveForm={globalWaveForm}
+            dGTranscript={dGTranscript}
           />
         </TabPanel>
         <TabPanel>
-          <Entity globalWaveForm={globalWaveForm} />
+          <Entity globalWaveForm={globalWaveForm} dGTranscript={dGTranscript} />
         </TabPanel>
         <TabPanel>
-          <Actions globalWaveForm={globalWaveForm} />
+          <Actions
+            globalWaveForm={globalWaveForm}
+            dGTranscript={dGTranscript}
+          />
         </TabPanel>
         <TabPanel>
-          <Search globalWaveForm={globalWaveForm} />
+          <Search globalWaveForm={globalWaveForm} dGTranscript={dGTranscript} />
         </TabPanel>
       </Tabs>
     </div>
