@@ -1,4 +1,4 @@
-// This sample transcript was built with Deepgram API and is used for the demo audio in the sandbox.
+// This sample transcript was generated with Deepgram API and is used for the demo audio in the sandbox.
 
 export const transcription = {
   confidence: 0.99609375,

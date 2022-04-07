@@ -1,30 +1,27 @@
 export const about = [
     {
-      question: "What is CropScore?",
+      question: "What is VoiceCue?",
       answers: [
-        "CropScore is an online image cropper designed for content creators.",
-        "It calculates the score of how well the real-time crop will fit for the target use.",
-        "Custom resolutions and aspect ratios are also supported.",
+        "VoiceCue lets you find sentiments, tags, entities, and actions in your voice recordings instantly.",
+        "The workflow is as simple as uploading your voice recording, selecting the analysis and clicking on the generated cues.",
+        "The app supports commonly used audio formats, is fully responsive and has a colorful user interface.",
       ],
-      image: "/graphics/about/scissors.png",
     },
     {
         question: "Why was it built?",
         answers: [
-          "I wanted to create an app that would prepare upload-ready images without any manual calculations.",
-          "The project was built specifically as an entry for the Hashnode and Netlify hackathon.",
+          "I wanted to find a solution that could save days of work by processing voice recordings based on speech recognition.",
+          "The project was built specifically as an entry for the DEV and Deepgram hackathon.",
         ],
-        image: "/graphics/about/idea.png",
       },
       {
         question: "How was it built?",
         answers: [
-          "The project is built with NextJS and react-cropper.",
-          "Chakra UI is used for components.",
-          "The icons are taken from Flaticon and React icons library.",
-          "Code is stored on GitHub and deployed on Netlify.",
+          "The project is built with NextJS and Deepgram API.",
+          "Compromise and Sentiment were used for text processing.",
+          "React-tag-cloud, react-tabs and react-drag-drop-files are external components.",
+          "Code is stored on GitHub and deployed on Vercel.",
         ],
-        image: "/graphics/about/build.png",
       },
       {
         question: "Can I contribute to the project?",
@@ -32,7 +29,6 @@ export const about = [
           "Yes, the project is open source on GitHub. The feature requests are welcome.",
           "The project is under MIT license.",
         ],
-        image: "/graphics/about/code.png",
       },
 
 ]

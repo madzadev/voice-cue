@@ -43,11 +43,11 @@ The app workflow is as simple as uploading your voice recording, selecting which
 
 [GitHub](https://github.com) - to host the code
 
-[Netlify](https://netlify.com) - to deploy the project, serverless functions
+[Vercel](https://vercel.com) - to deploy the project
 
 [ESLint](https://eslint.org/), [prettier](https://prettier.io/) - for linting and code formatting
 
-[Namecheap](https://namecheap.com) - for custom subdomain (configured on Netlify)
+[Namecheap](https://namecheap.com) - for custom subdomain
 
 ## Licence 📚
 
