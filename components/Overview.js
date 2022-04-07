@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import WordInText from "./WordInText";
 import ViewSplitter from "../components/ViewSplitter";
+import Sentiment from "sentiment";
 
 import { transcription } from "../data/transcription";
 import styles from "./Overview.module.css";
@@ -8,6 +9,9 @@ import styles from "./Overview.module.css";
 const Overview = ({ globalWaveForm, dGTranscript }) => {
   const [currentTime, setCurrentTime] = useState(0);
   const [transcript, setTranscript] = useState(transcription);
+
+  const sentiment = new Sentiment();
+  const analysis = sentiment.analyze(transcript.transcript);
 
   useEffect(() => {
     if (globalWaveForm) {
@@ -42,7 +46,9 @@ const Overview = ({ globalWaveForm, dGTranscript }) => {
         </div>
         <div className={styles.wrapper}>
           <div>
-            <h1>+4</h1>
+            <h1>
+              {analysis.score > 0 ? `+${analysis.score}` : analysis.score}
+            </h1>
             <h3 className={styles.category}>Sentiment</h3>
           </div>
           <div>

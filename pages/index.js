@@ -16,7 +16,7 @@ const WaveForm = dynamic(() => import("../components/WaveForm"), {
   ssr: false,
 });
 
-// import { transcription } from "../data/transcription";
+import { transcription } from "../data/transcription";
 
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";

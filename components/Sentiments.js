@@ -23,6 +23,7 @@ const Sentiments = () => {
             onClick={() => {
               setEmotion("positive");
               setSentimentList([]);
+              console.log(analysis);
               // console.log(analysis.calculation);
               // console.log(transcription.words);
               analysis.calculation.forEach((el, index) => {
