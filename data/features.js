@@ -1,52 +1,58 @@
 export const features = [
     {
-      title: "Upload",
-      description: "Supported formats .PNG and .JPG",
+      title: "General stats",
+      description: "An overview about voice recording",
     },
     {
-        title: "Upload",
-        description: "Supported formats .PNG and .JPG",
+        title: "Sentiment analysis",
+        description: "Positive and negative word detection",
       },
       {
-        title: "Upload",
-        description: "Supported formats .PNG and .JPG",
+        title: "Word cloud generation",
+        description: "The classification of most used words",
       },
       {
-        title: "Upload",
-        description: "Supported formats .PNG and .JPG",
+        title: "Entity name recognition",
+        description: "Categories such as person, place, etc",
       },
       {
-        title: "Upload",
-        description: "Supported formats .PNG and .JPG",
+        title: "Activity tracking",
+        description: "Find actions in past, present or future",
       },
       {
-        title: "Upload",
-        description: "Supported formats .PNG and .JPG",
+        title: "Voice recognition",
+        description: "AI based solution by Deepgram",
       },
       {
-        title: "Upload",
-        description: "Supported formats .PNG and .JPG",
+        title: "Interactive transcript",
+        description: "See progress or click to control it",
       },
       {
-        title: "Upload",
-        description: "Supported formats .PNG and .JPG",
+        title: "Cue word usage",
+        description: "Extractions from the text for context",
       },
       {
-        title: "Upload",
-        description: "Supported formats .PNG and .JPG",
+        title: "Waveform preview",
+        description: "See the dynamics of voice, identify silences",
       },
       {
-        title: "Upload",
-        description: "Supported formats .PNG and .JPG",
+        title: "Audio controls",
+        description: "Play, pause, fast forward and backward",
       },
       {
-        title: "Upload",
-        description: "Supported formats .PNG and .JPG",
+        title: "Drag and drop support",
+        description: "Drop audio in the file select area",
       },
       {
-        title: "Upload",
-        description: "Supported formats .PNG and .JPG",
+        title: "Upload both MP3 and WAV",
+        description: "Commonly used audio formats",
       },
-      
-
+      {
+        title: "Fully responsive",
+        description: "Works fine on mobile and tablets",
+      },
+      {
+        title: "Colorful UI",
+        description: "For easier interaction and highlighting",
+      },
 ]
