@@ -31,8 +31,10 @@ const Search = ({ globalWaveForm, dGTranscript }) => {
                 if (
                   word.word.toLowerCase().includes(e.target.value.toLowerCase())
                 ) {
-                  // console.log(word);
-                  setResultsArray((resultsArray) => [...resultsArray, word]);
+                  setResultsArray((resultsArray) => [
+                    ...resultsArray,
+                    { ...word, index },
+                  ]);
                 }
               });
             }
@@ -55,7 +57,10 @@ const Search = ({ globalWaveForm, dGTranscript }) => {
                 return (
                   <SearchItem
                     color="#0d76ff"
-                    index={index}
+                    key={index}
+                    sequence={index}
+                    index={word.index}
+                    dGTranscript={transcript}
                     time={word.start}
                     word={word.word}
                     onClick={() => {

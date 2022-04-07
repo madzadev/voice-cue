@@ -67,7 +67,7 @@ const Overview = ({ globalWaveForm, dGTranscript }) => {
             <WordInText
               key={index}
               word={el.punctuated_word}
-              color={currentTime > el.start ? "#0d76ff" : "white"}
+              color={currentTime > el.start ? "#0d76ff" : "#808074"}
               onClick={() => {
                 globalWaveForm.current.skip(
                   el.start - globalWaveForm.current.getCurrentTime()

@@ -1,8 +1,28 @@
+import { useState, useEffect } from "react";
 import toHHMMSS from "../helpers/getMinuteFormat";
+import getSampleText from "../helpers/getSampleText";
+
+import { transcription } from "../data/transcription";
 
 import styles from "./SearchItem.module.css";
 
-const SearchItem = ({ color, word, index, time, onClick }) => {
+const SearchItem = ({
+  color,
+  word,
+  sequence,
+  index,
+  dGTranscript,
+  time,
+  onClick,
+}) => {
+  const [transcript, setTranscript] = useState(transcription);
+
+  useEffect(() => {
+    if (dGTranscript) {
+      setTranscript(dGTranscript);
+    }
+  }, [dGTranscript]);
+
   return (
     <div className={styles.wrapper} onClick={onClick}>
       <div>
@@ -11,7 +31,7 @@ const SearchItem = ({ color, word, index, time, onClick }) => {
             color: `${color}`,
           }}
         >
-          #{index + 1}
+          #{sequence + 1}
         </h1>
       </div>
       <div>
@@ -26,7 +46,9 @@ const SearchItem = ({ color, word, index, time, onClick }) => {
           </span>{" "}
           Appears at: {toHHMMSS(time)}
         </h3>
-        <p>This is the text included</p>
+        <p className={styles.sample}>
+          {getSampleText(transcript.words, index)}
+        </p>
       </div>
     </div>
   );
