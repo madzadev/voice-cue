@@ -41,9 +41,7 @@ export default function Home() {
       </Head>
       <ViewSplitter>
         <div>
-          <h1 className={styles.title}>
-            Explore voice recordings with VoiceCue
-          </h1>
+          <h1 className={styles.title}>Decode the voice with VoiceCue</h1>
           <h3 className={styles.subtitle}>
             Find sentiments, tags, entities, actions instantly
           </h3>

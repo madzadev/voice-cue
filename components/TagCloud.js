@@ -19,7 +19,9 @@ function SimpleCloud({ globalWaveForm, dGTranscript }) {
     return occ.map((el, index) => {
       return (
         <TagCloudItem
-          index={index}
+          index={el.index}
+          dGTranscript={transcript}
+          sequence={index}
           key={index}
           time={el.start}
           color={activeColor}
@@ -55,7 +57,10 @@ function SimpleCloud({ globalWaveForm, dGTranscript }) {
           setActiveColor(e.target.style.color);
           transcript.words.forEach((el, index) => {
             if (tag.value === el.word) {
-              setOccurrences((occurrences) => [...occurrences, el]);
+              setOccurrences((occurrences) => [
+                ...occurrences,
+                { ...el, index },
+              ]);
             }
           });
         }}

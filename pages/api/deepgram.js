@@ -10,8 +10,8 @@ export default async function handler(req, res) {
       },
       { punctuate: true, numerals: true }
     );
-    res.status(200).json({ statusCode: 200, body: JSON.stringify(results) });
+    res.status(200).json({ body: JSON.stringify(results) });
   } catch (err) {
-    res.status(500).json({ statusCode: 500, body: String(err) });
+    res.status(500).json({ body: String(err) });
   }
 }
