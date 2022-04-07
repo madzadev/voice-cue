@@ -8,7 +8,7 @@ export default async function handler(req, res) {
         buffer: Buffer.from(req.body, "base64"),
         mimetype: "audio/wav",
       },
-      { punctuate: true }
+      { punctuate: true, numerals: true }
     );
     res.status(200).json({ statusCode: 200, body: JSON.stringify(results) });
   } catch (err) {

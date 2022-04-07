@@ -32,16 +32,16 @@ const Overview = ({ globalWaveForm, dGTranscript }) => {
       <div>
         <div className={styles.wrapper}>
           <div>
+            <h1>6</h1>
+            <h3 className={styles.category}>Sentences</h3>
+          </div>
+          <div>
             <h1>{transcript.words.length}</h1>
-            <h2 className={styles.category}>Words</h2>
+            <h3 className={styles.category}>Words</h3>
           </div>
           <div>
             <h1>21 secs</h1>
             <h3 className={styles.category}>Length</h3>
-          </div>
-          <div>
-            <h1>2</h1>
-            <h3 className={styles.category}>Speakers</h3>
           </div>
         </div>
         <div className={styles.wrapper}>
@@ -52,8 +52,8 @@ const Overview = ({ globalWaveForm, dGTranscript }) => {
             <h3 className={styles.category}>Sentiment</h3>
           </div>
           <div>
-            <h1>234</h1>
-            <h3 className={styles.category}>Total words</h3>
+            <h1>2</h1>
+            <h3 className={styles.category}>Speakers</h3>
           </div>
           <div>
             <h1>234</h1>
