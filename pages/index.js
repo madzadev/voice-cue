@@ -28,7 +28,7 @@ export default function Home() {
   // console.log(sentiment.analyze(data.transcript));
   const [globalWaveForm, setGlobalWaveForm] = useState();
   const [audio, setAudio] = useState(false);
-  const [transcript, setTranscript] = useState();
+  const [dGTranscript, setDGTranscript] = useState();
 
   return (
     <div className={styles.container}>
@@ -48,7 +48,7 @@ export default function Home() {
           <h3 className={styles.subtitle}>
             Find sentiments, tags, entities, actions instantly
           </h3>
-          <FileSelector setAudio={setAudio} setTranscript={setTranscript} />
+          <FileSelector setAudio={setAudio} setDGTranscript={setDGTranscript} />
         </div>
         <div style={{ display: "grid", placeItems: "center end" }}>
           <Player globalWaveForm={globalWaveForm} audio={audio} />
@@ -71,7 +71,10 @@ export default function Home() {
         </TabList>
 
         <TabPanel>
-          <Overview globalWaveForm={globalWaveForm} transcript={transcript} />
+          <Overview
+            globalWaveForm={globalWaveForm}
+            dGTranscript={dGTranscript}
+          />
         </TabPanel>
         <TabPanel>
           <Sentiments />
