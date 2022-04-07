@@ -6,6 +6,8 @@ import Sentiment from "sentiment";
 import { transcription } from "../data/transcription";
 import styles from "./Overview.module.css";
 
+const categories = [""];
+
 const Overview = ({ globalWaveForm, dGTranscript }) => {
   const [currentTime, setCurrentTime] = useState(0);
   const [transcript, setTranscript] = useState(transcription);
@@ -46,18 +48,32 @@ const Overview = ({ globalWaveForm, dGTranscript }) => {
         </div>
         <div className={styles.wrapper}>
           <div>
+            <h1>2</h1>
+            <h3 className={styles.category}>Sentiments</h3>
+          </div>
+          <div>
             <h1>
               {analysis.score > 0 ? `+${analysis.score}` : analysis.score}
             </h1>
-            <h3 className={styles.category}>Sentiment</h3>
+            <h3 className={styles.category}>Sentiment score</h3>
+          </div>
+          <div>
+            <h1>234</h1>
+            <h3 className={styles.category}>Tags</h3>
+          </div>
+        </div>
+        <div className={styles.wrapper}>
+          <div>
+            <h1>10</h1>
+            <h3 className={styles.category}>Entities</h3>
+          </div>
+          <div>
+            <h1>2</h1>
+            <h3 className={styles.category}>Actions</h3>
           </div>
           <div>
             <h1>2</h1>
             <h3 className={styles.category}>Speakers</h3>
-          </div>
-          <div>
-            <h1>234</h1>
-            <h3 className={styles.category}>Total words</h3>
           </div>
         </div>
       </div>
