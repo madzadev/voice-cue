@@ -1,0 +1,11 @@
+.actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+    height:160px;
+}
+
+.item {
+    cursor: pointer;
+    color: limegreen;
+}

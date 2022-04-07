@@ -4,7 +4,11 @@
     border-radius: 10px;
 }
 
-.title {
+.question {
     color: #0d76ff;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+}
+
+.answer {
+    margin-bottom:8px;
 }

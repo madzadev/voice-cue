@@ -76,17 +76,21 @@ const Actions = ({ globalWaveForm }) => {
   }, [actionArray]);
   return (
     <ViewSplitter>
-      <div>
+      <div className={styles.actions}>
         {actions.map((action, index) => {
           return (
-            <h3
-              key={index}
-              onClick={() => {
-                setActiveAction(action);
-              }}
-            >
-              {action}
-            </h3>
+            <div>
+              <h2
+                key={index}
+                className={styles.item}
+                onClick={() => {
+                  setActiveAction(action);
+                }}
+              >
+                {action}
+              </h2>
+              <p>Words: {doc.match(`#${action}`).ptrs.length}</p>
+            </div>
           );
         })}
       </div>
