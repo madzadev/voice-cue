@@ -40,7 +40,10 @@ const Actions = ({ globalWaveForm, dGTranscript }) => {
           wordsArray.forEach((word, index) => {
             if (nlpArrays[i][j].text.toLowerCase() == word.word.toLowerCase()) {
               if (!usedWordsArray.includes(word.word.toLowerCase())) {
-                setActionArray((actionArray) => [...actionArray, word]);
+                setActionArray((actionArray) => [
+                  ...actionArray,
+                  { ...word, index },
+                ]);
                 word1 = word.word.toLowerCase();
               }
             }
@@ -57,7 +60,9 @@ const Actions = ({ globalWaveForm, dGTranscript }) => {
       .map((el, index) => {
         return (
           <ActionItem
-            index={index}
+            index={el.index}
+            dGTranscript={transcript}
+            sequence={index}
             key={index}
             time={el.start}
             word={el.word}
