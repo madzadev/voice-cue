@@ -7,4 +7,8 @@
   .wrapper:hover {
     cursor: pointer;
   }
+
+  .sample {
+    color: #808074
+  }
   

@@ -41,7 +41,10 @@ const Entity = ({ globalWaveForm, dGTranscript }) => {
           wordsArray.forEach((word, index) => {
             if (nlpArrays[i][j].text.toLowerCase() == word.word.toLowerCase()) {
               if (!usedWordsArray.includes(word.word.toLowerCase())) {
-                setEntityArray((entityArray) => [...entityArray, word]);
+                setEntityArray((entityArray) => [
+                  ...entityArray,
+                  { ...word, index },
+                ]);
                 word1 = word.word.toLowerCase();
               }
             }
@@ -58,13 +61,16 @@ const Entity = ({ globalWaveForm, dGTranscript }) => {
       .map((el, index) => {
         return (
           <EntityItem
-            index={index}
+            index={el.index}
+            dGTranscript={transcript}
+            sequence={index}
             key={index}
             time={el.start}
             word={el.word}
             entity={activeEntity}
             color="red"
             onClick={() => {
+              console.log(el);
               globalWaveForm.current.skip(
                 el.start - globalWaveForm.current.getCurrentTime()
               );
