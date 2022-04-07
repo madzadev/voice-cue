@@ -18,7 +18,7 @@ export const about = [
         question: "How was it built?",
         answers: [
           "The project is built with NextJS and Deepgram API.",
-          "Compromise and Sentiment were used for text processing.",
+          "Compromise and Sentiment were used for further text processing.",
           "React-tag-cloud, react-tabs and react-drag-drop-files are external components.",
           "Code is stored on GitHub and deployed on Vercel.",
         ],

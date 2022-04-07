@@ -1,7 +1,7 @@
 export const features = [
     {
       title: "General stats",
-      description: "An overview about voice recording",
+      description: "An overview about voice recordings",
     },
     {
         title: "Sentiment analysis",
@@ -21,7 +21,7 @@ export const features = [
       },
       {
         title: "Voice recognition",
-        description: "AI based solution by Deepgram",
+        description: "An effective AI based solution by Deepgram",
       },
       {
         title: "Interactive transcript",

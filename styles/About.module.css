@@ -1,0 +1,15 @@
+.title {
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+  
+  .subtitle {
+    margin-bottom: 40px;
+    color: #424253;
+  }
+
+  .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+  }

@@ -54,16 +54,3 @@ The app workflow is as simple as uploading your voice recording, selecting which
 VoiceCue is an open source project. The feature requests are welcome.
 
 The project is under the terms of [MIT license](https://choosealicense.com/licenses/mit/).
-
-punctuate=true, add Uppercase and periods for sentences.
-diarize=true, adds "speaker": 1
-ner=true, adds Named-Entity Recognition (eight two = 82)
-I want to say thanks for this amazing opportunity. Building in public is the best way to learn, especially in such supportive communities as DEV.
-You are listening to the demo voice recording for presentation purposes, but feel free to upload your own voice recordings as well.
-
-Switch between tabs while tha voice recording is playing.
-
-This application lets you find sentiments, tags, entities, and actions in your voice recordings instantly.
-It was built as an entry for DEV and Deepgram coding contest from mid-March to mid-April in 2022. It is based on Deepgram API, which is among the leading voice recognition solutions, giving you streamlined access to all Deepgram trained speech recognition models.
-Forget about bad transcripts. The API even recognizes person names like John and Jane, places like London and Paris, organizations like Google and Microsoft.
-If you want to try the speech recognition yourself, do not waste your time and go to the Deepgram website and sign up for 150$ free credit to test out their awesome API yourself.
