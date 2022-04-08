@@ -1,8 +1,28 @@
+import { useState, useEffect } from "react";
 import toHHMMSS from "../helpers/getMinuteFormat";
+import getSampleText from "../helpers/getSampleText";
+
+import { transcription } from "../data/transcription";
 
 import styles from "./SentimentItem.module.css";
 
-const SentimentItem = ({ sentiment, score, word, time, onClick }) => {
+const SentimentItem = ({
+  dGTranscript,
+  index,
+  sentiment,
+  score,
+  word,
+  time,
+  onClick,
+}) => {
+  const [transcript, setTranscript] = useState(transcription);
+
+  useEffect(() => {
+    if (dGTranscript) {
+      setTranscript(dGTranscript);
+    }
+  }, [dGTranscript]);
+
   return (
     <div className={styles.wrapper} onClick={onClick}>
       <div>
@@ -27,7 +47,9 @@ const SentimentItem = ({ sentiment, score, word, time, onClick }) => {
           </span>{" "}
           at {toHHMMSS(time)}
         </h3>
-        <p>The sentence use case</p>
+        <p className={styles.sample}>
+          {getSampleText(transcript.words, index)}
+        </p>
       </div>
     </div>
   );

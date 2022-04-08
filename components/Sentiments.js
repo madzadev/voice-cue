@@ -126,6 +126,8 @@ const Sentiments = ({ globalWaveForm, dGTranscript }) => {
                     <SentimentItem
                       key={index}
                       sentiment={emotion}
+                      dGTranscript={transcript}
+                      index={el.index}
                       score={el.score}
                       word={el.word}
                       time={el.start}

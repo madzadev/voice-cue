@@ -60,10 +60,10 @@ const Actions = ({ globalWaveForm, dGTranscript }) => {
       .map((el, index) => {
         return (
           <ActionItem
+            key={index}
             index={el.index}
             dGTranscript={transcript}
             sequence={index}
-            key={index}
             time={el.start}
             word={el.word}
             action={activeAction}
