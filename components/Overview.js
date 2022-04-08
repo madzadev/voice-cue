@@ -3,6 +3,9 @@ import WordInText from "./WordInText";
 import ViewSplitter from "../components/ViewSplitter";
 import Sentiment from "sentiment";
 import getTagOccurrences from "../helpers/getTagOccurrences";
+import nlp from "compromise/two";
+import getTotalEntities from "../helpers/getTotalEntities";
+import getTotalActions from "../helpers/getTotalActions";
 
 import { transcription } from "../data/transcription";
 import styles from "./Overview.module.css";
@@ -13,6 +16,7 @@ const Overview = ({ globalWaveForm, dGTranscript }) => {
   const [currentTime, setCurrentTime] = useState(0);
   const [transcript, setTranscript] = useState(transcription);
 
+  let doc = nlp(transcript.transcript);
   const sentiment = new Sentiment();
   const analysis = sentiment.analyze(transcript.transcript);
 
@@ -71,11 +75,11 @@ const Overview = ({ globalWaveForm, dGTranscript }) => {
         </div>
         <div className={styles.wrapper}>
           <div>
-            <h1>10</h1>
+            <h1>{getTotalEntities(doc)}</h1>
             <h3 className={styles.category}>Entities</h3>
           </div>
           <div>
-            <h1>2</h1>
+            <h1>{getTotalActions(doc)}</h1>
             <h3 className={styles.category}>Actions</h3>
           </div>
           <div>
