@@ -6,13 +6,19 @@ import { transcription } from "../data/transcription";
 
 import styles from "./Sentiments.module.css";
 
-const sentiment = new Sentiment();
-const analysis = sentiment.analyze(transcription.transcript);
-
-const Sentiments = () => {
+const Sentiments = ({ globalWaveForm, dGTranscript }) => {
   const [emotion, setEmotion] = useState("");
   const [sentimentList, setSentimentList] = useState([]);
-  // console.log(analysis);
+  const [transcript, setTranscript] = useState(transcription);
+
+  const sentiment = new Sentiment();
+  const analysis = sentiment.analyze(transcript.transcript);
+
+  useEffect(() => {
+    if (dGTranscript) {
+      setTranscript(dGTranscript);
+    }
+  }, [dGTranscript]);
 
   return (
     <ViewSplitter>
@@ -23,22 +29,26 @@ const Sentiments = () => {
             onClick={() => {
               setEmotion("positive");
               setSentimentList([]);
-              console.log(analysis);
-              // console.log(analysis.calculation);
-              // console.log(transcription.words);
+              let usedWordsArray = [];
               analysis.calculation.forEach((el, index) => {
-                let elObject = {};
                 if (el[Object.keys(el)] > 0) {
-                  elObject.sentiment = Object.keys(el)[0];
-                  elObject.score = el[Object.keys(el)];
-                  elObject.position = 1;
-                  // let transcriptIndex;
-
-                  // transcription.words.forEach(()=>{
-
-                  // })
-                  // console.log(elObject);
-                  setSentimentList((sentimentList) => [...sentimentList, el]);
+                  let wordsArray = transcript.words;
+                  let word1 = "";
+                  wordsArray.forEach((word, index) => {
+                    if (
+                      Object.keys(el)[0].toLowerCase() ==
+                      word.word.toLowerCase()
+                    ) {
+                      if (!usedWordsArray.includes(word.word.toLowerCase())) {
+                        setSentimentList((sentimentList) => [
+                          ...sentimentList,
+                          { ...word, index: index, score: el[Object.keys(el)] },
+                        ]);
+                        word1 = word.word.toLowerCase();
+                      }
+                    }
+                  });
+                  usedWordsArray.push(word1);
                 }
               });
             }}
@@ -57,9 +67,26 @@ const Sentiments = () => {
             onClick={() => {
               setEmotion("negative");
               setSentimentList([]);
+              let usedWordsArray = [];
               analysis.calculation.forEach((el, index) => {
                 if (el[Object.keys(el)] < 0) {
-                  setSentimentList((sentimentList) => [...sentimentList, el]);
+                  let wordsArray = transcript.words;
+                  let word1 = "";
+                  wordsArray.forEach((word, index) => {
+                    if (
+                      Object.keys(el)[0].toLowerCase() ==
+                      word.word.toLowerCase()
+                    ) {
+                      if (!usedWordsArray.includes(word.word.toLowerCase())) {
+                        setSentimentList((sentimentList) => [
+                          ...sentimentList,
+                          { ...word, index: index, score: el[Object.keys(el)] },
+                        ]);
+                        word1 = word.word.toLowerCase();
+                      }
+                    }
+                  });
+                  usedWordsArray.push(word1);
                 }
               });
             }}
@@ -92,20 +119,24 @@ const Sentiments = () => {
               </h3>
             </div>
             <div style={{ maxHeight: "220px", overflowY: "scroll" }}>
-              {sentimentList.map((el, index) => {
-                return (
-                  <SentimentItem
-                    sentiment={emotion}
-                    score={el[Object.keys(el)]}
-                    word={Object.keys(el)}
-                    time={5}
-                    key={index}
-                    onClick={() => {
-                      console.log("Clicked");
-                    }}
-                  />
-                );
-              })}
+              {sentimentList
+                .sort((a, b) => a.start - b.start)
+                .map((el, index) => {
+                  return (
+                    <SentimentItem
+                      key={index}
+                      sentiment={emotion}
+                      score={el.score}
+                      word={el.word}
+                      time={el.start}
+                      onClick={() => {
+                        globalWaveForm.current.skip(
+                          el.start - globalWaveForm.current.getCurrentTime()
+                        );
+                      }}
+                    />
+                  );
+                })}
             </div>
           </>
         ) : (

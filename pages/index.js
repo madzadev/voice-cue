@@ -74,7 +74,10 @@ export default function Home() {
           />
         </TabPanel>
         <TabPanel>
-          <Sentiments />
+          <Sentiments
+            globalWaveForm={globalWaveForm}
+            dGTranscript={dGTranscript}
+          />
         </TabPanel>
         <TabPanel>
           <TagCloud

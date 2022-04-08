@@ -25,7 +25,7 @@ const SentimentItem = ({ sentiment, score, word, time, onClick }) => {
           >
             {word}
           </span>{" "}
-          at {time}
+          at {toHHMMSS(time)}
         </h3>
         <p>The sentence use case</p>
       </div>
