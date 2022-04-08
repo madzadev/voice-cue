@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import WordInText from "./WordInText";
 import ViewSplitter from "../components/ViewSplitter";
 import Sentiment from "sentiment";
+import getTagOccurrences from "../helpers/getTagOccurrences";
 
 import { transcription } from "../data/transcription";
 import styles from "./Overview.module.css";
@@ -35,7 +36,9 @@ const Overview = ({ globalWaveForm, dGTranscript }) => {
       <div>
         <div className={styles.wrapper}>
           <div>
-            <h1>6</h1>
+            <h1>
+              {transcript.transcript.split(/[.!?]+\s/).filter(Boolean).length}
+            </h1>
             <h3 className={styles.category}>Sentences</h3>
           </div>
           <div>
@@ -63,7 +66,7 @@ const Overview = ({ globalWaveForm, dGTranscript }) => {
             <h3 className={styles.category}>Positivity</h3>
           </div>
           <div>
-            <h1>234</h1>
+            <h1>{getTagOccurrences(transcript.words).length}</h1>
             <h3 className={styles.category}>Tags</h3>
           </div>
         </div>
