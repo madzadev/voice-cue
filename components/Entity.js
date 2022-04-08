@@ -70,7 +70,6 @@ const Entity = ({ globalWaveForm, dGTranscript }) => {
             entity={activeEntity}
             color="red"
             onClick={() => {
-              console.log(el);
               globalWaveForm.current.skip(
                 el.start - globalWaveForm.current.getCurrentTime()
               );

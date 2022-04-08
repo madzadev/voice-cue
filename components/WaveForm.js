@@ -58,21 +58,6 @@ const WaveForm = ({ url, setGlobalWaveForm }) => {
     <>
       <div id="waveform" className={styles.waveform} />
       {loading && <h1>Loading...</h1>}
-
-      {/* <button
-        onClick={() => {
-          console.log(waveform.current.getCurrentTime());
-        }}
-      >
-        Get current time
-      </button>
-      <button
-        onClick={() => {
-          waveform.current.skipForward(2);
-        }}
-      >
-        2 sec forward
-      </button> */}
     </>
   );
 };

@@ -15,7 +15,6 @@ const Overview = ({ globalWaveForm, dGTranscript }) => {
 
   const sentiment = new Sentiment();
   const analysis = sentiment.analyze(transcript.transcript);
-  console.log(analysis);
 
   useEffect(() => {
     if (globalWaveForm) {
