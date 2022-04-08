@@ -10,8 +10,6 @@ import getTotalActions from "../helpers/getTotalActions";
 import { transcription } from "../data/transcription";
 import styles from "./Overview.module.css";
 
-const categories = [""];
-
 const Overview = ({ globalWaveForm, dGTranscript }) => {
   const [currentTime, setCurrentTime] = useState(0);
   const [transcript, setTranscript] = useState(transcription);

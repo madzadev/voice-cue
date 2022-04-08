@@ -2,24 +2,13 @@ import { useState, useEffect } from "react";
 import nlp from "compromise/two";
 
 import ViewSplitter from "../components/ViewSplitter";
+import ActionItem from "./ActionItem";
+
+import { actions } from "../data/actions";
 import { transcription } from "../data/transcription";
 
 import styles from "./Actions.module.css";
-import ActionItem from "./ActionItem";
 
-const actions = [
-  "PastTense",
-  // "PerfectTense",
-  "Infinitive",
-  // "PresentTense",
-  "Copula",
-  "Modal",
-  "Gerund",
-  // "FuturePerfect",
-  // "Pluperfect",
-  // "FuturePerfect",
-  // "Activity",
-];
 const Actions = ({ globalWaveForm, dGTranscript }) => {
   const [activeAction, setActiveAction] = useState("");
   const [actionArray, setActionArray] = useState([]);

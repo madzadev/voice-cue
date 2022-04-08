@@ -2,24 +2,11 @@ import { useState, useEffect } from "react";
 import nlp from "compromise/two";
 
 import ViewSplitter from "../components/ViewSplitter";
+import { entities } from "../data/entities";
 import { transcription } from "../data/transcription";
 
 import styles from "./Entity.module.css";
 import EntityItem from "./EntityItem";
-
-const entities = [
-  "Person",
-  "Place",
-  "Organization",
-  "Money",
-  "Unit",
-  // "NumericValue",
-  // "Url",
-  // "Email",
-  // "PhoneNumber",
-  "Date",
-  // "Hashtag",
-];
 
 const Entity = ({ globalWaveForm, dGTranscript }) => {
   const [activeEntity, setActiveEntity] = useState("");
