@@ -14,6 +14,7 @@ const Overview = ({ globalWaveForm, dGTranscript }) => {
 
   const sentiment = new Sentiment();
   const analysis = sentiment.analyze(transcript.transcript);
+  console.log(analysis);
 
   useEffect(() => {
     if (globalWaveForm) {
@@ -48,14 +49,18 @@ const Overview = ({ globalWaveForm, dGTranscript }) => {
         </div>
         <div className={styles.wrapper}>
           <div>
-            <h1>2</h1>
+            <h1>
+              {analysis.calculation.length > 0
+                ? analysis.calculation.length
+                : 0}
+            </h1>
             <h3 className={styles.category}>Sentiments</h3>
           </div>
           <div>
             <h1>
               {analysis.score > 0 ? `+${analysis.score}` : analysis.score}
             </h1>
-            <h3 className={styles.category}>Sentiment score</h3>
+            <h3 className={styles.category}>Positivity</h3>
           </div>
           <div>
             <h1>234</h1>

@@ -4,7 +4,7 @@ import ViewSplitter from "../components/ViewSplitter";
 import TagCloudItem from "../components/TagCloudItem";
 
 import { transcription } from "../data/transcription";
-import getOccurrences from "../helpers/wordcloud";
+import getTagOccurrences from "../helpers/getTagOccurrences";
 
 import styles from "./TagCloud.module.css";
 
@@ -50,7 +50,7 @@ function SimpleCloud({ globalWaveForm, dGTranscript }) {
       <TagCloud
         minSize={18}
         maxSize={40}
-        tags={getOccurrences(transcript.words)}
+        tags={getTagOccurrences(transcript.words)}
         onClick={(tag, e) => {
           setActiveTag(tag);
           setOccurrences([]);
