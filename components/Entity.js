@@ -80,6 +80,8 @@ const Entity = ({ audioWaveForm, dGTranscript }) => {
     <ViewSplitter>
       <div className={styles.entities}>
         {entities.map((entity, index) => {
+          console.log(doc.match(`#${entity}`).ptrs);
+          console.log(doc);
           return (
             <div key={index}>
               <h2

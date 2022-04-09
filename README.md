@@ -21,7 +21,7 @@ The app workflow is as simple as uploading your voice recording, selecting which
 9. Waveform preview - see the dynamics of voice, identify silences
 10. Audio controls - play, pause, fast forward and backward
 11. Drag and drop support - drop audio in the file select area
-12. Upload both MP3 and WAV - commonly used audio formats
+12. Upload MP3 files - most commonly used audio format
 13. Progress loaders - Improved UX for loading transcripts
 14. Fully responsive - works fine on mobile and tablets
 15. Colorful UI - for easier interaction and highlighting

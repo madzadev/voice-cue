@@ -44,8 +44,8 @@ export const features = [
     description: "Drop audio in the file select area",
   },
   {
-    title: "Upload both MP3 and WAV",
-    description: "Commonly used audio formats",
+    title: "Upload MP3 files",
+    description: "Most commonly used audio format",
   },
   {
     title: "Progress loaders",
