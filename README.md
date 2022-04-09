@@ -22,8 +22,9 @@ The app workflow is as simple as uploading your voice recording, selecting which
 10. Audio controls - play, pause, fast forward and backward
 11. Drag and drop support - drop audio in the file select area
 12. Upload both MP3 and WAV - commonly used audio formats
-13. Fully responsive - works fine on mobile and tablets
-14. Colorful UI - for easier interaction and highlighting
+13. Progress loaders - Improved UX for loading transcripts
+14. Fully responsive - works fine on mobile and tablets
+15. Colorful UI - for easier interaction and highlighting
 
 ## Tech stack 🛠️
 

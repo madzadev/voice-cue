@@ -70,7 +70,7 @@ function SimpleCloud({ globalWaveForm, dGTranscript }) {
           <div>
             <div className={styles.listHead}>
               <h1>
-                Word:{" "}
+                Tag:{" "}
                 <span style={{ color: `${activeColor}` }}>
                   {activeTag.value}
                 </span>

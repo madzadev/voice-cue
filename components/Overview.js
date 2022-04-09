@@ -6,6 +6,7 @@ import getTagOccurrences from "../helpers/getTagOccurrences";
 import nlp from "compromise/two";
 import getTotalEntities from "../helpers/getTotalEntities";
 import getTotalActions from "../helpers/getTotalActions";
+import getTotalSpeakers from "../helpers/getTotalSpeakers";
 
 import { transcription } from "../data/transcription";
 import styles from "./Overview.module.css";
@@ -100,7 +101,7 @@ const Overview = ({ globalWaveForm, dGTranscript }) => {
             <h3 className={styles.category}>Actions</h3>
           </div>
           <div>
-            <h1>2</h1>
+            <h1>{getTotalSpeakers(transcript.words)}</h1>
             <h3 className={styles.category}>Speakers</h3>
           </div>
         </div>
