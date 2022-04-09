@@ -8,3 +8,7 @@
     color: #0d76ff;
     margin-bottom: 10px;
 }
+
+.description {
+    font-family: 'JetBrains Mono', monospace;
+}

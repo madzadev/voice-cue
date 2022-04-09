@@ -1,7 +1,7 @@
 .wrapper {
-  /* border: 1px solid grey; */
   padding: 5px;
   display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
 }
 
 .wrapper:hover {

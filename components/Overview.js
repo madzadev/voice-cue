@@ -62,7 +62,7 @@ const Overview = ({ globalWaveForm, dGTranscript }) => {
             <h3 className={styles.category}>Words</h3>
           </div>
           <div>
-            <h1>21 secs</h1>
+            <h1>21</h1>
             <h3 className={styles.category}>Length</h3>
           </div>
         </div>

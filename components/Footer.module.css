@@ -10,4 +10,9 @@
   color: rgb(255, 255, 255);
   font-weight: bold;
   padding: 10px 20px;
+  /* font-family: 'JetBrains Mono', monospace; */
+}
+
+.link {
+  color: #0D76FF
 }
