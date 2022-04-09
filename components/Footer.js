@@ -5,8 +5,8 @@ import styles from "./Footer.module.css";
 const Footer = () => {
   return (
     <footer className={styles.wrapper}>
-      <p>
-        Made with 💖 by{" "}
+      <p className={styles.author}>
+        Made with love by{" "}
         <span className={styles.link}>
           <a href="https://github.com/madzadev" target="_blank">
             Madza

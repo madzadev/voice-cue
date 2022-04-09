@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
 .wrapper {
   width: 100%;
   min-height: 50px;
+  padding: 10px 0;
   text-align: center;
   position: absolute;
   left: 0;
@@ -8,9 +10,15 @@
   background-color: #21212c;
   color: #181820;
   color: rgb(255, 255, 255);
-  font-weight: bold;
+  
   padding: 10px 20px;
-  /* font-family: 'JetBrains Mono', monospace; */
+  
+  font-family: 'Zen Dots', cursive;
+  /* font-size:12px; */
+}
+
+.author {
+  /* margin-bottom: 10px; */
 }
 
 .link {
