@@ -16,9 +16,13 @@ const WaveForm = dynamic(() => import("../components/WaveForm"), {
   ssr: false,
 });
 
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import "react-tabs/style/react-tabs.css";
+const Tabs = dynamic(
+  import("react-tabs").then((mod) => mod.Tabs),
+  { ssr: false }
+);
+import { Tab, TabList, TabPanel } from "react-tabs";
 
+import "react-tabs/style/react-tabs.css";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {

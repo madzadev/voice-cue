@@ -2,10 +2,11 @@ import { useState, useRef } from "react";
 import { FileUploader } from "react-drag-drop-files";
 import styles from "./FileSelector.module.css";
 
-const fileTypes = ["MP3", "WAV"];
+const fileTypes = ["MP3"];
 
 function DragDrop({ setAudio, setDGTranscript }) {
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
   const file = useRef(null);
 
   const handleChange = (file) => {
@@ -36,6 +37,7 @@ function DragDrop({ setAudio, setDGTranscript }) {
         })
         .catch((error) => {
           console.error("Error:", error);
+          setError(true);
         });
     }
 
@@ -44,12 +46,13 @@ function DragDrop({ setAudio, setDGTranscript }) {
   return (
     <div className={styles.wrapper}>
       {loading ? (
-        <h2>Loading transcript...</h2>
+        <h2>{!error ? "Loading transcript..." : "Error, try another file!"}</h2>
       ) : (
         <FileUploader
           handleChange={handleChange}
           name="file"
           types={fileTypes}
+          maxSize={100}
         />
       )}
     </div>

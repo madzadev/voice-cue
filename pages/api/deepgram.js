@@ -6,7 +6,7 @@ export default async function handler(req, res) {
     const { results } = await deepgram.transcription.preRecorded(
       {
         buffer: Buffer.from(req.body, "base64"),
-        mimetype: "audio/wav",
+        mimetype: "audio/mpeg",
       },
       { punctuate: true, numerals: true, ner: true, diarize: true }
     );
@@ -15,3 +15,11 @@ export default async function handler(req, res) {
     res.status(500).json({ body: String(err) });
   }
 }
+
+export const config = {
+  api: {
+    bodyParser: {
+      sizeLimit: "100mb",
+    },
+  },
+};

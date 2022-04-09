@@ -7,6 +7,7 @@ import nlp from "compromise/two";
 import getTotalEntities from "../helpers/getTotalEntities";
 import getTotalActions from "../helpers/getTotalActions";
 import getTotalSpeakers from "../helpers/getTotalSpeakers";
+import getThousandFormat from "../helpers/getThousandFormat";
 
 import { transcription } from "../data/transcription";
 import styles from "./Overview.module.css";
@@ -45,20 +46,18 @@ const Overview = ({ audioWaveForm, dGTranscript }) => {
       <div>
         <div className={styles.wrapper}>
           <div>
-            <h1>{transcript.transcript.length}</h1>
+            <h1>{getThousandFormat(transcript.transcript.length)}</h1>
             <h3 className={styles.category}>Characters</h3>
           </div>
           <div>
-            <h1>
-              {transcript.words.length > 999
-                ? (transcript.words.length / 1000).toFixed(1) + "K"
-                : transcript.words.length}
-            </h1>
+            <h1>{getThousandFormat(transcript.words.length)}</h1>
             <h3 className={styles.category}>Words</h3>
           </div>
           <div>
             <h1>
-              {transcript.transcript.split(/[.!?]+\s/).filter(Boolean).length}
+              {getThousandFormat(
+                transcript.transcript.split(/[.!?]+\s/).filter(Boolean).length
+              )}
             </h1>
             <h3 className={styles.category}>Sentences</h3>
           </div>

@@ -7,6 +7,7 @@
   color: #0658c2;
   margin-bottom: 10px;
   font-family: 'JetBrains Mono', monospace;
+  word-break: break-all;
 }
 
 .time {
