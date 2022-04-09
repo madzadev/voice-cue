@@ -5,10 +5,11 @@ import styles from "./FileSelector.module.css";
 const fileTypes = ["MP3", "WAV"];
 
 function DragDrop({ setAudio, setDGTranscript }) {
-  // const [file, setFile] = useState(null);
+  const [loading, setLoading] = useState(false);
   const file = useRef(null);
 
   const handleChange = (file) => {
+    setLoading(true);
     setAudio(file);
 
     async function audioToBase64(audioFile) {
@@ -31,6 +32,7 @@ function DragDrop({ setAudio, setDGTranscript }) {
         .then((result) => {
           console.log(JSON.parse(result.body));
           setDGTranscript(JSON.parse(result.body).channels[0].alternatives[0]);
+          setLoading(false);
         })
         .catch((error) => {
           console.error("Error:", error);
@@ -41,7 +43,15 @@ function DragDrop({ setAudio, setDGTranscript }) {
   };
   return (
     <div className={styles.wrapper}>
-      <FileUploader handleChange={handleChange} name="file" types={fileTypes} />
+      {loading ? (
+        <h1>Loading transcript...</h1>
+      ) : (
+        <FileUploader
+          handleChange={handleChange}
+          name="file"
+          types={fileTypes}
+        />
+      )}
     </div>
   );
 }

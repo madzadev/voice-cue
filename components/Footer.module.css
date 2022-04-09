@@ -10,15 +10,12 @@
   background-color: #21212c;
   color: #181820;
   color: rgb(255, 255, 255);
-  
-  padding: 10px 20px;
-  
+  padding: 10px 20px; 
   font-family: 'Rubik', sans-serif;
-  /* font-size:18px; */
 }
 
 .author {
-  /* margin-bottom: 10px; */
+  margin-bottom: 5px;
 }
 
 .link {

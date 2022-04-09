@@ -16,7 +16,6 @@ const WaveForm = ({ url, setGlobalWaveForm, setTime }) => {
 
     if (!waveform.current) {
       // Create a wavesurfer object
-      // More info about options here https://wavesurfer-js.org/docs/options.html
 
       waveform.current = Wavesurfer.create({
         container: "#waveform",
@@ -36,15 +35,15 @@ const WaveForm = ({ url, setGlobalWaveForm, setTime }) => {
         waveform.current.loadBlob(url);
       }
 
-      waveform.current.on("loading", function () {
-        setLoading(true);
-      });
-
       waveform.current.on("ready", function () {
         setLoading(false);
+        console.log("loaded");
       });
 
-      waveform.current.on("interaction", function () {});
+      waveform.current.on("loading", function () {
+        setLoading(true);
+        console.log("loading");
+      });
 
       /* To load a local audio file
 		    1. Read the audio file as a array buffer.
@@ -57,8 +56,12 @@ const WaveForm = ({ url, setGlobalWaveForm, setTime }) => {
 
   return (
     <>
-      <div id="waveform" className={styles.waveform} />
-      {loading && <h1>Loading...</h1>}
+      <div
+        id="waveform"
+        className={styles.waveform}
+        style={{ display: `${loading ? "hidden" : "block"}` }}
+      />
+      {loading && <h1>Loading waveform...</h1>}
     </>
   );
 };

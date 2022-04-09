@@ -79,7 +79,7 @@ const Overview = ({ globalWaveForm, dGTranscript }) => {
             <h1>
               {analysis.score > 0 ? `+${analysis.score}` : analysis.score}
             </h1>
-            <h3 className={styles.category}>Positivity</h3>
+            <h3 className={styles.category}>Tone</h3>
           </div>
           <div>
             <h1>{getTagOccurrences(transcript.words).length}</h1>
