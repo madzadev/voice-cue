@@ -67,7 +67,7 @@ function SimpleCloud({ globalWaveForm, dGTranscript }) {
       />
       <div>
         {activeTag ? (
-          <>
+          <div>
             <div className={styles.listHead}>
               <h1>
                 Word:{" "}
@@ -82,7 +82,7 @@ function SimpleCloud({ globalWaveForm, dGTranscript }) {
             <div style={{ maxHeight: "220px", overflowY: "scroll" }}>
               {tagList}
             </div>
-          </>
+          </div>
         ) : (
           <h1>Select a tag to get cues</h1>
         )}
