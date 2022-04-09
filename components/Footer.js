@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className={styles.wrapper}>
       <p className={styles.author}>
-        Made with love by{" "}
+        Made with ❤️ by{" "}
         <span className={styles.link}>
           <a href="https://github.com/madzadev" target="_blank">
             Madza
@@ -28,8 +28,8 @@ const Footer = () => {
         </span>{" "}
         and{" "}
         <span className={styles.link}>
-          <a href="https://netlify.com" target="_blank">
-            Netlify
+          <a href="https://vercel.com" target="_blank">
+            Vercel
           </a>
         </span>
       </p>

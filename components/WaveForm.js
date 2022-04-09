@@ -61,7 +61,7 @@ const WaveForm = ({ url, setGlobalWaveForm, setTime }) => {
         className={styles.waveform}
         style={{ display: `${loading ? "hidden" : "block"}` }}
       />
-      {loading && <h1>Loading waveform...</h1>}
+      {loading && <h2>Loading waveform...</h2>}
     </>
   );
 };

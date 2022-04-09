@@ -52,18 +52,22 @@ const Overview = ({ globalWaveForm, dGTranscript }) => {
       <div>
         <div className={styles.wrapper}>
           <div>
+            <h1>{transcript.transcript.length}</h1>
+            <h3 className={styles.category}>Characters</h3>
+          </div>
+          <div>
+            <h1>
+              {transcript.words.length > 999
+                ? (transcript.words.length / 1000).toFixed(1) + "K"
+                : transcript.words.length}
+            </h1>
+            <h3 className={styles.category}>Words</h3>
+          </div>
+          <div>
             <h1>
               {transcript.transcript.split(/[.!?]+\s/).filter(Boolean).length}
             </h1>
             <h3 className={styles.category}>Sentences</h3>
-          </div>
-          <div>
-            <h1>{transcript.words.length}</h1>
-            <h3 className={styles.category}>Words</h3>
-          </div>
-          <div>
-            <h1>21</h1>
-            <h3 className={styles.category}>Length</h3>
           </div>
         </div>
         <div className={styles.wrapper}>
@@ -107,7 +111,7 @@ const Overview = ({ globalWaveForm, dGTranscript }) => {
             <WordInText
               key={index}
               word={el.punctuated_word}
-              color={currentTime >= el.start ? "#0d76ff" : "#808074"}
+              color={currentTime >= el.start ? "#0d76ff" : "#595970"}
               onClick={() => {
                 globalWaveForm.current.skip(
                   el.start - globalWaveForm.current.getCurrentTime()

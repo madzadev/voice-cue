@@ -44,7 +44,7 @@ function DragDrop({ setAudio, setDGTranscript }) {
   return (
     <div className={styles.wrapper}>
       {loading ? (
-        <h1>Loading transcript...</h1>
+        <h2>Loading transcript...</h2>
       ) : (
         <FileUploader
           handleChange={handleChange}

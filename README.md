@@ -10,7 +10,7 @@ The app workflow is as simple as uploading your voice recording, selecting which
 
 ## Features ✨
 
-1. General stats - overview about voice recording
+1. General stats - an overview about voice recording
 2. Sentiment analysis - positive and negative word detection
 3. Word cloud generation - most used word classification
 4. Entity name recognition - categories such as person, place, etc
