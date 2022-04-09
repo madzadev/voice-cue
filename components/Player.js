@@ -32,12 +32,6 @@ const Player = ({ audioWaveForm, audio }) => {
 
   useEffect(() => {
     setIsPlaying(false);
-    // audioWaveForm.current.on("ready", function () {
-    //   setAudioLength(toHHMMSS(audioWaveForm.current.getDuration()));
-    // });
-    // audioWaveForm.current.on("finish", function () {
-    //   setIsPlaying(false);
-    // });
   }, [audio]);
 
   const playAudio = () => {

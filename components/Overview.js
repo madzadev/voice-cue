@@ -22,14 +22,6 @@ const Overview = ({ audioWaveForm, dGTranscript }) => {
   useEffect(() => {
     if (audioWaveForm) {
       setCurrentTime(0);
-      // audioWaveForm.current.on("audioprocess", function () {
-      //   setCurrentTime(audioWaveForm.current.getCurrentTime());
-      // });
-      // audioWaveForm.current.on("interaction", function () {
-      //   setTimeout(() => {
-      //     setCurrentTime(audioWaveForm.current.getCurrentTime());
-      //   }, 100);
-      // });
       const timer = setInterval(() => {
         if (audioWaveForm) {
           setCurrentTime(audioWaveForm.current.getCurrentTime());

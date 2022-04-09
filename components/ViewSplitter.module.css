@@ -2,13 +2,11 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
-  /* max-height: 200px; */
 }
 
 @media only screen and (max-width: 750px) {
   .wrapper {
     grid-template-columns: 1fr;
-    /* max-height: 400px; */
     text-align: center;
   }
 }

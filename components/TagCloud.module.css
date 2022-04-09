@@ -1,15 +1,8 @@
-.listHead {
-  /* background-color: silver; */
-  /* border: 1px solid silver; */
-}
-
 .listItem {
-  /* border: 1px solid beige; */
   margin: 10px 0;
 }
 
 .listItem:hover {
-  /* border: 1px solid orange; */
   cursor: pointer;
   color: orange;
 }

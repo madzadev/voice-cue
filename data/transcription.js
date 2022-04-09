@@ -1,4 +1,4 @@
-// This sample transcript was generated with Deepgram API and is used for the static demo audio in the sandbox.
+// This sample transcript was generated for the static demo audio in the sandbox.
 // Any further voice uploads by the user will result in calling Deepgram API directly.
 
 export const transcription = {

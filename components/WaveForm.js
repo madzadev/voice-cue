@@ -8,15 +8,12 @@ const WaveForm = ({ url, setAudioWaveForm }) => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    // Check if wavesurfer object is already created.
     if (waveform.current) {
       waveform.current.destroy();
       waveform.current = null;
     }
 
     if (!waveform.current) {
-      // Create a wavesurfer object
-
       waveform.current = Wavesurfer.create({
         container: "#waveform",
         waveColor: "white",
@@ -28,7 +25,7 @@ const WaveForm = ({ url, setAudioWaveForm }) => {
         cursorWidth: 3,
         cursorColor: "tomato",
       });
-      // Load audio from a remote url.
+
       if (typeof url == "string") {
         waveform.current.load(url);
       } else {
@@ -37,12 +34,10 @@ const WaveForm = ({ url, setAudioWaveForm }) => {
 
       waveform.current.on("ready", function () {
         setLoading(false);
-        console.log("loaded");
       });
 
       waveform.current.on("loading", function () {
         setLoading(true);
-        console.log("loading");
       });
 
       setAudioWaveForm(waveform);

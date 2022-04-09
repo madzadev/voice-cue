@@ -4,10 +4,5 @@ export const entities = [
   "Organization",
   "Money",
   "Unit",
-  // "NumericValue",
-  // "Url",
-  // "Email",
-  // "PhoneNumber",
   "Date",
-  // "Hashtag",
 ];
