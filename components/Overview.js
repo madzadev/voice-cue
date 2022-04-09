@@ -20,9 +20,24 @@ const Overview = ({ globalWaveForm, dGTranscript }) => {
 
   useEffect(() => {
     if (globalWaveForm) {
-      globalWaveForm.current.on("audioprocess", function () {
-        setCurrentTime(globalWaveForm.current.getCurrentTime());
-      });
+      setCurrentTime(0);
+      // globalWaveForm.current.on("audioprocess", function () {
+      //   setCurrentTime(globalWaveForm.current.getCurrentTime());
+      // });
+      // globalWaveForm.current.on("interaction", function () {
+      //   setTimeout(() => {
+      //     setCurrentTime(globalWaveForm.current.getCurrentTime());
+      //   }, 100);
+      // });
+      const timer = setInterval(() => {
+        if (globalWaveForm) {
+          setCurrentTime(globalWaveForm.current.getCurrentTime());
+        }
+      }, 100);
+
+      return () => {
+        clearInterval(timer);
+      };
     }
   }, [globalWaveForm]);
 
@@ -92,12 +107,12 @@ const Overview = ({ globalWaveForm, dGTranscript }) => {
             <WordInText
               key={index}
               word={el.punctuated_word}
-              color={currentTime > el.start ? "#0d76ff" : "#808074"}
+              color={currentTime >= el.start ? "#0d76ff" : "#808074"}
               onClick={() => {
                 globalWaveForm.current.skip(
                   el.start - globalWaveForm.current.getCurrentTime()
                 );
-                setCurrentTime(el.start + 0.01);
+                setCurrentTime(el.start);
               }}
             />
           );

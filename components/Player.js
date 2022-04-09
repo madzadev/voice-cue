@@ -13,22 +13,25 @@ const Player = ({ globalWaveForm, audio }) => {
       globalWaveForm.current.on("ready", function () {
         setAudioLength(toHHMMSS(globalWaveForm.current.getDuration()));
       });
-      globalWaveForm.current.on("audioprocess", function () {
-        setCurrentTime(toHHMMSS(globalWaveForm.current.getCurrentTime()));
-      });
+      // globalWaveForm.current.on("audioprocess", function () {
+      //   setCurrentTime(toHHMMSS(globalWaveForm.current.getCurrentTime()));
+      // });
       globalWaveForm.current.on("finish", function () {
         setIsPlaying(false);
       });
     }
-  }, [globalWaveForm]);
 
-  // Update this via useEffect
-  setInterval(() => {
-    if (globalWaveForm) {
-      setAudioLength(toHHMMSS(globalWaveForm.current.getDuration()));
-      setCurrentTime(toHHMMSS(globalWaveForm.current.getCurrentTime()));
-    }
-  }, 500);
+    const timer = setInterval(() => {
+      if (globalWaveForm) {
+        setAudioLength(toHHMMSS(globalWaveForm.current.getDuration()));
+        setCurrentTime(toHHMMSS(globalWaveForm.current.getCurrentTime()));
+      }
+    }, 500);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, [globalWaveForm]);
 
   const playAudio = () => {
     if (globalWaveForm.current.isPlaying()) {
