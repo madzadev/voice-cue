@@ -27,7 +27,10 @@
 
 .link:hover {
   cursor: pointer;
-  
+}
+
+.page {
+  font-family: 'Rubik', sans-serif;
 }
 
 

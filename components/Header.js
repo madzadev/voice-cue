@@ -20,12 +20,12 @@ const Header = () => {
       </Link>
       <Link href="/features">
         <div className={styles.navItem}>
-          <p className={styles.link}>Features</p>
+          <p className={`${styles.link} ${styles.page}`}>Features</p>
         </div>
       </Link>
       <Link href="/about">
         <div className={styles.navItem}>
-          <p className={styles.link}>About</p>
+          <p className={`${styles.link} ${styles.page}`}>About</p>
         </div>
       </Link>
     </header>

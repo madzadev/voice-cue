@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+
 .wrapper {
   width: 100%;
   min-height: 50px;
@@ -13,8 +13,8 @@
   
   padding: 10px 20px;
   
-  font-family: 'Zen Dots', cursive;
-  /* font-size:12px; */
+  font-family: 'Rubik', sans-serif;
+  /* font-size:18px; */
 }
 
 .author {
