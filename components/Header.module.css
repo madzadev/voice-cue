@@ -8,8 +8,15 @@
   margin-bottom: 20px;
 }
 
-.logo {
+.logo{
+  display: grid;
+  grid-template-columns: 40px auto;
   cursor: pointer;
+}
+
+.icon {
+  width:30px;
+  height: 30px;
 }
 
 .navItem {

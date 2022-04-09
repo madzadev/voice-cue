@@ -7,15 +7,16 @@ const Header = () => {
   return (
     <header className={styles.wrapper}>
       <Link href="/">
-        <h2
+        <div
           className={styles.logo}
           onClick={() => {
             window.location.pathname === "/" &&
               Router.reload(window.location.pathname);
           }}
         >
-          VoiceCue
-        </h2>
+          <img className={styles.icon} src="logo/cue.png" alt="cue" />
+          <h2 className={styles.name}>VoiceCue</h2>
+        </div>
       </Link>
       <Link href="/features">
         <div className={styles.navItem}>

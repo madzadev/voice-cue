@@ -9,13 +9,13 @@
 .title {
   color: #0658c2;
   margin-bottom: 10px;
+  font-family: 'JetBrains Mono', monospace;
 }
 
 .time {
   margin-bottom: 10px;
   font-family: 'Roboto Mono', monospace;
   font-family: 'JetBrains Mono', monospace;
-  /* font-size:18px; */
   
 }
 
