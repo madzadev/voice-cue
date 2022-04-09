@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 
 import styles from "./WaveForm.module.css";
 
-const WaveForm = ({ url, setGlobalWaveForm, setTime }) => {
+const WaveForm = ({ url, setAudioWaveForm }) => {
   const waveform = useRef(null);
   const [loading, setLoading] = useState(false);
 
@@ -45,12 +45,7 @@ const WaveForm = ({ url, setGlobalWaveForm, setTime }) => {
         console.log("loading");
       });
 
-      /* To load a local audio file
-		    1. Read the audio file as a array buffer.
-			2. Create a blob from the array buffer
-			3. Load the audio using wavesurfer's loadBlob API
-	 */
-      setGlobalWaveForm(waveform);
+      setAudioWaveForm(waveform);
     }
   }, [url]);
 

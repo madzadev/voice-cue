@@ -8,7 +8,7 @@ import { transcription } from "../data/transcription";
 import styles from "./Entity.module.css";
 import EntityItem from "./EntityItem";
 
-const Entity = ({ globalWaveForm, dGTranscript }) => {
+const Entity = ({ audioWaveForm, dGTranscript }) => {
   const [activeEntity, setActiveEntity] = useState("");
   const [entityArray, setEntityArray] = useState([]);
   const [entityList, setEntityList] = useState();
@@ -57,8 +57,8 @@ const Entity = ({ globalWaveForm, dGTranscript }) => {
             entity={activeEntity}
             color="red"
             onClick={() => {
-              globalWaveForm.current.skip(
-                el.start - globalWaveForm.current.getCurrentTime()
+              audioWaveForm.current.skip(
+                el.start - audioWaveForm.current.getCurrentTime()
               );
             }}
           />

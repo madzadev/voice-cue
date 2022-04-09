@@ -8,7 +8,7 @@ import getTagOccurrences from "../helpers/getTagOccurrences";
 
 import styles from "./TagCloud.module.css";
 
-function SimpleCloud({ globalWaveForm, dGTranscript }) {
+function SimpleCloud({ audioWaveForm, dGTranscript }) {
   const [activeTag, setActiveTag] = useState();
   const [activeColor, setActiveColor] = useState("white");
   const [occurrences, setOccurrences] = useState([]);
@@ -26,8 +26,8 @@ function SimpleCloud({ globalWaveForm, dGTranscript }) {
           time={el.start}
           color={activeColor}
           onClick={() => {
-            globalWaveForm.current.skip(
-              el.start - globalWaveForm.current.getCurrentTime()
+            audioWaveForm.current.skip(
+              el.start - audioWaveForm.current.getCurrentTime()
             );
           }}
         />

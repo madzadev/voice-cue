@@ -9,7 +9,7 @@ import { transcription } from "../data/transcription";
 
 import styles from "./Actions.module.css";
 
-const Actions = ({ globalWaveForm, dGTranscript }) => {
+const Actions = ({ audioWaveForm, dGTranscript }) => {
   const [activeAction, setActiveAction] = useState("");
   const [actionArray, setActionArray] = useState([]);
   const [actionList, setActionList] = useState();
@@ -58,8 +58,8 @@ const Actions = ({ globalWaveForm, dGTranscript }) => {
             action={activeAction}
             color="red"
             onClick={() => {
-              globalWaveForm.current.skip(
-                el.start - globalWaveForm.current.getCurrentTime()
+              audioWaveForm.current.skip(
+                el.start - audioWaveForm.current.getCurrentTime()
               );
             }}
           />

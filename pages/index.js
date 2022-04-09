@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Head from "next/head";
 import dynamic from "next/dynamic";
 
@@ -16,16 +16,13 @@ const WaveForm = dynamic(() => import("../components/WaveForm"), {
   ssr: false,
 });
 
-import { transcription } from "../data/transcription";
-
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
-  // console.log(sentiment.analyze(data.transcript));
-  const [globalWaveForm, setGlobalWaveForm] = useState();
+  const [audioWaveForm, setAudioWaveForm] = useState();
   const [audio, setAudio] = useState(false);
   const [dGTranscript, setDGTranscript] = useState();
 
@@ -48,13 +45,13 @@ export default function Home() {
           <FileSelector setAudio={setAudio} setDGTranscript={setDGTranscript} />
         </div>
         <div style={{ display: "grid", placeItems: "center end" }}>
-          <Player globalWaveForm={globalWaveForm} audio={audio} />
+          <Player audioWaveForm={audioWaveForm} audio={audio} />
         </div>
       </ViewSplitter>
 
       <WaveForm
         url={!audio ? "samples/demo.mp3" : audio}
-        setGlobalWaveForm={setGlobalWaveForm}
+        setAudioWaveForm={setAudioWaveForm}
       />
 
       <Tabs className={styles.tabs}>
@@ -68,34 +65,25 @@ export default function Home() {
         </TabList>
 
         <TabPanel>
-          <Overview
-            globalWaveForm={globalWaveForm}
-            dGTranscript={dGTranscript}
-          />
+          <Overview audioWaveForm={audioWaveForm} dGTranscript={dGTranscript} />
         </TabPanel>
         <TabPanel>
           <Sentiments
-            globalWaveForm={globalWaveForm}
+            audioWaveForm={audioWaveForm}
             dGTranscript={dGTranscript}
           />
         </TabPanel>
         <TabPanel>
-          <TagCloud
-            globalWaveForm={globalWaveForm}
-            dGTranscript={dGTranscript}
-          />
+          <TagCloud audioWaveForm={audioWaveForm} dGTranscript={dGTranscript} />
         </TabPanel>
         <TabPanel>
-          <Entity globalWaveForm={globalWaveForm} dGTranscript={dGTranscript} />
+          <Entity audioWaveForm={audioWaveForm} dGTranscript={dGTranscript} />
         </TabPanel>
         <TabPanel>
-          <Actions
-            globalWaveForm={globalWaveForm}
-            dGTranscript={dGTranscript}
-          />
+          <Actions audioWaveForm={audioWaveForm} dGTranscript={dGTranscript} />
         </TabPanel>
         <TabPanel>
-          <Search globalWaveForm={globalWaveForm} dGTranscript={dGTranscript} />
+          <Search audioWaveForm={audioWaveForm} dGTranscript={dGTranscript} />
         </TabPanel>
       </Tabs>
     </div>

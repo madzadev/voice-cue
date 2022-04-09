@@ -11,7 +11,7 @@ import getTotalSpeakers from "../helpers/getTotalSpeakers";
 import { transcription } from "../data/transcription";
 import styles from "./Overview.module.css";
 
-const Overview = ({ globalWaveForm, dGTranscript }) => {
+const Overview = ({ audioWaveForm, dGTranscript }) => {
   const [currentTime, setCurrentTime] = useState(0);
   const [transcript, setTranscript] = useState(transcription);
 
@@ -20,19 +20,19 @@ const Overview = ({ globalWaveForm, dGTranscript }) => {
   const analysis = sentiment.analyze(transcript.transcript);
 
   useEffect(() => {
-    if (globalWaveForm) {
+    if (audioWaveForm) {
       setCurrentTime(0);
-      // globalWaveForm.current.on("audioprocess", function () {
-      //   setCurrentTime(globalWaveForm.current.getCurrentTime());
+      // audioWaveForm.current.on("audioprocess", function () {
+      //   setCurrentTime(audioWaveForm.current.getCurrentTime());
       // });
-      // globalWaveForm.current.on("interaction", function () {
+      // audioWaveForm.current.on("interaction", function () {
       //   setTimeout(() => {
-      //     setCurrentTime(globalWaveForm.current.getCurrentTime());
+      //     setCurrentTime(audioWaveForm.current.getCurrentTime());
       //   }, 100);
       // });
       const timer = setInterval(() => {
-        if (globalWaveForm) {
-          setCurrentTime(globalWaveForm.current.getCurrentTime());
+        if (audioWaveForm) {
+          setCurrentTime(audioWaveForm.current.getCurrentTime());
         }
       }, 100);
 
@@ -40,7 +40,7 @@ const Overview = ({ globalWaveForm, dGTranscript }) => {
         clearInterval(timer);
       };
     }
-  }, [globalWaveForm]);
+  }, [audioWaveForm]);
 
   useEffect(() => {
     if (dGTranscript) {
@@ -114,8 +114,8 @@ const Overview = ({ globalWaveForm, dGTranscript }) => {
               word={el.punctuated_word}
               color={currentTime >= el.start ? "#0d76ff" : "#595970"}
               onClick={() => {
-                globalWaveForm.current.skip(
-                  el.start - globalWaveForm.current.getCurrentTime()
+                audioWaveForm.current.skip(
+                  el.start - audioWaveForm.current.getCurrentTime()
                 );
                 setCurrentTime(el.start);
               }}

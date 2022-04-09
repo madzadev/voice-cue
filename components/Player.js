@@ -3,50 +3,50 @@ import toHHMMSS from "../helpers/getMinuteFormat";
 
 import styles from "./Player.module.css";
 
-const Player = ({ globalWaveForm, audio }) => {
+const Player = ({ audioWaveForm, audio }) => {
   const [audioLength, setAudioLength] = useState("00:00");
   const [currentTime, setCurrentTime] = useState("00:00");
   const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
-    if (globalWaveForm) {
-      globalWaveForm.current.on("ready", function () {
-        setAudioLength(toHHMMSS(globalWaveForm.current.getDuration()));
+    if (audioWaveForm) {
+      audioWaveForm.current.on("ready", function () {
+        setAudioLength(toHHMMSS(audioWaveForm.current.getDuration()));
       });
-      globalWaveForm.current.on("finish", function () {
+      audioWaveForm.current.on("finish", function () {
         setIsPlaying(false);
       });
     }
 
     const timer = setInterval(() => {
-      if (globalWaveForm) {
-        setAudioLength(toHHMMSS(globalWaveForm.current.getDuration()));
-        setCurrentTime(toHHMMSS(globalWaveForm.current.getCurrentTime()));
+      if (audioWaveForm) {
+        setAudioLength(toHHMMSS(audioWaveForm.current.getDuration()));
+        setCurrentTime(toHHMMSS(audioWaveForm.current.getCurrentTime()));
       }
     }, 500);
 
     return () => {
       clearInterval(timer);
     };
-  }, [globalWaveForm]);
+  }, [audioWaveForm]);
 
   useEffect(() => {
     setIsPlaying(false);
-    // globalWaveForm.current.on("ready", function () {
-    //   setAudioLength(toHHMMSS(globalWaveForm.current.getDuration()));
+    // audioWaveForm.current.on("ready", function () {
+    //   setAudioLength(toHHMMSS(audioWaveForm.current.getDuration()));
     // });
-    // globalWaveForm.current.on("finish", function () {
+    // audioWaveForm.current.on("finish", function () {
     //   setIsPlaying(false);
     // });
   }, [audio]);
 
   const playAudio = () => {
-    if (globalWaveForm.current.isPlaying()) {
+    if (audioWaveForm.current.isPlaying()) {
       setIsPlaying(false);
-      globalWaveForm.current.pause();
+      audioWaveForm.current.pause();
     } else {
       setIsPlaying(true);
-      globalWaveForm.current.play();
+      audioWaveForm.current.play();
     }
   };
 
@@ -63,7 +63,7 @@ const Player = ({ globalWaveForm, audio }) => {
           className={styles.ffStop}
           src="icons/fast-backward-start.png"
           onClick={() => {
-            globalWaveForm.current.stop();
+            audioWaveForm.current.stop();
             setIsPlaying(false);
           }}
           alt="ff-stop-icon"
@@ -72,7 +72,7 @@ const Player = ({ globalWaveForm, audio }) => {
           className={styles.ff}
           src="icons/fast-backward.png"
           onClick={() => {
-            globalWaveForm.current.skipBackward(10);
+            audioWaveForm.current.skipBackward(10);
           }}
           alt="ff-icon"
         />
@@ -86,12 +86,12 @@ const Player = ({ globalWaveForm, audio }) => {
           className={styles.ff}
           src="icons/fast-forward.png"
           onClick={() => {
-            globalWaveForm.current.skipForward(10);
+            audioWaveForm.current.skipForward(10);
 
-            setAudioLength(toHHMMSS(globalWaveForm.current.getDuration()));
+            setAudioLength(toHHMMSS(audioWaveForm.current.getDuration()));
 
-            globalWaveForm.current.on("audioprocess", function () {
-              setCurrentTime(toHHMMSS(globalWaveForm.current.getCurrentTime()));
+            audioWaveForm.current.on("audioprocess", function () {
+              setCurrentTime(toHHMMSS(audioWaveForm.current.getCurrentTime()));
             });
           }}
           alt="ff-icon"
@@ -100,8 +100,8 @@ const Player = ({ globalWaveForm, audio }) => {
           className={styles.ffStop}
           src="icons/fast-forward-end.png"
           onClick={() => {
-            globalWaveForm.current.seekTo(1);
-            globalWaveForm.current.pause();
+            audioWaveForm.current.seekTo(1);
+            audioWaveForm.current.pause();
             setIsPlaying(false);
           }}
           alt="ff-stop-icon"

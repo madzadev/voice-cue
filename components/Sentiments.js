@@ -6,7 +6,7 @@ import { transcription } from "../data/transcription";
 
 import styles from "./Sentiments.module.css";
 
-const Sentiments = ({ globalWaveForm, dGTranscript }) => {
+const Sentiments = ({ audioWaveForm, dGTranscript }) => {
   const [emotion, setEmotion] = useState("");
   const [sentimentList, setSentimentList] = useState([]);
   const [transcript, setTranscript] = useState(transcription);
@@ -132,8 +132,8 @@ const Sentiments = ({ globalWaveForm, dGTranscript }) => {
                       word={el.word}
                       time={el.start}
                       onClick={() => {
-                        globalWaveForm.current.skip(
-                          el.start - globalWaveForm.current.getCurrentTime()
+                        audioWaveForm.current.skip(
+                          el.start - audioWaveForm.current.getCurrentTime()
                         );
                       }}
                     />

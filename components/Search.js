@@ -5,7 +5,7 @@ import SearchItem from "./SearchItem";
 import styles from "./Search.module.css";
 import { transcription } from "../data/transcription";
 
-const Search = ({ globalWaveForm, dGTranscript }) => {
+const Search = ({ audioWaveForm, dGTranscript }) => {
   const [input, setInput] = useState("");
   const [resultsArray, setResultsArray] = useState([]);
   const [transcript, setTranscript] = useState(transcription);
@@ -64,8 +64,8 @@ const Search = ({ globalWaveForm, dGTranscript }) => {
                     time={word.start}
                     word={word.word}
                     onClick={() => {
-                      globalWaveForm.current.skip(
-                        word.start - globalWaveForm.current.getCurrentTime()
+                      audioWaveForm.current.skip(
+                        word.start - audioWaveForm.current.getCurrentTime()
                       );
                     }}
                   />
