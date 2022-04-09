@@ -82,9 +82,8 @@ const Actions = ({ globalWaveForm, dGTranscript }) => {
       <div className={styles.actions}>
         {actions.map((action, index) => {
           return (
-            <div>
+            <div key={index}>
               <h2
-                key={index}
                 className={styles.item}
                 onClick={() => {
                   setActiveAction(action);
