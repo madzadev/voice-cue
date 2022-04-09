@@ -13,9 +13,6 @@ const Player = ({ globalWaveForm, audio }) => {
       globalWaveForm.current.on("ready", function () {
         setAudioLength(toHHMMSS(globalWaveForm.current.getDuration()));
       });
-      // globalWaveForm.current.on("audioprocess", function () {
-      //   setCurrentTime(toHHMMSS(globalWaveForm.current.getCurrentTime()));
-      // });
       globalWaveForm.current.on("finish", function () {
         setIsPlaying(false);
       });
@@ -32,6 +29,16 @@ const Player = ({ globalWaveForm, audio }) => {
       clearInterval(timer);
     };
   }, [globalWaveForm]);
+
+  useEffect(() => {
+    setIsPlaying(false);
+    // globalWaveForm.current.on("ready", function () {
+    //   setAudioLength(toHHMMSS(globalWaveForm.current.getDuration()));
+    // });
+    // globalWaveForm.current.on("finish", function () {
+    //   setIsPlaying(false);
+    // });
+  }, [audio]);
 
   const playAudio = () => {
     if (globalWaveForm.current.isPlaying()) {
