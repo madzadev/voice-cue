@@ -52,7 +52,8 @@ function DragDrop({ setAudio, setDGTranscript }) {
           handleChange={handleChange}
           name="file"
           types={fileTypes}
-          maxSize={100}
+          label="or drop a file right here (up to 5MB)"
+          maxSize={5}
         />
       )}
     </div>
