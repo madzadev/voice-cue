@@ -1,10 +1,10 @@
-# Introducing VoiceCue 📢📍
+# Introducing VoiceCue 💿📍
 
 Forget about listening to long and boring voice recordings and process them manually.
 
 ## About 👀
 
-[VoiceCue](https://cue.madza.dev) lets you find sentiments, tags, entities, and actions in your voice recordings instantly.
+[VoiceCue](https://cue.madza.dev) lets you find sentiments, tags, entities, and actions in your voice recordings like a DJ.
 
 ![Preview](https://github.com/madzadev/voice-cue/blob/main/public/media-card.png)
 

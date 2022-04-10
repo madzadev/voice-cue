@@ -6,7 +6,7 @@ const MetaTags = () => {
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       <meta charSet="utf-8" />
       <title>
-        VoiceCue: Find sentiments, tags, entities, actions instantly 📢📍
+        VoiceCue: Find sentiments, tags, entities, actions like a DJ 💿📍
       </title>
       <meta
         name="description"
@@ -19,7 +19,7 @@ const MetaTags = () => {
       <meta property="og:url" content="https://cue.madza.dev/" />
       <meta
         property="og:title"
-        content="VoiceCue: Find sentiments, tags, entities, actions instantly 📢📍"
+        content="VoiceCue: Find sentiments, tags, entities, actions like a DJ 💿📍"
       />
       <meta
         property="og:description"
@@ -32,7 +32,7 @@ const MetaTags = () => {
       <meta property="twitter:url" content="https://cue.madza.dev/" />
       <meta
         property="twitter:title"
-        content="VoiceCue: Find sentiments, tags, entities, actions instantly 📢📍"
+        content="VoiceCue: Find sentiments, tags, entities, actions like a DJ 💿📍"
       />
       <meta
         property="twitter:description"

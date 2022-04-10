@@ -2,7 +2,7 @@ export const about = [
   {
     question: "What is VoiceCue?",
     answers: [
-      "VoiceCue lets you find sentiments, tags, entities, and actions in your voice recordings instantly.",
+      "VoiceCue lets you find sentiments, tags, entities, and actions in your voice recordings like a DJ.",
       "The workflow is as simple as uploading your voice recording, selecting the analysis and clicking on the generated cues.",
     ],
   },
