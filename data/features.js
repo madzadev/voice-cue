@@ -1,5 +1,9 @@
 export const features = [
   {
+    title: "Voice recognition",
+    description: "An effective AI based solution by Deepgram",
+  },
+  {
     title: "General stats",
     description: "An overview about voice recordings",
   },
@@ -18,10 +22,6 @@ export const features = [
   {
     title: "Activity tracking",
     description: "Find actions in past, present or future",
-  },
-  {
-    title: "Voice recognition",
-    description: "An effective AI based solution by Deepgram",
   },
   {
     title: "Interactive transcript",

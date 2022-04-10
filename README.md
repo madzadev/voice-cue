@@ -12,12 +12,12 @@ The app workflow is as simple as uploading your voice recording, selecting which
 
 ## Features ✨
 
-1. General stats - an overview about voice recording
-2. Sentiment analysis - positive and negative word detection
-3. Word cloud generation - most used word classification
-4. Entity name recognition - categories such as person, place, etc
-5. Activity tracking - find actions in past, present or future
-6. Voice recognition - AI based solution by [Deepgram](https://deepgram.com)
+1. Voice recognition - AI based solution by [Deepgram](https://deepgram.com)
+2. General stats - an overview about voice recording
+3. Sentiment analysis - positive and negative word detection
+4. Word cloud generation - most used word classification
+5. Entity name recognition - categories such as person, place, etc
+6. Activity tracking - find actions in past, present or future
 7. Interactive transcript - see progress or click to control it
 8. Speaker detection - total number of speakers in recording
 9. Cue word usage - extractions from the text for context
