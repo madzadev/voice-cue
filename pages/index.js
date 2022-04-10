@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Head from "next/head";
 import dynamic from "next/dynamic";
 
 import FileSelector from "../components/FileSelector";
@@ -32,14 +31,6 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      <Head>
-        <title>VoiceCue</title>
-        <meta
-          name="description"
-          content="Find sentiments, tags, entities, actions instantly"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <ViewSplitter>
         <div>
           <h1 className={styles.title}>Decode the voice with VoiceCue</h1>
@@ -52,12 +43,10 @@ export default function Home() {
           <Player audioWaveForm={audioWaveForm} audio={audio} />
         </div>
       </ViewSplitter>
-
       <WaveForm
         url={!audio ? "samples/demo.mp3" : audio}
         setAudioWaveForm={setAudioWaveForm}
       />
-
       <Tabs className={styles.tabs}>
         <TabList>
           <Tab>Overview</Tab>
@@ -67,7 +56,6 @@ export default function Home() {
           <Tab>Actions</Tab>
           <Tab>Search</Tab>
         </TabList>
-
         <TabPanel>
           <Overview audioWaveForm={audioWaveForm} dGTranscript={dGTranscript} />
         </TabPanel>
