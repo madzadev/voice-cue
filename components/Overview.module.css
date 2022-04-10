@@ -8,3 +8,9 @@
 .category {
   color: orange;
 }
+
+@media only screen and (max-width: 750px) {
+  .wrapper {
+      gap: 0;
+  }
+}
