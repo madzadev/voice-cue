@@ -1,10 +1,12 @@
 # Introducing VoiceCue 📢📍
 
-Forget about listening to long and boring voice recordings and process them in days.
+Forget about listening to long and boring voice recordings and process them manually.
 
 ## About 👀
 
 [VoiceCue](https://cue.madza.dev) lets you find sentiments, tags, entities, and actions in your voice recordings instantly.
+
+![Preview](https://github.com/madzadev/voice-cue/blob/main/public/media-card.png)
 
 The app workflow is as simple as uploading your voice recording, selecting which type of analysis to perform and clicking on the generated cues in the list to instantly navigate to its exact position in the voice recording.
 
@@ -17,14 +19,15 @@ The app workflow is as simple as uploading your voice recording, selecting which
 5. Activity tracking - find actions in past, present or future
 6. Voice recognition - AI based solution by [Deepgram](https://deepgram.com)
 7. Interactive transcript - see progress or click to control it
-8. Cue word usage - extractions from the text for context
-9. Waveform preview - see the dynamics of voice, identify silences
-10. Audio controls - play, pause, fast forward and backward
-11. Drag and drop support - drop audio in the file select area
-12. Upload MP3 files - most commonly used audio format
-13. Progress loaders - Improved UX for loading transcripts
-14. Fully responsive - works fine on mobile and tablets
-15. Colorful UI - for easier interaction and highlighting
+8. Speaker detection - total number of speakers in recording
+9. Cue word usage - extractions from the text for context
+10. Waveform preview - see the dynamics of voice, identify silences
+11. Audio controls - play, pause, fast forward and backward
+12. Drag and drop support - drop audio in the file select area
+13. Upload MP3 files - most commonly used audio format
+14. Progress loaders - Improved UX for loading transcripts
+15. Fully responsive - works fine on mobile and tablets
+16. Colorful UI - for easier interaction and highlighting
 
 ## Tech stack 🛠️
 
