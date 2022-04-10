@@ -20,14 +20,15 @@ The app workflow is as simple as uploading your voice recording, selecting which
 6. Activity tracking - find actions in past, present or future
 7. Interactive transcript - see progress or click to control it
 8. Speaker detection - total number of speakers in recording
-9. Cue word usage - extractions from the text for context
-10. Waveform preview - see the dynamics of voice, identify silences
-11. Audio controls - play, pause, fast forward and backward
-12. Drag and drop support - drop audio in the file select area
-13. Upload MP3 files - most commonly used audio format
-14. Progress loaders - Improved UX for loading transcripts
-15. Fully responsive - works fine on mobile and tablets
-16. Colorful UI - for easier interaction and highlighting
+9. Cue word usage - transcript samples for better context
+10. Custom search - extended ability to query for cues
+11. Waveform preview - see the dynamics of voice, identify silences
+12. Audio controls - play, pause, fast forward and backward
+13. Drag and drop support - drop audio in the file select area
+14. Upload MP3 files - most commonly used audio format
+15. Progress loaders - Improved UX for loading transcripts
+16. Fully responsive - works fine on mobile and tablets
+17. Colorful UI - for easier interaction and highlighting
 
 ## Tech stack 🛠️
 

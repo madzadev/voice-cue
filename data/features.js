@@ -29,7 +29,7 @@ export const features = [
   },
   {
     title: "Cue word usage",
-    description: "Extractions from the text for context",
+    description: "Transcript samples for better context",
   },
   {
     title: "Waveform preview",
