@@ -3,7 +3,7 @@
 
 export const transcription = {
   transcript:
-    "This application lets you find sentiments, tags, entities, and actions in your voice recordings instantly. It was built as a entry for Dev and Deep programming contest from mid March to mid April in 20 22 It is based on Deepgram Api which is among the leading voice recognition solutions, giving you access to all Deep trained speech recognition models. The Api even recognizes person names like John and Jane, places like London and Paris. And organizations like Google and Microsoft. If you want to try the speech recognition yourself, go to the Deepgram website and sign up for 150 dollars free credit to test out their awesome Api yourself.",
+    "This application lets you find sentiments, tags, entities, and actions in your voice recordings instantly. It was built as an entry for Dev and Deepgram programming contest from mid March to mid April in 2022. It is based on Deepgram Api which is among the leading voice recognition solutions, giving you access to all Deepgram trained speech recognition models. The Api even recognizes person names like John and Jane, places like London and Paris. And organizations like Google and Microsoft. If you want to try the speech recognition yourself, go to the Deepgram website and sign up for 150 dollars free credit to test out their awesome Api yourself.",
   confidence: 0.9951172,
   words: [
     {
@@ -159,12 +159,12 @@ export const transcription = {
       punctuated_word: "as",
     },
     {
-      word: "a",
+      word: "an",
       start: 8.683489,
       end: 8.843269,
       confidence: 0.9946289,
       speaker: 0,
-      punctuated_word: "a",
+      punctuated_word: "an",
     },
     {
       word: "entry",
@@ -199,12 +199,12 @@ export const transcription = {
       punctuated_word: "and",
     },
     {
-      word: "deep",
+      word: "deepgram",
       start: 9.841896,
       end: 10.341896,
       confidence: 0.6743164,
       speaker: 0,
-      punctuated_word: "Deep",
+      punctuated_word: "Deepgram",
     },
     {
       word: "programming",
@@ -279,20 +279,12 @@ export const transcription = {
       punctuated_word: "in",
     },
     {
-      word: "20",
+      word: "2022",
       start: 13.6766205,
       end: 14.036127,
       confidence: 0.9995117,
       speaker: 0,
-      punctuated_word: "20",
-    },
-    {
-      word: "22",
-      start: 14.036127,
-      end: 14.595357,
-      confidence: 0.9970703,
-      speaker: 0,
-      punctuated_word: "22",
+      punctuated_word: "2022.",
     },
     {
       word: "it",
@@ -447,12 +439,12 @@ export const transcription = {
       punctuated_word: "all",
     },
     {
-      word: "deep",
+      word: "deepgram",
       start: 22.201582,
       end: 22.701582,
       confidence: 0.7050781,
       speaker: 0,
-      punctuated_word: "Deep",
+      punctuated_word: "Deepgram",
     },
     {
       word: "trained",
