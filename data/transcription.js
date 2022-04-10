@@ -3,7 +3,7 @@
 
 export const transcription = {
   transcript:
-    "This application lets you find sentiments, tags, entities, and actions in your voice recordings instantly. It was built as an entry for Dev and Deepgram programming contest from mid March to mid April in 2022. It is based on Deepgram Api which is among the leading voice recognition solutions, giving you access to all Deepgram trained speech recognition models. The Api even recognizes person names like John and Jane, places like London and Paris. And organizations like Google and Microsoft. If you want to try the speech recognition yourself, go to the Deepgram website and sign up for 150 dollars free credit to test out their awesome Api yourself.",
+    "This application lets you find sentiments, tags, entities, and actions in your voice recordings instantly. It was built as an entry for Dev and Deepgram programming contest from mid March to mid April in 2022. It is based on Deepgram Api which is among the leading voice recognition solutions, giving you access to all Deepgram trained speech recognition models. The Api even recognizes person names like John and Jane, places like London and Paris, and organizations like Google and Microsoft. If you want to try the speech recognition yourself, go to the Deepgram website and sign up for 150 dollars free credit to test out their awesome Api yourself.",
   confidence: 0.9951172,
   words: [
     {
@@ -596,7 +596,7 @@ export const transcription = {
       end: 31.71534,
       confidence: 0.9760742,
       speaker: 0,
-      punctuated_word: "Paris.",
+      punctuated_word: "Paris,",
     },
     {
       word: "and",
@@ -604,7 +604,7 @@ export const transcription = {
       end: 32.54937,
       confidence: 0.99658203,
       speaker: 0,
-      punctuated_word: "And",
+      punctuated_word: "and",
     },
     {
       word: "organizations",
