@@ -18,7 +18,7 @@ const Search = ({ audioWaveForm, dGTranscript }) => {
 
   return (
     <ViewSplitter>
-      <div>
+      <div className={styles.wrapper}>
         <h2>Custom search:</h2>
         <input
           spellCheck="false"

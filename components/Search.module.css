@@ -1,7 +1,8 @@
 .input {
     background-color: #21212C;
     outline: none;
-    max-width: 600px;
+    max-width:600px;
+    display: inline-block;
     height: 50px;
     border-radius:5px;
     border: 2px dashed aqua;
@@ -12,3 +13,9 @@
     font-family: "Montserrat", sans-serif;
     margin-top:15px;
 }
+
+@media only screen and (max-width: 750px) {
+    .input {
+        width: calc(100% - 20px);
+    }
+  }
