@@ -40,7 +40,11 @@ export default function Home() {
           <FileSelector setAudio={setAudio} setDGTranscript={setDGTranscript} />
         </div>
         <div style={{ display: "grid", placeItems: "center end" }}>
-          <Player audioWaveForm={audioWaveForm} audio={audio} />
+          <Player
+            audio={audio}
+            audioWaveForm={audioWaveForm}
+            dGTranscript={dGTranscript}
+          />
         </div>
       </ViewSplitter>
       <WaveForm

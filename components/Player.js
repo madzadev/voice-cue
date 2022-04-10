@@ -3,7 +3,7 @@ import toHHMMSS from "../helpers/getMinuteFormat";
 
 import styles from "./Player.module.css";
 
-const Player = ({ audioWaveForm, audio }) => {
+const Player = ({ audio, audioWaveForm, dGTranscript }) => {
   const [audioLength, setAudioLength] = useState("00:00");
   const [currentTime, setCurrentTime] = useState("00:00");
   const [isPlaying, setIsPlaying] = useState(false);
@@ -33,6 +33,19 @@ const Player = ({ audioWaveForm, audio }) => {
   useEffect(() => {
     setIsPlaying(false);
   }, [audio]);
+
+  useEffect(() => {
+    if (dGTranscript) {
+      if (audioWaveForm) {
+        audioWaveForm.current.on("ready", function () {
+          setAudioLength(toHHMMSS(audioWaveForm.current.getDuration()));
+        });
+        audioWaveForm.current.on("finish", function () {
+          setIsPlaying(false);
+        });
+      }
+    }
+  }, [dGTranscript]);
 
   const playAudio = () => {
     if (audioWaveForm.current.isPlaying()) {
